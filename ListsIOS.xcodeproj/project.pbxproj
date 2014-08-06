@@ -22,6 +22,13 @@
 		FCF5D6361992AC3E0027AB49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6151992AC3D0027AB49 /* UIKit.framework */; };
 		FCF5D63E1992AC3E0027AB49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D63C1992AC3E0027AB49 /* InfoPlist.strings */; };
 		FCF5D6401992AC3E0027AB49 /* ListsIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D63F1992AC3E0027AB49 /* ListsIOSTests.m */; };
+		FCF5D6571992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D64B1992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m */; };
+		FCF5D6581992B5FD0027AB49 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D64D1992B5FD0027AB49 /* ECSlidingAnimationController.m */; };
+		FCF5D6591992B5FD0027AB49 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6501992B5FD0027AB49 /* ECSlidingInteractiveTransition.m */; };
+		FCF5D65A1992B5FD0027AB49 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6521992B5FD0027AB49 /* ECSlidingSegue.m */; };
+		FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6541992B5FD0027AB49 /* ECSlidingViewController.m */; };
+		FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */; };
+		FCF5D6621992B7690027AB49 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6611992B7690027AB49 /* MenuVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,21 @@
 		FCF5D63B1992AC3E0027AB49 /* ListsIOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ListsIOSTests-Info.plist"; sourceTree = "<group>"; };
 		FCF5D63D1992AC3E0027AB49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FCF5D63F1992AC3E0027AB49 /* ListsIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListsIOSTests.m; sourceTree = "<group>"; };
+		FCF5D64A1992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		FCF5D64B1992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		FCF5D64C1992B5FD0027AB49 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		FCF5D64D1992B5FD0027AB49 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		FCF5D64E1992B5FD0027AB49 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		FCF5D64F1992B5FD0027AB49 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		FCF5D6501992B5FD0027AB49 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		FCF5D6511992B5FD0027AB49 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		FCF5D6521992B5FD0027AB49 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		FCF5D6531992B5FD0027AB49 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		FCF5D6541992B5FD0027AB49 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		FCF5D6551992B5FD0027AB49 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		FCF5D6601992B7690027AB49 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVC.h; sourceTree = "<group>"; };
+		FCF5D6611992B7690027AB49 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +108,7 @@
 			children = (
 				FCF5D6171992AC3D0027AB49 /* ListsIOS */,
 				FCF5D6391992AC3E0027AB49 /* ListsIOSTests */,
+				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
 				FCF5D6101992AC3D0027AB49 /* Frameworks */,
 				FCF5D60F1992AC3D0027AB49 /* Products */,
 			);
@@ -120,6 +143,8 @@
 				FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */,
 				FCF5D6291992AC3E0027AB49 /* ViewController.h */,
 				FCF5D62A1992AC3E0027AB49 /* ViewController.m */,
+				FCF5D6601992B7690027AB49 /* MenuVC.h */,
+				FCF5D6611992B7690027AB49 /* MenuVC.m */,
 				FCF5D62C1992AC3E0027AB49 /* Images.xcassets */,
 				FCF5D6181992AC3D0027AB49 /* Supporting Files */,
 			);
@@ -153,6 +178,26 @@
 				FCF5D63C1992AC3E0027AB49 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5D64A1992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.h */,
+				FCF5D64B1992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m */,
+				FCF5D64C1992B5FD0027AB49 /* ECSlidingAnimationController.h */,
+				FCF5D64D1992B5FD0027AB49 /* ECSlidingAnimationController.m */,
+				FCF5D64E1992B5FD0027AB49 /* ECSlidingConstants.h */,
+				FCF5D64F1992B5FD0027AB49 /* ECSlidingInteractiveTransition.h */,
+				FCF5D6501992B5FD0027AB49 /* ECSlidingInteractiveTransition.m */,
+				FCF5D6511992B5FD0027AB49 /* ECSlidingSegue.h */,
+				FCF5D6521992B5FD0027AB49 /* ECSlidingSegue.m */,
+				FCF5D6531992B5FD0027AB49 /* ECSlidingViewController.h */,
+				FCF5D6541992B5FD0027AB49 /* ECSlidingViewController.m */,
+				FCF5D6551992B5FD0027AB49 /* UIViewController+ECSlidingViewController.h */,
+				FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */,
+			);
+			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +299,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF5D62B1992AC3E0027AB49 /* ViewController.m in Sources */,
+				FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */,
 				FCF5D6221992AC3D0027AB49 /* AppDelegate.m in Sources */,
+				FCF5D6621992B7690027AB49 /* MenuVC.m in Sources */,
+				FCF5D6591992B5FD0027AB49 /* ECSlidingInteractiveTransition.m in Sources */,
+				FCF5D65A1992B5FD0027AB49 /* ECSlidingSegue.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
+				FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */,
+				FCF5D6581992B5FD0027AB49 /* ECSlidingAnimationController.m in Sources */,
+				FCF5D6571992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
