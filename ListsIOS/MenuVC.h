@@ -13,3 +13,9 @@
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
 
 @end
+
+@interface MenuNavVC : UINavigationController
+
+- (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
+
+@end

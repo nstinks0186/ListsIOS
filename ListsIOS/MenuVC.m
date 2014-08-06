@@ -17,3 +17,13 @@
 }
 
 @end
+
+@implementation MenuNavVC
+
+#pragma mark - Action Methods
+
+- (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue
+{
+}
+
+@end
