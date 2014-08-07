@@ -29,6 +29,13 @@
 		FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6541992B5FD0027AB49 /* ECSlidingViewController.m */; };
 		FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */; };
 		FCF5D6621992B7690027AB49 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6611992B7690027AB49 /* MenuVC.m */; };
+		FCF5D6721993FFD60027AB49 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6681993FFD60027AB49 /* CTFeedbackCell.m */; };
+		FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D66A1993FFD60027AB49 /* CTFeedbackCellItem.m */; };
+		FCF5D6741993FFD60027AB49 /* CTFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D66C1993FFD60027AB49 /* CTFeedbackTopicsViewController.m */; };
+		FCF5D6751993FFD60027AB49 /* CTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D66E1993FFD60027AB49 /* CTFeedbackViewController.m */; };
+		FCF5D6761993FFD60027AB49 /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6701993FFD60027AB49 /* NSBundle+CTFeedback.m */; };
+		FCF5D6771993FFD60027AB49 /* PlatformNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D6711993FFD60027AB49 /* PlatformNames.plist */; };
+		FCF5D67A1994011B0027AB49 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6791994011B0027AB49 /* SettingsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,19 @@
 		FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		FCF5D6601992B7690027AB49 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVC.h; sourceTree = "<group>"; };
 		FCF5D6611992B7690027AB49 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
+		FCF5D6671993FFD60027AB49 /* CTFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCell.h; sourceTree = "<group>"; };
+		FCF5D6681993FFD60027AB49 /* CTFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCell.m; sourceTree = "<group>"; };
+		FCF5D6691993FFD60027AB49 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
+		FCF5D66A1993FFD60027AB49 /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
+		FCF5D66B1993FFD60027AB49 /* CTFeedbackTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackTopicsViewController.h; sourceTree = "<group>"; };
+		FCF5D66C1993FFD60027AB49 /* CTFeedbackTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackTopicsViewController.m; sourceTree = "<group>"; };
+		FCF5D66D1993FFD60027AB49 /* CTFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackViewController.h; sourceTree = "<group>"; };
+		FCF5D66E1993FFD60027AB49 /* CTFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackViewController.m; sourceTree = "<group>"; };
+		FCF5D66F1993FFD60027AB49 /* NSBundle+CTFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CTFeedback.h"; sourceTree = "<group>"; };
+		FCF5D6701993FFD60027AB49 /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
+		FCF5D6711993FFD60027AB49 /* PlatformNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlatformNames.plist; sourceTree = "<group>"; };
+		FCF5D6781994011B0027AB49 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		FCF5D6791994011B0027AB49 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +128,7 @@
 			children = (
 				FCF5D6171992AC3D0027AB49 /* ListsIOS */,
 				FCF5D6391992AC3E0027AB49 /* ListsIOSTests */,
+				FCF5D6661993FFD60027AB49 /* CTFeedback */,
 				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
 				FCF5D6101992AC3D0027AB49 /* Frameworks */,
 				FCF5D60F1992AC3D0027AB49 /* Products */,
@@ -145,6 +166,8 @@
 				FCF5D62A1992AC3E0027AB49 /* ViewController.m */,
 				FCF5D6601992B7690027AB49 /* MenuVC.h */,
 				FCF5D6611992B7690027AB49 /* MenuVC.m */,
+				FCF5D6781994011B0027AB49 /* SettingsVC.h */,
+				FCF5D6791994011B0027AB49 /* SettingsVC.m */,
 				FCF5D62C1992AC3E0027AB49 /* Images.xcassets */,
 				FCF5D6181992AC3D0027AB49 /* Supporting Files */,
 			);
@@ -198,6 +221,24 @@
 				FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */,
 			);
 			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		FCF5D6661993FFD60027AB49 /* CTFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5D6671993FFD60027AB49 /* CTFeedbackCell.h */,
+				FCF5D6681993FFD60027AB49 /* CTFeedbackCell.m */,
+				FCF5D6691993FFD60027AB49 /* CTFeedbackCellItem.h */,
+				FCF5D66A1993FFD60027AB49 /* CTFeedbackCellItem.m */,
+				FCF5D66B1993FFD60027AB49 /* CTFeedbackTopicsViewController.h */,
+				FCF5D66C1993FFD60027AB49 /* CTFeedbackTopicsViewController.m */,
+				FCF5D66D1993FFD60027AB49 /* CTFeedbackViewController.h */,
+				FCF5D66E1993FFD60027AB49 /* CTFeedbackViewController.m */,
+				FCF5D66F1993FFD60027AB49 /* NSBundle+CTFeedback.h */,
+				FCF5D6701993FFD60027AB49 /* NSBundle+CTFeedback.m */,
+				FCF5D6711993FFD60027AB49 /* PlatformNames.plist */,
+			);
+			path = CTFeedback;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +321,7 @@
 				FCF5D62D1992AC3E0027AB49 /* Images.xcassets in Resources */,
 				FCF5D6251992AC3E0027AB49 /* Main_iPhone.storyboard in Resources */,
 				FCF5D61C1992AC3D0027AB49 /* InfoPlist.strings in Resources */,
+				FCF5D6771993FFD60027AB49 /* PlatformNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,14 +341,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF5D62B1992AC3E0027AB49 /* ViewController.m in Sources */,
+				FCF5D67A1994011B0027AB49 /* SettingsVC.m in Sources */,
+				FCF5D6741993FFD60027AB49 /* CTFeedbackTopicsViewController.m in Sources */,
 				FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */,
+				FCF5D6761993FFD60027AB49 /* NSBundle+CTFeedback.m in Sources */,
 				FCF5D6221992AC3D0027AB49 /* AppDelegate.m in Sources */,
 				FCF5D6621992B7690027AB49 /* MenuVC.m in Sources */,
 				FCF5D6591992B5FD0027AB49 /* ECSlidingInteractiveTransition.m in Sources */,
+				FCF5D6751993FFD60027AB49 /* CTFeedbackViewController.m in Sources */,
 				FCF5D65A1992B5FD0027AB49 /* ECSlidingSegue.m in Sources */,
+				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
 				FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */,
 				FCF5D6581992B5FD0027AB49 /* ECSlidingAnimationController.m in Sources */,
+				FCF5D6721993FFD60027AB49 /* CTFeedbackCell.m in Sources */,
 				FCF5D6571992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +570,7 @@
 				FCF5D6451992AC3E0027AB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCF5D6461992AC3E0027AB49 /* Build configuration list for PBXNativeTarget "ListsIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +579,7 @@
 				FCF5D6481992AC3E0027AB49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
