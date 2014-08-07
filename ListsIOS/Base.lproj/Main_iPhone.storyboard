@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-939" y="-1533"/>
         </scene>
-        <!--Table View Controller - Sign Up-->
+        <!--SignupVC - Sign Up-->
         <scene sceneID="r4M-RN-VtC">
             <objects>
-                <tableViewController id="Hmw-jA-IN5" sceneMemberID="viewController">
+                <tableViewController id="Hmw-jA-IN5" customClass="SignupVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qc9-b2-HQo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +127,9 @@
                             <state key="normal" title="Sign Up">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="signupButtonTapped:" destination="Hmw-jA-IN5" eventType="touchUpInside" id="vdC-r4-wtu"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection id="KNc-Vp-CMc">
@@ -151,6 +154,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="emailAddressFieldChanged:" destination="Hmw-jA-IN5" eventType="editingChanged" id="I97-1O-RhY"/>
+                                                        <outlet property="delegate" destination="Hmw-jA-IN5" id="qi4-1r-XU5"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -167,6 +174,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="usernameFieldChanged:" destination="Hmw-jA-IN5" eventType="editingChanged" id="mnA-2O-a64"/>
+                                                        <outlet property="delegate" destination="Hmw-jA-IN5" id="bAZ-ry-Bhk"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -183,6 +194,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <action selector="passwordFieldChanged:" destination="Hmw-jA-IN5" eventType="editingChanged" id="ydO-ip-Nve"/>
+                                                        <outlet property="delegate" destination="Hmw-jA-IN5" id="1Cv-Xk-96s"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -204,15 +219,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign Up" id="o7b-2M-929"/>
+                    <connections>
+                        <outlet property="emailAddressField" destination="pwg-rT-iDx" id="V1S-q9-LkP"/>
+                        <outlet property="passwordField" destination="d4e-BI-j4P" id="50R-Tu-1aq"/>
+                        <outlet property="usernameField" destination="qvh-oW-gY5" id="mSE-A3-7Y7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gh-4n-yqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-524" y="-2201"/>
         </scene>
-        <!--Table View Controller - Login-->
+        <!--LoginVC - Login-->
         <scene sceneID="FnW-iA-bg2">
             <objects>
-                <tableViewController id="vW2-LZ-8NW" sceneMemberID="viewController">
+                <tableViewController id="vW2-LZ-8NW" customClass="LoginVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SIc-mO-769">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,6 +244,9 @@
                             <state key="normal" title="Login">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="loginButtonTapped:" destination="vW2-LZ-8NW" eventType="touchUpInside" id="hOC-5I-MUB"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection id="EAO-dO-EWN">
@@ -248,6 +271,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vW2-LZ-8NW" id="jUd-75-qHN"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -264,6 +290,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vW2-LZ-8NW" id="iqP-fh-X2j"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -285,6 +314,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Login" id="9Of-NI-BNK"/>
+                    <connections>
+                        <outlet property="passwordField" destination="HVh-AP-T4x" id="CRm-Sz-oe4"/>
+                        <outlet property="usernameField" destination="aSg-Bi-I96" id="HiA-c2-BeW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SU5-gj-qUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,20 +327,40 @@
         <scene sceneID="57F-Uj-Jge">
             <objects>
                 <tableViewController id="jVG-5g-9bh" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y5r-wF-YVh">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y5r-wF-YVh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PAx-HR-LoA">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAx-HR-LoA" id="3og-Si-0w2">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="aue-c3-kQL">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PAx-HR-LoA">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PAx-HR-LoA" id="3og-Si-0w2">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Df-w9-ngo">
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Df-w9-ngo" id="waJ-rL-0Rv">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dKh-Tx-Gaf">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKh-Tx-Gaf" id="512-uK-7NC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="jVG-5g-9bh" id="2sI-YZ-yDC"/>
                             <outlet property="delegate" destination="jVG-5g-9bh" id="OXt-aq-W9U"/>

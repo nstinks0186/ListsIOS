@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SignupVC.h"
 
 @interface ListsIOSTests : XCTestCase
 
@@ -26,9 +27,22 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)test_signupWithVMblock
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *username = [NSString stringWithFormat:@"%f",[NSDate new].timeIntervalSinceReferenceDate];
+    
+    SignupVM *vm = [SignupVM new];
+    vm.emailAddress = [NSString stringWithFormat:@"%@@test.com",username];
+    vm.username = username;
+    vm.password = username;
+    
+    SignupVC *vc = [[SignupVC alloc] initWithNibName:nil bundle:nil];
+    XCTAssertNotNil(vc, @"Signup failed. SignupVC is nil.");
+    [vc signupWithVM:vm block:^(BOOL succeeded, NSError *error) {
+        NSLog(@"%@",[PFUser currentUser].username);
+        NSLog(@"%@",error);
+        XCTAssertNotNil(error, @"Signup failed. %@",error);
+    }];
 }
 
 @end
