@@ -40,6 +40,11 @@
 
 #pragma mark - Action Methods
 
+- (IBAction)cancelButtonTapped:(id)sender
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)emailAddressFieldChanged:(id)sender
 {
     self.signupVM.emailAddress = self.emailAddressField.text;
@@ -63,6 +68,7 @@
         [self signup];
     }
 }
+
 
 #pragma mark - UITextFieldDelegate Methods
 

@@ -39,6 +39,11 @@
 
 #pragma mark - Action Methods
 
+- (IBAction)cancelButtonTapped:(id)sender
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)usernameFieldChanged:(id)sender
 {
     self.loginVM.username = self.usernameField.text;

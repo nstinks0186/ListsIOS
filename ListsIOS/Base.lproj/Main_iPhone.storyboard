@@ -34,6 +34,9 @@
                                 <state key="normal" title="Signup">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="2Zw-ml-c3h" kind="modal" id="mrj-Wg-f2w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-DT-OHk" customClass="BButton">
                                 <rect key="frame" x="164" y="339" width="100" height="40"/>
@@ -42,6 +45,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zh5-7J-Atx" kind="modal" id="EtS-87-9WT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUu-EB-zi8" customClass="BButton">
                                 <rect key="frame" x="56" y="291" width="208" height="40"/>
@@ -60,7 +66,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVJ-NZ-IkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1051" y="-1710"/>
+            <point key="canvasLocation" x="-2377" y="-2674"/>
+        </scene>
+        <!--SignupVC - Signup-->
+        <scene sceneID="D5c-Nu-oup">
+            <objects>
+                <tableViewController id="YYC-un-HAR" customClass="SignupVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1pc-bI-YGV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Tm7-89-Kb0">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tm7-89-Kb0" id="1D0-cw-5Zp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YYC-un-HAR" id="r4V-6l-Q7Q"/>
+                            <outlet property="delegate" destination="YYC-un-HAR" id="FQ9-WP-HaZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Signup" id="sOU-jR-gJJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2g0-jf-TLg">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="YYC-un-HAR" id="5BM-vQ-omr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nl-nc-wnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="-2674"/>
+        </scene>
+        <!--LoginVC - Login-->
+        <scene sceneID="3gC-Ac-rsk">
+            <objects>
+                <tableViewController id="bDy-KX-QZG" customClass="LoginVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OKk-Pb-vq4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aWO-ax-ilU">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aWO-ax-ilU" id="Kvq-UA-2B5">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bDy-KX-QZG" id="e7F-tw-yed"/>
+                            <outlet property="delegate" destination="bDy-KX-QZG" id="0bS-Hz-pYQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Login" id="kAF-UJ-c1E">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zpw-Bg-tAt">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="bDy-KX-QZG" id="C8d-wn-DpO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFq-L8-YLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="-2009"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5BO-HD-nNY">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="zh5-7J-Atx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S8f-kQ-gFZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bDy-KX-QZG" kind="relationship" relationship="rootViewController" id="co4-5e-xer"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZG-Zn-AGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1877" y="-2009"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8pJ-PW-q6S">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="2Zw-ml-c3h" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fz6-Mq-mNT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YYC-un-HAR" kind="relationship" relationship="rootViewController" id="Qap-mH-x2s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OOu-0l-ake" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1877" y="-2674"/>
         </scene>
     </scenes>
     <resources>
