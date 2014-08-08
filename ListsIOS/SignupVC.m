@@ -38,6 +38,10 @@
     self.passwordField.textField.placeholder = @"Password";
     self.passwordField.textField.secureTextEntry = YES;
     
+    [self.emailAddressField.textField addTarget:self action:@selector(emailAddressFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.usernameField.textField addTarget:self action:@selector(usernameFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordField.textField addTarget:self action:@selector(passwordFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    
     self.signupVM = [[SignupVM alloc] init];
     self.signupVM.emailAddress = self.emailAddressField.textField.text;
     self.signupVM.username = self.usernameField.textField.text;

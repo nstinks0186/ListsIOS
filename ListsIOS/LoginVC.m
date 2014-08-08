@@ -8,6 +8,7 @@
 
 #import "LoginVC.h"
 #import "AppDelegate.h"
+#import "BZGFormField.h"
 
 @implementation LoginVM
 
@@ -17,8 +18,8 @@
 
 @property (strong, nonatomic) LoginVM *loginVM;
 
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet BZGFormField *usernameField;
+@property (weak, nonatomic) IBOutlet BZGFormField *passwordField;
 
 - (void)login;
 - (void)showHome;
@@ -31,9 +32,16 @@
 {
     [super viewDidLoad];
     
+    self.usernameField.textField.placeholder = @"Username";
+    self.passwordField.textField.placeholder = @"Password";
+    self.passwordField.textField.secureTextEntry = YES;
+    
+    [self.usernameField.textField addTarget:self action:@selector(usernameFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.passwordField.textField addTarget:self action:@selector(passwordFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    
     self.loginVM = [LoginVM new];
-    self.loginVM.username = self.usernameField.text;
-    self.loginVM.password = self.passwordField.text;
+    self.loginVM.username = self.usernameField.textField.text;
+    self.loginVM.password = self.passwordField.textField.text;
     
 }
 
@@ -46,12 +54,12 @@
 
 - (IBAction)usernameFieldChanged:(id)sender
 {
-    self.loginVM.username = self.usernameField.text;
+    self.loginVM.username = self.usernameField.textField.text;
 }
 
 - (IBAction)passwordFieldChanged:(id)sender
 {
-    self.loginVM.password = self.passwordField.text;
+    self.loginVM.password = self.passwordField.textField.text;
 }
 
 - (IBAction)loginButtonTapped:(id)sender
