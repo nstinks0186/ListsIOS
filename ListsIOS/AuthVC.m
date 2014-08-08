@@ -8,8 +8,11 @@
 
 #import "AuthVC.h"
 #import "AppDelegate.h"
+#import "BButton.h"
 
 @interface AuthVC ()
+
+@property (weak, nonatomic) IBOutlet BButton *facebookLoginButton;
 
 @end
 
@@ -18,6 +21,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.facebookLoginButton setType:BButtonTypeFacebook];
+    [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
 //    if([PFUser currentUser]){
 //        [self showHome];

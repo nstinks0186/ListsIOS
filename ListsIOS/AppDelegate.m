@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "BButton.h"
 
 @implementation AppDelegate
 
@@ -28,10 +29,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Parse Setup
     [Parse setApplicationId:@"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw"
                   clientKey:@"qPyxYg7VOIpZtJ0wBfFlJ25GgyDAmReqpqB0kzuY"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // FB Setup
     [PFFacebookUtils initializeFacebook];
+    
+    // Appearance Setup
+    [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
     
     return YES;
 }
