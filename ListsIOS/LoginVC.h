@@ -18,6 +18,4 @@
 
 @interface LoginVC : UITableViewController
 
-@property (strong, nonatomic) LoginVM *loginVM;
-
 @end

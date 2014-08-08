@@ -19,6 +19,4 @@
 
 @interface SignupVC : UITableViewController
 
-@property (strong, nonatomic) SignupVM *signupVM;
-
 @end

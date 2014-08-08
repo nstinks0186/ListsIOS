@@ -15,6 +15,8 @@
 
 @interface SignupVC ()
 
+@property (strong, nonatomic) SignupVM *signupVM;
+
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
@@ -88,7 +90,7 @@
         if (!error) {
             [self showHome];
         }else{
-            
+            ULog(@"Signup failed. %@",error);
         }
         
     }];
