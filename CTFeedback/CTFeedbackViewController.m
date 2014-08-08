@@ -107,9 +107,9 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         self.navigationController.navigationBarHidden = NO;
     }
 
-    if (self.presentingViewController.presentedViewController) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
-    }
+//    if (self.presentingViewController.presentedViewController) {
+//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped:)];
+//    }
 }
 
 - (void)didReceiveMemoryWarning

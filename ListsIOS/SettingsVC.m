@@ -8,8 +8,27 @@
 
 #import "SettingsVC.h"
 #import "CTFeedbackViewController.h"
+#import "AppDelegate.h"
 
 @implementation SettingsVC
+
+#pragma mark - Action Methods
+
+- (IBAction)doneButtonTapped:(id)sender
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)signoutButtonTapped:(id)sender
+{
+    [PFUser logOut];
+    
+    [self.navigationController dismissViewControllerAnimated:NO completion:^{
+        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        [delegate showAuth];
+    }];
+    
+}
 
 #pragma mark - UITableViewControllerDelegate Methods
 

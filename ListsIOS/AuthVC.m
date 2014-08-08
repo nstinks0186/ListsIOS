@@ -24,15 +24,9 @@
     
     [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
-//    if([PFUser currentUser]){
-//        [self showHome];
-//    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if([PFUser currentUser]){
+        [self showHome];
+    }
 }
 
 #pragma mark - Action Buttons

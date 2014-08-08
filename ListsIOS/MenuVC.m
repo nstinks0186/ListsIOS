@@ -17,21 +17,6 @@
 {
 }
 
-- (IBAction)signoutButtonTapped:(id)sender
-{
-    [self signout];
-}
-
-#pragma mark - Convenience Methods
-
-- (void)signout
-{
-    [PFUser logOut];
-    
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate showAuth];
-}
-
 @end
 
 @implementation MenuNavVC
