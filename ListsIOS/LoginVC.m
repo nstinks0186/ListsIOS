@@ -93,7 +93,6 @@
                                         if (user) {
                                             [self showHome];
                                         } else {
-                                            DLog(@"code: %d", error.code);
                                             NSString *errorMessage = error.localizedDescription;
                                             switch (error.code) {
                                                 case 101:   // kPFErrorObjectNotFound
