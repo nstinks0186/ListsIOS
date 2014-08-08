@@ -39,6 +39,7 @@
     
     // Appearance Setup
     [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue-Light" size:0.0f] }];
     
     return YES;
 }

@@ -8,6 +8,7 @@
 
 #import "SignupVC.h"
 #import "AppDelegate.h"
+#import "BZGFormField.h"
 
 @implementation SignupVM
 
@@ -17,9 +18,9 @@
 
 @property (strong, nonatomic) SignupVM *signupVM;
 
-@property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet BZGFormField *emailAddressField;
+@property (weak, nonatomic) IBOutlet BZGFormField *usernameField;
+@property (weak, nonatomic) IBOutlet BZGFormField *passwordField;
 
 - (void)signup;
 - (void)showHome;
@@ -32,10 +33,15 @@
 {
     [super viewDidLoad];
     
+    self.emailAddressField.textField.placeholder = @"Email Address";
+    self.usernameField.textField.placeholder = @"Username";
+    self.passwordField.textField.placeholder = @"Password";
+    self.passwordField.textField.secureTextEntry = YES;
+    
     self.signupVM = [[SignupVM alloc] init];
-    self.signupVM.emailAddress = self.emailAddressField.text;
-    self.signupVM.username = self.usernameField.text;
-    self.signupVM.password = self.passwordField.text;
+    self.signupVM.emailAddress = self.emailAddressField.textField.text;
+    self.signupVM.username = self.usernameField.textField.text;
+    self.signupVM.password = self.passwordField.textField.text;
 }
 
 #pragma mark - Action Methods
@@ -47,17 +53,17 @@
 
 - (IBAction)emailAddressFieldChanged:(id)sender
 {
-    self.signupVM.emailAddress = self.emailAddressField.text;
+    self.signupVM.emailAddress = self.emailAddressField.textField.text;
 }
 
 - (IBAction)usernameFieldChanged:(id)sender
 {
-    self.signupVM.username = self.usernameField.text;
+    self.signupVM.username = self.usernameField.textField.text;
 }
 
 - (IBAction)passwordFieldChanged:(id)sender
 {
-    self.signupVM.password = self.passwordField.text;
+    self.signupVM.password = self.passwordField.textField.text;
 }
 
 - (IBAction)signupButtonTapped:(id)sender

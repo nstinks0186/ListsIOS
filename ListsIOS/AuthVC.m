@@ -22,7 +22,6 @@
 {
     [super viewDidLoad];
     
-    [self.facebookLoginButton setType:BButtonTypeFacebook];
     [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
 //    if([PFUser currentUser]){

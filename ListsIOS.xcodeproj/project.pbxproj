@@ -13,6 +13,7 @@
 		FC16A8171995233000EB26F4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8111995233000EB26F4 /* NSString+FontAwesome.m */; };
 		FC16A8181995233000EB26F4 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8131995233000EB26F4 /* UIColor+BButton.m */; };
 		FC16A8191995233000EB26F4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC16A8151995233000EB26F4 /* FontAwesome.ttf */; };
+		FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A81C19952D5D00EB26F4 /* BZGFormField.m */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -77,6 +78,8 @@
 		FC16A8121995233000EB26F4 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
 		FC16A8131995233000EB26F4 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		FC16A8151995233000EB26F4 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		FC16A81B19952D5D00EB26F4 /* BZGFormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormField.h; sourceTree = "<group>"; };
+		FC16A81C19952D5D00EB26F4 /* BZGFormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZGFormField.m; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,7 +184,8 @@
 				FC16A80D1995233000EB26F4 /* Classes */,
 				FC16A8141995233000EB26F4 /* resources */,
 			);
-			path = BButton;
+			name = BButton;
+			path = ../BButton;
 			sourceTree = "<group>";
 		};
 		FC16A80D1995233000EB26F4 /* Classes */ = {
@@ -205,14 +209,34 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		FC16A81A19952D5D00EB26F4 /* BZGFormField */ = {
+			isa = PBXGroup;
+			children = (
+				FC16A81B19952D5D00EB26F4 /* BZGFormField.h */,
+				FC16A81C19952D5D00EB26F4 /* BZGFormField.m */,
+			);
+			name = BZGFormField;
+			path = ../BZGFormField;
+			sourceTree = "<group>";
+		};
+		FC16A81E19952D8200EB26F4 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FC16A80C1995233000EB26F4 /* BButton */,
+				FC16A81A19952D5D00EB26F4 /* BZGFormField */,
+				FCF5D6661993FFD60027AB49 /* CTFeedback */,
+				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
+			);
+			name = Libraries;
+			path = ListsIOS;
+			sourceTree = "<group>";
+		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
 			children = (
 				FCF5D6171992AC3D0027AB49 /* ListsIOS */,
 				FCF5D6391992AC3E0027AB49 /* ListsIOSTests */,
-				FC16A80C1995233000EB26F4 /* BButton */,
-				FCF5D6661993FFD60027AB49 /* CTFeedback */,
-				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
+				FC16A81E19952D8200EB26F4 /* Libraries */,
 				FCF5D6101992AC3D0027AB49 /* Frameworks */,
 				FCF5D60F1992AC3D0027AB49 /* Products */,
 			);
@@ -313,7 +337,8 @@
 				FCF5D6551992B5FD0027AB49 /* UIViewController+ECSlidingViewController.h */,
 				FCF5D6561992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m */,
 			);
-			path = ECSlidingViewController;
+			name = ECSlidingViewController;
+			path = ../ECSlidingViewController;
 			sourceTree = "<group>";
 		};
 		FCF5D6661993FFD60027AB49 /* CTFeedback */ = {
@@ -331,7 +356,8 @@
 				FCF5D6701993FFD60027AB49 /* NSBundle+CTFeedback.m */,
 				FCF5D6711993FFD60027AB49 /* PlatformNames.plist */,
 			);
-			path = CTFeedback;
+			name = CTFeedback;
+			path = ../CTFeedback;
 			sourceTree = "<group>";
 		};
 		FCF5D68119940B140027AB49 /* Authentication */ = {
@@ -463,6 +489,7 @@
 				FCF5D65A1992B5FD0027AB49 /* ECSlidingSegue.m in Sources */,
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
+				FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */,
 				FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */,
 				FCF5D6581992B5FD0027AB49 /* ECSlidingAnimationController.m in Sources */,
 				FCF5D6721993FFD60027AB49 /* CTFeedbackCell.m in Sources */,
