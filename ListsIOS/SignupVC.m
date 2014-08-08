@@ -90,7 +90,8 @@
         if (!error) {
             [self showHome];
         }else{
-            ULog(@"Signup failed. %@",error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup Failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
         }
         
     }];
@@ -99,7 +100,7 @@
 - (void)showHome
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    delegate.window.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+    [delegate showHome];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "MenuVC.h"
+#import "AppDelegate.h"
 
 @implementation MenuVC
 
@@ -14,6 +15,21 @@
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue
 {
+}
+
+- (IBAction)signoutButtonTapped:(id)sender
+{
+    [self signout];
+}
+
+#pragma mark - Convenience Methods
+
+- (void)signout
+{
+    [PFUser logOut];
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    [delegate showAuth];
 }
 
 @end

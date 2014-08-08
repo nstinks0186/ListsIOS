@@ -97,7 +97,7 @@
 - (void)showHome
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    delegate.window.rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+    [delegate showHome];
 }
 
 @end
