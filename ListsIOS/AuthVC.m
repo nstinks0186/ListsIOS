@@ -19,9 +19,9 @@
 {
     [super viewDidLoad];
     
-    if([PFUser currentUser]){
-        [self showHome];
-    }
+//    if([PFUser currentUser]){
+//        [self showHome];
+//    }
 }
 
 - (void)didReceiveMemoryWarning

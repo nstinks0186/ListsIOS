@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		9E54D28019946F1800D54176 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E54D27F19946F1800D54176 /* FacebookSDK.framework */; };
 		9E54D283199470D500D54176 /* AuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54D282199470D500D54176 /* AuthVC.m */; };
+		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
 		FCF5D6161992AC3D0027AB49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6151992AC3D0027AB49 /* UIKit.framework */; };
 		FCF5D61C1992AC3D0027AB49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D61A1992AC3D0027AB49 /* InfoPlist.strings */; };
 		FCF5D61E1992AC3D0027AB49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D61D1992AC3D0027AB49 /* main.m */; };
 		FCF5D6221992AC3D0027AB49 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF5D6211992AC3D0027AB49 /* AppDelegate.m */; };
-		FCF5D6251992AC3E0027AB49 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D6231992AC3E0027AB49 /* Main_iPhone.storyboard */; };
 		FCF5D6281992AC3E0027AB49 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */; };
 		FCF5D62D1992AC3E0027AB49 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5D62C1992AC3E0027AB49 /* Images.xcassets */; };
 		FCF5D6341992AC3E0027AB49 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6331992AC3E0027AB49 /* XCTest.framework */; };
@@ -66,6 +66,7 @@
 		9E54D27F19946F1800D54176 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9E54D281199470D500D54176 /* AuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthVC.h; sourceTree = "<group>"; };
 		9E54D282199470D500D54176 /* AuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthVC.m; sourceTree = "<group>"; };
+		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,7 +77,6 @@
 		FCF5D61F1992AC3D0027AB49 /* ListsIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ListsIOS-Prefix.pch"; sourceTree = "<group>"; };
 		FCF5D6201992AC3D0027AB49 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FCF5D6211992AC3D0027AB49 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FCF5D6241992AC3E0027AB49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D6271992AC3E0027AB49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		FCF5D62C1992AC3E0027AB49 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCF5D6321992AC3E0027AB49 /* ListsIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListsIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +212,7 @@
 			children = (
 				FCF5D6201992AC3D0027AB49 /* AppDelegate.h */,
 				FCF5D6211992AC3D0027AB49 /* AppDelegate.m */,
-				FCF5D6231992AC3E0027AB49 /* Main_iPhone.storyboard */,
+				FCB587771995176E000AD806 /* Main_iPhone.storyboard */,
 				FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */,
 				FCF5D6601992B7690027AB49 /* MenuVC.h */,
 				FCF5D6611992B7690027AB49 /* MenuVC.m */,
@@ -383,7 +383,7 @@
 			files = (
 				FCF5D6281992AC3E0027AB49 /* Main_iPad.storyboard in Resources */,
 				FCF5D62D1992AC3E0027AB49 /* Images.xcassets in Resources */,
-				FCF5D6251992AC3E0027AB49 /* Main_iPhone.storyboard in Resources */,
+				FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */,
 				FCF5D61C1992AC3D0027AB49 /* InfoPlist.strings in Resources */,
 				FCF5D6771993FFD60027AB49 /* PlatformNames.plist in Resources */,
 			);
@@ -444,20 +444,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FCB587771995176E000AD806 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCB587781995176E000AD806 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
 		FCF5D61A1992AC3D0027AB49 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FCF5D61B1992AC3D0027AB49 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FCF5D6231992AC3E0027AB49 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCF5D6241992AC3E0027AB49 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */ = {
