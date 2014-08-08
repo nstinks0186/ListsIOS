@@ -332,7 +332,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="vZb-ws-CBl" kind="custom" customClass="ECSlidingSegue" id="7Jb-0s-xl6"/>
+                                            <segue destination="vZb-ws-CBl" kind="custom" identifier="ToDoSegue" customClass="ECSlidingSegue" id="7Jb-0s-xl6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="J7P-GZ-wy1" style="IBUITableViewCellStyleDefault" id="xpA-8t-eur">
@@ -353,7 +353,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="vZb-ws-CBl" kind="custom" customClass="ECSlidingSegue" id="0aq-vr-W51"/>
+                                            <segue destination="vZb-ws-CBl" kind="custom" identifier="ToBuySegue" customClass="ECSlidingSegue" id="0aq-vr-W51"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="r8X-iB-ZXd" style="IBUITableViewCellStyleDefault" id="U3P-ce-PRJ">
@@ -374,7 +374,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="vZb-ws-CBl" kind="custom" customClass="ECSlidingSegue" id="vTO-cP-0yG"/>
+                                            <segue destination="vZb-ws-CBl" kind="custom" identifier="ToNoteSegue" customClass="ECSlidingSegue" id="vTO-cP-0yG"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -654,21 +654,47 @@
             </objects>
             <point key="canvasLocation" x="-4909" y="-872"/>
         </scene>
-        <!--Table View Controller - List-->
+        <!--ListVC - List-->
         <scene sceneID="cp6-Ve-yxn">
             <objects>
-                <tableViewController storyboardIdentifier="ListVC" id="0Jm-Qf-qUy" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListVC" id="0Jm-Qf-qUy" customClass="ListVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mQk-93-7pS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="KmO-T2-fZU">
+                            <rect key="frame" x="0.0" y="64" width="320" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add an item ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-Pd-3Sk">
+                                    <rect key="frame" x="20" y="20" width="280" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <action selector="createItemFieldChange:" destination="0Jm-Qf-qUy" eventType="editingChanged" id="L5n-e5-zvs"/>
+                                        <outlet property="delegate" destination="0Jm-Qf-qUy" id="cwN-3Y-q79"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0a0-fw-BWQ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListItemCellIdentifier" textLabel="4F4-Ww-WuO" style="IBUITableViewCellStyleDefault" id="0a0-fw-BWQ">
+                                <rect key="frame" x="0.0" y="156" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0a0-fw-BWQ" id="3XB-T6-tAL">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="ListItem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4F4-Ww-WuO">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -684,6 +710,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createItemField" destination="Hfl-Pd-3Sk" id="52S-bv-tMl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofM-n5-HZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g2w-EZ-6zA" userLabel="Exit" sceneMemberID="exit"/>
@@ -749,6 +778,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vTO-cP-0yG"/>
+        <segue reference="7Jb-0s-xl6"/>
     </inferredMetricsTieBreakers>
 </document>
