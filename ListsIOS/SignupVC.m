@@ -9,6 +9,7 @@
 #import "SignupVC.h"
 #import "AppDelegate.h"
 #import "BZGFormField.h"
+#import "TSMessage.h"
 
 @implementation SignupVM
 
@@ -32,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TSMessage setDefaultViewController:self];
     
     self.emailAddressField.textField.placeholder = @"Email Address";
     self.usernameField.textField.placeholder = @"Username";
@@ -100,14 +103,12 @@
     user.password = self.signupVM.password;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        DLog(@"succeed: %d",succeeded);
-        DLog(@"error: %@",error);
-        
         if (!error) {
             [self showHome];
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup Failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alert show];
+            [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
+                                        subtitle:error.localizedDescription
+                                            type:TSMessageNotificationTypeError];
         }
         
     }];

@@ -9,6 +9,7 @@
 #import "LoginVC.h"
 #import "AppDelegate.h"
 #import "BZGFormField.h"
+#import "TSMessage.h"
 
 @implementation LoginVM
 
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TSMessage setDefaultViewController:self.navigationController];
     
     self.usernameField.textField.placeholder = @"Username";
     self.passwordField.textField.placeholder = @"Password";
@@ -100,8 +103,9 @@
                                                     break;
                                             }
                                             
-                                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                                            [alert show];
+                                            [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
+                                                                        subtitle:errorMessage
+                                                                            type:TSMessageNotificationTypeError];
                                             
                                         }
                                     }];

@@ -9,6 +9,7 @@
 #import "AuthVC.h"
 #import "AppDelegate.h"
 #import "BButton.h"
+#import "TSMessage.h"
 
 @interface AuthVC ()
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TSMessage setDefaultViewController:self];
     
     [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
@@ -36,8 +39,9 @@
     [PFFacebookUtils logInWithPermissions:@[@"public_profile"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             if (error) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [alert show];
+                [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
+                                            subtitle:error.localizedDescription
+                                                type:TSMessageNotificationTypeError];
             }
         } else if (user.isNew) {
             [self showHome];
