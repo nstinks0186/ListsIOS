@@ -21,6 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 
 #import "ECSlidingAnimationController.h"
@@ -245,6 +246,10 @@
     [oldTopViewController endAppearanceTransition];
     
     _topViewController = topViewController;
+    
+    _topViewController.view.layer.shadowOpacity = 0.75f;
+    _topViewController.view.layer.shadowRadius = 5.0f;
+    _topViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
     
     if (_topViewController) {
         [self addChildViewController:_topViewController];
