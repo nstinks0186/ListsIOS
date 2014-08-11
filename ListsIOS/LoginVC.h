@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSString *password;
 
 @property (readonly) BOOL isValid;
+@property (readonly) NSString *validationError;
+
 
 @end
 

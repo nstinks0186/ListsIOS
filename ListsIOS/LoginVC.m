@@ -65,6 +65,10 @@
 {
     if (self.loginVM.isValid) {
         [self login];
+    }else{
+        [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
+                                    subtitle:self.loginVM.validationError
+                                        type:TSMessageNotificationTypeError];
     }
 }
 
@@ -112,12 +116,35 @@
 
 @end
 
+@interface LoginVM (){
+    NSString *_validationError;
+}
+
+@end
+
 @implementation LoginVM
 
 - (BOOL)isValid
 {
-    // TODO: implement
+    // TODO: improve
+    
+    if (self.username.length < 8) {
+        _validationError = @"Invalid username.";
+        return NO;
+    }
+    
+    if (self.username.length < 8) {
+        _validationError = @"Invalid password.";
+        return NO;
+    }
+    
+    _validationError = nil;
     return YES;
+}
+
+- (NSString *)validationErrror
+{
+    return [_validationError copy];
 }
 
 @end

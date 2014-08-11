@@ -73,6 +73,10 @@
 {
     if (self.signupVM.isValid) {
         [self signup];
+    }else{
+        [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
+                                    subtitle:self.signupVM.validationError
+                                        type:TSMessageNotificationTypeError];
     }
 }
 
@@ -117,12 +121,40 @@
 
 @end
 
+@interface SignupVM () {
+    NSString *_validationError;
+}
+
+@end
+
 @implementation SignupVM
 
 - (BOOL)isValid
 {
-    // TODO: implement
+    // TODO: improve
+    
+    
+    if (self.emailAddress.length < 8) {
+        _validationError = @"Invalid email address.";
+    }
+        
+    
+    if (self.username.length < 8) {
+        _validationError = @"Invalid username.";
+        return NO;
+    }
+    
+    if (self.username.length < 8) {
+        _validationError = @"Invalid password.";
+        return NO;
+    }
+    _validationError = nil;
     return YES;
+}
+
+- (NSString *)validationError
+{
+    return [_validationError copy];
 }
 
 @end
