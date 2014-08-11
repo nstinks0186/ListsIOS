@@ -1,19 +1,18 @@
 //
-//  ListsIOSTests.m
-//  ListsIOSTests
+//  SignupVMTests.m
+//  ListsIOS
 //
-//  Created by Pinuno on 8/6/14.
+//  Created by Pinuno on 8/11/14.
 //  Copyright (c) 2014 UNO. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "SignupVC.h"
 
-@interface ListsIOSTests : XCTestCase
+@interface SignupVMTests : XCTestCase
 
 @end
 
-@implementation ListsIOSTests
+@implementation SignupVMTests
 
 - (void)setUp
 {
@@ -25,6 +24,11 @@
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)test_isValid
+{
+    // TODO: implement
 }
 
 @end

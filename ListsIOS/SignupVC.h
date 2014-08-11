@@ -15,6 +15,8 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
 
+@property (readonly) BOOL isValid;
+
 @end
 
 @interface SignupVC : UITableViewController

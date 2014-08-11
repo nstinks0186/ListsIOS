@@ -39,6 +39,10 @@
 		FC16A862199573A100EB26F4 /* LZList.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A861199573A100EB26F4 /* LZList.m */; };
 		FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A864199573BA00EB26F4 /* LZListItem.m */; };
 		FC16A868199573FB00EB26F4 /* ListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A867199573FB00EB26F4 /* ListVM.m */; };
+		FC16A86C19992E6900EB26F4 /* LZListItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86B19992E6900EB26F4 /* LZListItemTests.m */; };
+		FC16A86E1999324300EB26F4 /* LoginVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86D1999324300EB26F4 /* LoginVMTests.m */; };
+		FC16A8701999328100EB26F4 /* SignupVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86F1999328100EB26F4 /* SignupVMTests.m */; };
+		FC16A8891999341400EB26F4 /* ListVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8881999341400EB26F4 /* ListVMTests.m */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -138,6 +142,10 @@
 		FC16A864199573BA00EB26F4 /* LZListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZListItem.m; sourceTree = "<group>"; };
 		FC16A866199573FB00EB26F4 /* ListVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVM.h; sourceTree = "<group>"; };
 		FC16A867199573FB00EB26F4 /* ListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVM.m; sourceTree = "<group>"; };
+		FC16A86B19992E6900EB26F4 /* LZListItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZListItemTests.m; sourceTree = "<group>"; };
+		FC16A86D1999324300EB26F4 /* LoginVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVMTests.m; sourceTree = "<group>"; };
+		FC16A86F1999328100EB26F4 /* SignupVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVMTests.m; sourceTree = "<group>"; };
+		FC16A8881999341400EB26F4 /* ListVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVMTests.m; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -452,6 +460,10 @@
 		FCF5D6391992AC3E0027AB49 /* ListsIOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				FC16A8881999341400EB26F4 /* ListVMTests.m */,
+				FC16A86F1999328100EB26F4 /* SignupVMTests.m */,
+				FC16A86D1999324300EB26F4 /* LoginVMTests.m */,
+				FC16A86B19992E6900EB26F4 /* LZListItemTests.m */,
 				FCF5D63F1992AC3E0027AB49 /* ListsIOSTests.m */,
 				FCF5D63A1992AC3E0027AB49 /* Supporting Files */,
 			);
@@ -674,6 +686,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC16A8891999341400EB26F4 /* ListVMTests.m in Sources */,
+				FC16A86E1999324300EB26F4 /* LoginVMTests.m in Sources */,
+				FC16A86C19992E6900EB26F4 /* LZListItemTests.m in Sources */,
+				FC16A8701999328100EB26F4 /* SignupVMTests.m in Sources */,
 				FCF5D6401992AC3E0027AB49 /* ListsIOSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

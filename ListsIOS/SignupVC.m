@@ -11,10 +11,6 @@
 #import "BZGFormField.h"
 #import "TSMessage.h"
 
-@implementation SignupVM
-
-@end
-
 @interface SignupVC ()
 
 @property (strong, nonatomic) SignupVM *signupVM;
@@ -75,9 +71,7 @@
 
 - (IBAction)signupButtonTapped:(id)sender
 {
-    // TODO: validation
-    BOOL valid = true;
-    if (valid) {
+    if (self.signupVM.isValid) {
         [self signup];
     }
 }
@@ -122,6 +116,18 @@
 
 
 @end
+
+@implementation SignupVM
+
+- (BOOL)isValid
+{
+    // TODO: implement
+    return YES;
+}
+
+@end
+
+
 
 
 

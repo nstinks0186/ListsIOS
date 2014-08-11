@@ -11,10 +11,6 @@
 #import "BZGFormField.h"
 #import "TSMessage.h"
 
-@implementation LoginVM
-
-@end
-
 @interface LoginVC ()
 
 @property (strong, nonatomic) LoginVM *loginVM;
@@ -67,9 +63,7 @@
 
 - (IBAction)loginButtonTapped:(id)sender
 {
-    // TODO: validation
-    BOOL valid = YES;
-    if (valid) {
+    if (self.loginVM.isValid) {
         [self login];
     }
 }
@@ -117,3 +111,19 @@
 }
 
 @end
+
+@implementation LoginVM
+
+- (BOOL)isValid
+{
+    // TODO: implement
+    return YES;
+}
+
+@end
+
+
+
+
+
+
