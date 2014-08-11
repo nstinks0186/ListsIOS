@@ -37,6 +37,43 @@
     self.passwordField.textField.placeholder = @"Password";
     self.passwordField.textField.secureTextEntry = YES;
     
+    [self.emailAddressField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        // TODO: do validation
+        
+        if (text.length < 8) {
+            return NO;
+        }
+        
+        NSString *emailRegex =
+        @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
+        @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
+        @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
+        @"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
+        @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
+        @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
+        @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
+        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", emailRegex];
+        return [emailTest evaluateWithObject:text];
+    }];
+    [self.usernameField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        // TODO: do validation
+        
+        if (text.length < 8) {
+            return NO;
+        }
+        
+        return YES;
+    }];
+    [self.passwordField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        // TODO: do validation
+        
+        if (text.length < 8) {
+            return NO;
+        }
+        
+        return YES;
+    }];
+    
     [self.emailAddressField.textField addTarget:self action:@selector(emailAddressFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.usernameField.textField addTarget:self action:@selector(usernameFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordField.textField addTarget:self action:@selector(passwordFieldChanged:) forControlEvents:UIControlEventEditingChanged];

@@ -35,6 +35,26 @@
     self.passwordField.textField.placeholder = @"Password";
     self.passwordField.textField.secureTextEntry = YES;
     
+    [self.usernameField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        
+        // TODO: do validation
+        
+        if (text.length < 8) {
+            return NO;
+        }
+        return YES;
+    }];
+    [self.passwordField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        
+        // TODO: do validation
+        
+        if (text.length < 8) {
+            return NO;
+        }
+        
+        return YES;
+    }];
+    
     [self.usernameField.textField addTarget:self action:@selector(usernameFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.passwordField.textField addTarget:self action:@selector(passwordFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     
