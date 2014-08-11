@@ -62,6 +62,11 @@
             return NO;
         }
         
+        NSCharacterSet * characterSetFromTextField = [NSCharacterSet characterSetWithCharactersInString: text];
+        if([[NSCharacterSet alphanumericCharacterSet] isSupersetOfSet: characterSetFromTextField] == NO){
+            return NO;
+        }
+        
         return YES;
     }];
     [self.passwordField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
@@ -181,7 +186,12 @@
         return NO;
     }
     
-    if (self.username.length < 8) {
+    NSCharacterSet * characterSetFromTextField = [NSCharacterSet characterSetWithCharactersInString: self.username];
+    if([[NSCharacterSet alphanumericCharacterSet] isSupersetOfSet: characterSetFromTextField] == NO){
+        return NO;
+    }
+    
+    if (self.password.length < 8) {
         _validationError = @"Invalid password.";
         return NO;
     }
