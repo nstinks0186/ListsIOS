@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LZListItem.h"
 
 
 typedef NS_ENUM(NSUInteger, ListVType) {
@@ -19,6 +20,7 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 @interface ListVM : NSObject
 
 @property (nonatomic) ListVType type;
+@property (readonly, nonatomic) NSMutableArray *lzListItemList;
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *createItemDescription;

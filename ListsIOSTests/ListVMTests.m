@@ -70,7 +70,7 @@
 - (void)test_sectionCount
 {
     // given
-    NSInteger zero = 0;
+    NSInteger one = 1;
     
     // when
     NSInteger sectionCountTodo = vmTobuy.sectionCount;
@@ -79,10 +79,10 @@
     NSInteger sectionCountTocustom = vmCustom.sectionCount;
     
     // then
-    XCTAssertEqual(sectionCountTodo, zero, @"%d",sectionCountTodo);
-    XCTAssertEqual(sectionCountTobuy, zero, @"%d",sectionCountTobuy);
-    XCTAssertEqual(sectionCountTonote, zero, @"%d",sectionCountTonote);
-    XCTAssertEqual(sectionCountTocustom, zero, @"%d",sectionCountTocustom);
+    XCTAssertEqual(sectionCountTodo, one, @"%d",sectionCountTodo);
+    XCTAssertEqual(sectionCountTobuy, one, @"%d",sectionCountTobuy);
+    XCTAssertEqual(sectionCountTonote, one, @"%d",sectionCountTonote);
+    XCTAssertEqual(sectionCountTocustom, one, @"%d",sectionCountTocustom);
 }
 
 - (void)test_rowCountForSection
@@ -106,7 +106,6 @@
 - (void)test_doCreateItem
 {
     // given
-    NSInteger zero = 0;
     NSInteger one = 1;
     NSString *newItemDescription = @"new item";
     
@@ -120,27 +119,33 @@
     [vmTonote doCreateItem];
     [vmCustom doCreateItem];
     
-    // then sectionCount stays the same (0)
+    // then sectionCount stays the same (1)
     NSInteger sectionCountTodo = vmTobuy.sectionCount;
     NSInteger sectionCountTobuy = vmTodo.sectionCount;
     NSInteger sectionCountTonote = vmTonote.sectionCount;
     NSInteger sectionCountTocustom = vmCustom.sectionCount;
-    XCTAssertEqual(sectionCountTodo, zero, @"%d",sectionCountTodo);
-    XCTAssertEqual(sectionCountTobuy, zero, @"%d",sectionCountTobuy);
-    XCTAssertEqual(sectionCountTonote, zero, @"%d",sectionCountTonote);
-    XCTAssertEqual(sectionCountTocustom, zero, @"%d",sectionCountTocustom);
+    XCTAssertEqual(sectionCountTodo, one, @"%d",sectionCountTodo);
+    XCTAssertEqual(sectionCountTobuy, one, @"%d",sectionCountTobuy);
+    XCTAssertEqual(sectionCountTonote, one, @"%d",sectionCountTonote);
+    XCTAssertEqual(sectionCountTocustom, one, @"%d",sectionCountTocustom);
     // rowCount for section zero increase by one (1)
-    NSInteger rowCountTodo = [vmTodo rowCountForSection:zero];
-    NSInteger rowCountTobuy = [vmTobuy rowCountForSection:zero];
-    NSInteger rowCountTonote = [vmTonote rowCountForSection:zero];
-    NSInteger rowCountCustom = [vmCustom rowCountForSection:zero];
+    NSInteger rowCountTodo = [vmTodo rowCountForSection:one];
+    NSInteger rowCountTobuy = [vmTobuy rowCountForSection:one];
+    NSInteger rowCountTonote = [vmTonote rowCountForSection:one];
+    NSInteger rowCountCustom = [vmCustom rowCountForSection:one];
     XCTAssertEqual(rowCountTodo, one, @"%d",rowCountTodo);
     XCTAssertEqual(rowCountTobuy, one, @"%d",rowCountTobuy);
     XCTAssertEqual(rowCountTonote, one, @"%d",rowCountTonote);
     XCTAssertEqual(rowCountCustom, one, @"%d",rowCountCustom);
     // TODO: itemList[0].description should be equal to newItemDescription
-    
-    
+    LZListItem *newItemTodo = vmTodo.lzListItemList.firstObject;
+    LZListItem *newItemTobuy = vmTobuy.lzListItemList.firstObject;
+    LZListItem *newItemTonote = vmTonote.lzListItemList.firstObject;
+    LZListItem *newItemCustom = vmCustom.lzListItemList.firstObject;
+    XCTAssertTrue([newItemTodo.description isEqualToString:newItemDescription], @"%@",newItemTodo.description);
+    XCTAssertTrue([newItemTobuy.description isEqualToString:newItemDescription], @"%@",newItemTobuy.description);
+    XCTAssertTrue([newItemTonote.description isEqualToString:newItemDescription], @"%@",newItemTonote.description);
+    XCTAssertTrue([newItemCustom.description isEqualToString:newItemDescription], @"%@",newItemCustom.description);
     
 }
 

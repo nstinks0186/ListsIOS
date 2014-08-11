@@ -7,8 +7,6 @@
 //
 
 #import "ListVM.h"
-#import "LZList.h"
-#import "LZListItem.h"
 
 @interface ListVM ()
 
@@ -55,7 +53,7 @@
 
 - (NSInteger)sectionCount
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)rowCountForSection:(NSInteger)section

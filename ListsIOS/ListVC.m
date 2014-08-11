@@ -56,7 +56,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListItemCellIdentifier"];
     
-    assert(cell);
+    [self setupCell:cell forIndexPath:indexPath];
     
     return cell;
 }
@@ -70,13 +70,19 @@
     [self.listVM doCreateItem];
     
     // update UI
-    self.createItemField.text = @"";
     [self.tableView reloadData];
+    self.createItemField.text = @"";
     
     return YES;
 }
 
 #pragma mark - Conveninence Methods
+
+- (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
+{
+    LZListItem *lzListItem = [self.listVM.lzListItemList objectAtIndex:indexPath.row];
+    cell.textLabel.text = lzListItem.description;
+}
 
 @end
 
