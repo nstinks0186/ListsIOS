@@ -8,17 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-
-@interface SignupVM : NSObject
-
-@property (strong, nonatomic) NSString *emailAddress;
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
-
-@property (readonly) BOOL isValid;
-@property (readonly) NSString *validationError;
-
-@end
+#import "SignupVM.h"
 
 @interface SignupVC : UITableViewController
 

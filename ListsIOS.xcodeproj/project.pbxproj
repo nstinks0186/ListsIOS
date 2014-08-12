@@ -43,6 +43,8 @@
 		FC16A86E1999324300EB26F4 /* LoginVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86D1999324300EB26F4 /* LoginVMTests.m */; };
 		FC16A8701999328100EB26F4 /* SignupVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86F1999328100EB26F4 /* SignupVMTests.m */; };
 		FC16A8891999341400EB26F4 /* ListVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8881999341400EB26F4 /* ListVMTests.m */; };
+		FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */; };
+		FC2FDD4D199A7B4B00E9A1E1 /* SignupVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -146,6 +148,10 @@
 		FC16A86D1999324300EB26F4 /* LoginVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVMTests.m; sourceTree = "<group>"; };
 		FC16A86F1999328100EB26F4 /* SignupVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVMTests.m; sourceTree = "<group>"; };
 		FC16A8881999341400EB26F4 /* ListVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVMTests.m; sourceTree = "<group>"; };
+		FC2FDD48199A7AFA00E9A1E1 /* LoginVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
+		FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
+		FC2FDD4B199A7B4B00E9A1E1 /* SignupVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupVM.h; sourceTree = "<group>"; };
+		FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVM.m; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -524,8 +530,12 @@
 			children = (
 				9E54D281199470D500D54176 /* AuthVC.h */,
 				9E54D282199470D500D54176 /* AuthVC.m */,
+				FC2FDD48199A7AFA00E9A1E1 /* LoginVM.h */,
+				FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */,
 				FCF5D67E19940B020027AB49 /* LoginVC.h */,
 				FCF5D67F19940B020027AB49 /* LoginVC.m */,
+				FC2FDD4B199A7B4B00E9A1E1 /* SignupVM.h */,
+				FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */,
 				FCF5D67B19940A5A0027AB49 /* SignupVC.h */,
 				FCF5D67C19940A5A0027AB49 /* SignupVC.m */,
 			);
@@ -668,6 +678,7 @@
 				FC16A8511995533700EB26F4 /* TSMessageView.m in Sources */,
 				FCF5D65A1992B5FD0027AB49 /* ECSlidingSegue.m in Sources */,
 				FC16A862199573A100EB26F4 /* LZList.m in Sources */,
+				FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */,
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
@@ -678,6 +689,7 @@
 				FCF5D6721993FFD60027AB49 /* CTFeedbackCell.m in Sources */,
 				FC16A8161995233000EB26F4 /* BButton.m in Sources */,
 				FC16A8501995533700EB26F4 /* TSBlurView.m in Sources */,
+				FC2FDD4D199A7B4B00E9A1E1 /* SignupVM.m in Sources */,
 				FCF5D6571992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

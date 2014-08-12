@@ -36,33 +36,13 @@
     self.passwordField.textField.secureTextEntry = YES;
     
     [self.usernameField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
-        
-        // TODO: do validation
-        
-        if (text.length < 8) {
-            return NO;
-        }
-        
-        NSCharacterSet * characterSetFromTextField = [NSCharacterSet characterSetWithCharactersInString: text];
-        if([[NSCharacterSet alphanumericCharacterSet] isSupersetOfSet: characterSetFromTextField] == NO){
-            return NO;
-        }
-        
-        return YES;
+        self.loginVM.username = text;
+        return self.loginVM.isUsernameValid;
     }];
     [self.passwordField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
-        
-        // TODO: do validation
-        
-        if (text.length < 8) {
-            return NO;
-        }
-        
-        return YES;
+        self.loginVM.password = text;
+        return self.loginVM.isPasswordValid;
     }];
-    
-    [self.usernameField.textField addTarget:self action:@selector(usernameFieldChanged:) forControlEvents:UIControlEventEditingChanged];
-    [self.passwordField.textField addTarget:self action:@selector(passwordFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     
     self.loginVM = [LoginVM new];
     self.loginVM.username = self.usernameField.textField.text;
@@ -75,16 +55,6 @@
 - (IBAction)cancelButtonTapped:(id)sender
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)usernameFieldChanged:(id)sender
-{
-    self.loginVM.username = self.usernameField.textField.text;
-}
-
-- (IBAction)passwordFieldChanged:(id)sender
-{
-    self.loginVM.password = self.passwordField.textField.text;
 }
 
 - (IBAction)loginButtonTapped:(id)sender
@@ -138,44 +108,6 @@
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     [delegate showHome];
-}
-
-@end
-
-@interface LoginVM (){
-    NSString *_validationError;
-}
-
-@end
-
-@implementation LoginVM
-
-- (BOOL)isValid
-{
-    // TODO: improve
-    
-    if (self.username.length < 8) {
-        _validationError = @"Invalid username.";
-        return NO;
-    }
-    
-    NSCharacterSet * characterSetFromTextField = [NSCharacterSet characterSetWithCharactersInString: self.username];
-    if([[NSCharacterSet alphanumericCharacterSet] isSupersetOfSet: characterSetFromTextField] == NO){
-        return NO;
-    }
-    
-    if (self.password.length < 8) {
-        _validationError = @"Invalid password.";
-        return NO;
-    }
-    
-    _validationError = nil;
-    return YES;
-}
-
-- (NSString *)validationErrror
-{
-    return [_validationError copy];
 }
 
 @end

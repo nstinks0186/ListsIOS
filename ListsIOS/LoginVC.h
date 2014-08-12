@@ -8,18 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "LoginVM.h"
 
-@interface LoginVM : NSObject
-
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
-
-@property (readonly) BOOL isValid;
-@property (readonly) NSString *validationError;
-
-
-@end
-
-@interface LoginVC : UITableViewController
+@interface LoginVC : UITableViewController 
 
 @end
