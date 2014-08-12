@@ -49,6 +49,21 @@
     }
 }
 
+- (NSArray *)tagList
+{
+    switch (self.type) {
+        case ListVTypeTodo:
+            return @[@"$TypeTodo"];
+        case ListVTypeTobuy:
+            return @[@"$TypeTobuy"];
+        case ListVTypeTonote:
+            return @[@"$TypeTonote"];
+        default:
+            return @[@""];
+    }
+    return @[@""];
+}
+
 #pragma mark - Getters
 
 - (NSInteger)sectionCount
@@ -79,8 +94,11 @@
         PFQuery *query = [PFQuery queryWithClassName:@"Item"];
         query.cachePolicy = kPFCachePolicyCacheThenNetwork; // kPFCachePolicyNetworkElseCache;
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+        [query whereKey:@"status" equalTo:@0];
+        [query whereKey:@"tagList" containsAllObjectsInArray:self.tagList];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
+                [self.lzListItemList removeAllObjects];
                 for (PFObject *object in objects) {
                     LZListItem *item = [[LZListItem alloc] initWithPFObject:object];
                     [self.lzListItemList addObject:item];

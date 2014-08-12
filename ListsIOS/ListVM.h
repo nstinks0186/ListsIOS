@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *createItemDescription;
+@property (readonly, nonatomic) NSArray *tagList;
 
 @property (weak, nonatomic) id<ListVMDelegate> delegate;
 
