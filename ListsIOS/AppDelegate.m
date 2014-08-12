@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "GAI.h"
 #import "BButton.h"
 
 @implementation AppDelegate
@@ -36,6 +37,12 @@
     
     // FB Setup
     [PFFacebookUtils initializeFacebook];
+    
+    // Google Analytics Setup
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-53434717-2"];
     
     // Appearance Setup
     [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];

@@ -7,6 +7,9 @@
 //
 
 #import "ListVC.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface ListVC ()
 
@@ -20,12 +23,20 @@
 {
     [super viewDidLoad];
     
+    // initialize vm
     self.listVM = [[ListVM alloc] initWithType:self.type];
     self.listVM.delegate = self;
     self.listVM.createItemDescription = self.createItemField.text;
     
+    // setup GAnalytics tracker
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"ListVC.%@",self.listVM.title]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    // UI setup
     self.navigationItem.title = self.listVM.title;
     
+    // fetch data
     [self.listVM fetchItemList];
 }
 

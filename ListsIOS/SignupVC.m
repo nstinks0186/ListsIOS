@@ -10,6 +10,9 @@
 #import "AppDelegate.h"
 #import "BZGFormField.h"
 #import "TSMessage.h"
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 @interface SignupVC ()
 
@@ -29,6 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // setup GAnalytics tracker
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"SignupVC"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
     [TSMessage setDefaultViewController:self];
     

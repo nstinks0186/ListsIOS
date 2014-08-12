@@ -46,6 +46,8 @@
 		FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */; };
 		FC2FDD4D199A7B4B00E9A1E1 /* SignupVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */; };
 		FC2FDD53199A90EE00E9A1E1 /* LZObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD52199A90EE00E9A1E1 /* LZObject.m */; };
+		FC2FDD60199AA73800E9A1E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2FDD5F199AA73800E9A1E1 /* CoreData.framework */; };
+		FC2FDD62199AA81600E9A1E1 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -155,6 +157,18 @@
 		FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVM.m; sourceTree = "<group>"; };
 		FC2FDD51199A90EE00E9A1E1 /* LZObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZObject.h; sourceTree = "<group>"; };
 		FC2FDD52199A90EE00E9A1E1 /* LZObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZObject.m; sourceTree = "<group>"; };
+		FC2FDD55199AA6FC00E9A1E1 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		FC2FDD56199AA6FC00E9A1E1 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		FC2FDD57199AA6FC00E9A1E1 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		FC2FDD58199AA6FC00E9A1E1 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		FC2FDD59199AA6FC00E9A1E1 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		FC2FDD5A199AA6FC00E9A1E1 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		FC2FDD5B199AA6FC00E9A1E1 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		FC2FDD5C199AA6FC00E9A1E1 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		FC2FDD5D199AA6FC00E9A1E1 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		FC2FDD5E199AA6FC00E9A1E1 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		FC2FDD5F199AA73800E9A1E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -222,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2FDD60199AA73800E9A1E1 /* CoreData.framework in Frameworks */,
 				FCF5D695199410690027AB49 /* SystemConfiguration.framework in Frameworks */,
 				FCF5D693199410630027AB49 /* StoreKit.framework in Frameworks */,
 				FCF5D6911994105B0027AB49 /* Security.framework in Frameworks */,
@@ -232,6 +247,7 @@
 				FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */,
 				FCF5D687199410320027AB49 /* CFNetwork.framework in Frameworks */,
 				FCF5D685199410290027AB49 /* AudioToolbox.framework in Frameworks */,
+				FC2FDD62199AA81600E9A1E1 /* libGoogleAnalyticsServices.a in Frameworks */,
 				FCF5D6161992AC3D0027AB49 /* UIKit.framework in Frameworks */,
 				FCF5D68319940FAD0027AB49 /* Parse.framework in Frameworks */,
 				FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */,
@@ -297,6 +313,7 @@
 		FC16A81E19952D8200EB26F4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FC2FDD54199AA6FC00E9A1E1 /* GoogleAnalytics */,
 				FC16A852199554DE00EB26F4 /* HexColor */,
 				FC16A8221995533700EB26F4 /* TSMessages */,
 				FC16A80C1995233000EB26F4 /* BButton */,
@@ -425,6 +442,24 @@
 			name = LZ;
 			sourceTree = "<group>";
 		};
+		FC2FDD54199AA6FC00E9A1E1 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */,
+				FC2FDD55199AA6FC00E9A1E1 /* GAI.h */,
+				FC2FDD56199AA6FC00E9A1E1 /* GAIDictionaryBuilder.h */,
+				FC2FDD57199AA6FC00E9A1E1 /* GAIEcommerceFields.h */,
+				FC2FDD58199AA6FC00E9A1E1 /* GAIEcommerceProduct.h */,
+				FC2FDD59199AA6FC00E9A1E1 /* GAIEcommerceProductAction.h */,
+				FC2FDD5A199AA6FC00E9A1E1 /* GAIEcommercePromotion.h */,
+				FC2FDD5B199AA6FC00E9A1E1 /* GAIFields.h */,
+				FC2FDD5C199AA6FC00E9A1E1 /* GAILogger.h */,
+				FC2FDD5D199AA6FC00E9A1E1 /* GAITrackedViewController.h */,
+				FC2FDD5E199AA6FC00E9A1E1 /* GAITracker.h */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = SOURCE_ROOT;
+		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +483,7 @@
 		FCF5D6101992AC3D0027AB49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC2FDD5F199AA73800E9A1E1 /* CoreData.framework */,
 				9E54D27F19946F1800D54176 /* FacebookSDK.framework */,
 				FCF5D694199410690027AB49 /* SystemConfiguration.framework */,
 				FCF5D692199410630027AB49 /* StoreKit.framework */,
@@ -866,6 +902,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListsIOS/ListsIOS-Prefix.pch";
 				INFOPLIST_FILE = "ListsIOS/ListsIOS-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalytics",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -883,6 +923,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListsIOS/ListsIOS-Prefix.pch";
 				INFOPLIST_FILE = "ListsIOS/ListsIOS-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GoogleAnalytics",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
