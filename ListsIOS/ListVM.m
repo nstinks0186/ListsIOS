@@ -23,29 +23,23 @@
     if (self) {
         self.type = type;
         self.lzListItemList = [NSMutableArray array];
-        
-        [self initTitle];
     }
     return self;
 }
 
 #pragma mark - Convenience Methods
 
-- (void)initTitle
+- (NSString *)title
 {
     switch (self.type) {
         case ListVTypeTodo:
-            self.title = @"To Do";
-            break;
+            return @"To Do";
         case ListVTypeTobuy:
-            self.title = @"To Buy";
-            break;
+            return @"To Buy";
         case ListVTypeTonote:
-            self.title = @"To Note";
-            break;
+            return @"To Note";
         default:
-            self.title = @" ";
-            break;
+            return @" ";
     }
 }
 
@@ -61,7 +55,6 @@
         default:
             return @[@""];
     }
-    return @[@""];
 }
 
 #pragma mark - Getters
