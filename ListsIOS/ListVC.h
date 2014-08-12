@@ -10,7 +10,7 @@
 #import "ListVM.h"
 
 
-@interface ListVC : UITableViewController
+@interface ListVC : UITableViewController <ListVMDelegate>
 
 @property (nonatomic) ListVType type;
 @property (strong, nonatomic) ListVM *listVM;

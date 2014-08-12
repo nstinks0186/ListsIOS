@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 #import "LZListItem.h"
 
 
@@ -17,6 +18,8 @@ typedef NS_ENUM(NSUInteger, ListVType) {
     ListVTypeCustom
 };
 
+@protocol ListVMDelegate;
+
 @interface ListVM : NSObject
 
 @property (nonatomic) ListVType type;
@@ -24,6 +27,8 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *createItemDescription;
+
+@property (weak, nonatomic) id<ListVMDelegate> delegate;
 
 - (id)initWithType:(ListVType)type;
 
@@ -33,5 +38,12 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 // operation
 - (void)doCreateItem;
+- (void)fetchItemList;
+
+@end
+
+@protocol ListVMDelegate <NSObject>
+
+- (void)listVMDidUpdateListItemList:(ListVM *)vm;
 
 @end

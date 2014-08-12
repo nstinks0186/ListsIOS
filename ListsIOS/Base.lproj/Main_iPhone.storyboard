@@ -709,6 +709,11 @@
                                 <segue destination="g2w-EZ-6zA" kind="unwind" unwindAction="unwindToMenuViewController:" id="g63-3h-t1H"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="reload-22" id="fEZ-vc-Pac">
+                            <connections>
+                                <action selector="reloadButtonTapped:" destination="0Jm-Qf-qUy" id="HFU-8f-Eak"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="createItemField" destination="Hfl-Pd-3Sk" id="52S-bv-tMl"/>
@@ -770,6 +775,7 @@
     <resources>
         <image name="icon" width="256" height="256"/>
         <image name="menu-22" width="22" height="22"/>
+        <image name="reload-22" width="22" height="22"/>
         <image name="settings-22" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

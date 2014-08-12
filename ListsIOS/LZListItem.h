@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LZObject.h"
 
-@interface LZListItem : NSObject
+@interface LZListItem : LZObject
 
 @property (strong, nonatomic) NSString *description;
 

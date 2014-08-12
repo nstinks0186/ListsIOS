@@ -21,9 +21,12 @@
     [super viewDidLoad];
     
     self.listVM = [[ListVM alloc] initWithType:self.type];
+    self.listVM.delegate = self;
     self.listVM.createItemDescription = self.createItemField.text;
     
     self.navigationItem.title = self.listVM.title;
+    
+    [self.listVM fetchItemList];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +40,11 @@
 - (IBAction)createItemFieldChange:(id)sender
 {
     self.listVM.createItemDescription = self.createItemField.text;
+}
+
+- (IBAction)reloadButtonTapped:(id)sender
+{
+    [self.listVM fetchItemList];
 }
 
 #pragma mark - Table view data source
@@ -74,6 +82,13 @@
     self.createItemField.text = @"";
     
     return YES;
+}
+
+#pragma mark - ListVMDelegate Methods
+
+- (void)listVMDidUpdateListItemList:(ListVM *)vm
+{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Conveninence Methods

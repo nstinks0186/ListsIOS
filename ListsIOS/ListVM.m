@@ -73,4 +73,29 @@
     [self.lzListItemList addObject:newItem];
 }
 
+- (void)fetchItemList
+{
+    @synchronized(self) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork; // kPFCachePolicyNetworkElseCache;
+        [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                for (PFObject *object in objects) {
+                    LZListItem *item = [[LZListItem alloc] initWithPFObject:object];
+                    [self.lzListItemList addObject:item];
+                }
+                
+                if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.delegate listVMDidUpdateListItemList:self];
+                    });
+                }
+            } else {
+                DLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
+}
+
 @end

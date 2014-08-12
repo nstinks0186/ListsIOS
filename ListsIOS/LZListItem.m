@@ -10,6 +10,15 @@
 
 @implementation LZListItem
 
+- (id)initWithPFObject:(PFObject *)pfObject
+{
+    self = [super init];
+    if (self) {
+        self.description = pfObject[@"description"];
+    }
+    return self;
+}
+
 - (id)initWithDescription:(NSString *)description
 {
     self = [super init];
