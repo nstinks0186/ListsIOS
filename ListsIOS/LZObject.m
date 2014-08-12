@@ -19,4 +19,33 @@
     return self;
 }
 
+#pragma mark - Saving
+
+- (void)saveInBackground
+{
+    assert(self.pfObject);
+    [self.pfObject saveInBackground];
+}
+
+- (void)saveInBackgroundWithBlock:(PFBooleanResultBlock)block
+{
+    assert(self.pfObject);
+    [self.pfObject saveInBackgroundWithBlock:block];
+}
+
+#pragma mark -
+
++ (void)processError:(NSError *)error
+{
+    if (error.code == 120) { // cache miss
+        DLog(@"%@",error.localizedDescription);
+    }
+    if (error.code == 124) { // timed out
+        DLog(@"%@",error.localizedDescription);
+    }
+    else{
+        DLog(@"Error: %@ %@", error, [error userInfo]);
+    }
+}
+
 @end

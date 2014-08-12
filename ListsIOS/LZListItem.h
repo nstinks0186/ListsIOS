@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "LZObject.h"
 
+typedef NS_ENUM(NSInteger, LZListItemStatus) {
+    LZListItemStatusUnchecked,
+    LZListItemStatusChecked
+};
+
 @interface LZListItem : LZObject
 
 @property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSMutableArray *tagList;
+@property (nonatomic) LZListItemStatus status;
 
-- (id)initWithDescription:(NSString *)description;
+- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList status:(LZListItemStatus)status;
+- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList;
 
 @end

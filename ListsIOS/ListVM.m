@@ -77,8 +77,22 @@
         return;
     }
     
-    LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription];
+    LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription tagList:self.tagList];
     [self.lzListItemList addObject:newItem];
+    
+    @synchronized(self){
+        [newItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.delegate listVMDidUpdateListItemList:self];
+                    });
+                }
+            } else {
+                [LZObject processError:error];
+            }
+        }];
+    }
 }
 
 - (void)fetchItemList
@@ -87,7 +101,7 @@
         PFQuery *query = [PFQuery queryWithClassName:@"Item"];
         query.cachePolicy = kPFCachePolicyCacheThenNetwork; // kPFCachePolicyNetworkElseCache;
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-        [query whereKey:@"status" equalTo:@0];
+        [query whereKey:@"status" equalTo:@(LZListItemStatusUnchecked)];
         [query whereKey:@"tagList" containsAllObjectsInArray:self.tagList];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
@@ -103,7 +117,7 @@
                     });
                 }
             } else {
-                DLog(@"Error: %@ %@", error, [error userInfo]);
+                [LZObject processError:error];
             }
         }];
     }

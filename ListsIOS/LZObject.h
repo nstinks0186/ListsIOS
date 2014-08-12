@@ -15,4 +15,10 @@
 
 - (id)initWithPFObject:(PFObject *)pfObject;
 
+- (void)saveInBackground;
+- (void)saveInBackgroundWithBlock:(PFBooleanResultBlock)block;
+
++ (void)processError:(NSError *)error;
+
+
 @end
