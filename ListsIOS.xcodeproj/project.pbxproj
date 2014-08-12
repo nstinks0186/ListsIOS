@@ -391,6 +391,28 @@
 			name = List;
 			sourceTree = "<group>";
 		};
+		FC2FDD4E199A84B400E9A1E1 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				FC2FDD4B199A7B4B00E9A1E1 /* SignupVM.h */,
+				FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */,
+				FCF5D67B19940A5A0027AB49 /* SignupVC.h */,
+				FCF5D67C19940A5A0027AB49 /* SignupVC.m */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		FC2FDD4F199A84BF00E9A1E1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FC2FDD48199A7AFA00E9A1E1 /* LoginVM.h */,
+				FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */,
+				FCF5D67E19940B020027AB49 /* LoginVC.h */,
+				FCF5D67F19940B020027AB49 /* LoginVC.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
 			children = (
@@ -528,16 +550,10 @@
 		FCF5D68119940B140027AB49 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				FC2FDD4F199A84BF00E9A1E1 /* Login */,
+				FC2FDD4E199A84B400E9A1E1 /* Signup */,
 				9E54D281199470D500D54176 /* AuthVC.h */,
 				9E54D282199470D500D54176 /* AuthVC.m */,
-				FC2FDD48199A7AFA00E9A1E1 /* LoginVM.h */,
-				FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */,
-				FCF5D67E19940B020027AB49 /* LoginVC.h */,
-				FCF5D67F19940B020027AB49 /* LoginVC.m */,
-				FC2FDD4B199A7B4B00E9A1E1 /* SignupVM.h */,
-				FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */,
-				FCF5D67B19940A5A0027AB49 /* SignupVC.h */,
-				FCF5D67C19940A5A0027AB49 /* SignupVC.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
