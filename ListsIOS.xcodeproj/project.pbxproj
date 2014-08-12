@@ -48,6 +48,8 @@
 		FC2FDD53199A90EE00E9A1E1 /* LZObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD52199A90EE00E9A1E1 /* LZObject.m */; };
 		FC2FDD60199AA73800E9A1E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2FDD5F199AA73800E9A1E1 /* CoreData.framework */; };
 		FC2FDD62199AA81600E9A1E1 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */; };
+		FC2FDD66199AB95D00E9A1E1 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD65199AB95D00E9A1E1 /* WebVC.m */; };
+		FC2FDD69199ABD7900E9A1E1 /* LicensesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -169,6 +171,10 @@
 		FC2FDD5E199AA6FC00E9A1E1 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		FC2FDD5F199AA73800E9A1E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		FC2FDD64199AB95D00E9A1E1 /* WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		FC2FDD65199AB95D00E9A1E1 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		FC2FDD67199ABD7900E9A1E1 /* LicensesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicensesVC.h; sourceTree = "<group>"; };
+		FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicensesVC.m; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -313,13 +319,13 @@
 		FC16A81E19952D8200EB26F4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				FC2FDD54199AA6FC00E9A1E1 /* GoogleAnalytics */,
-				FC16A852199554DE00EB26F4 /* HexColor */,
-				FC16A8221995533700EB26F4 /* TSMessages */,
 				FC16A80C1995233000EB26F4 /* BButton */,
 				FC16A81A19952D5D00EB26F4 /* BZGFormField */,
 				FCF5D6661993FFD60027AB49 /* CTFeedback */,
 				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
+				FC2FDD54199AA6FC00E9A1E1 /* GoogleAnalytics */,
+				FC16A852199554DE00EB26F4 /* HexColor */,
+				FC16A8221995533700EB26F4 /* TSMessages */,
 			);
 			name = Libraries;
 			path = ListsIOS;
@@ -460,6 +466,19 @@
 			path = GoogleAnalytics;
 			sourceTree = SOURCE_ROOT;
 		};
+		FC2FDD63199AB69A00E9A1E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5D6781994011B0027AB49 /* SettingsVC.h */,
+				FCF5D6791994011B0027AB49 /* SettingsVC.m */,
+				FC2FDD67199ABD7900E9A1E1 /* LicensesVC.h */,
+				FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */,
+				FC2FDD64199AB95D00E9A1E1 /* WebVC.h */,
+				FC2FDD65199AB95D00E9A1E1 /* WebVC.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
 			children = (
@@ -512,11 +531,10 @@
 				FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */,
 				FCF5D6601992B7690027AB49 /* MenuVC.h */,
 				FCF5D6611992B7690027AB49 /* MenuVC.m */,
-				FCF5D6781994011B0027AB49 /* SettingsVC.h */,
-				FCF5D6791994011B0027AB49 /* SettingsVC.m */,
 				FC2FDD50199A90C100E9A1E1 /* LZ */,
 				FC16A85F1995736800EB26F4 /* List */,
 				FCF5D68119940B140027AB49 /* Authentication */,
+				FC2FDD63199AB69A00E9A1E1 /* Settings */,
 				FCF5D62C1992AC3E0027AB49 /* Images.xcassets */,
 				FCF5D6181992AC3D0027AB49 /* Supporting Files */,
 			);
@@ -731,8 +749,10 @@
 				FCF5D68019940B020027AB49 /* LoginVC.m in Sources */,
 				FCF5D6741993FFD60027AB49 /* CTFeedbackTopicsViewController.m in Sources */,
 				FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */,
+				FC2FDD69199ABD7900E9A1E1 /* LicensesVC.m in Sources */,
 				FC16A855199554DE00EB26F4 /* HexColor.m in Sources */,
 				FC16A868199573FB00EB26F4 /* ListVM.m in Sources */,
+				FC2FDD66199AB95D00E9A1E1 /* WebVC.m in Sources */,
 				FCF5D6761993FFD60027AB49 /* NSBundle+CTFeedback.m in Sources */,
 				FCF5D67D19940A5A0027AB49 /* SignupVC.m in Sources */,
 				FCF5D6221992AC3D0027AB49 /* AppDelegate.m in Sources */,
