@@ -42,6 +42,9 @@
     else if ([segue.identifier isEqualToString:@"ECSlidingViewControllerSegue"]) {
         webVC.webVM = [WebVM ECSlidingViewControllerWebVM];
     }
+    else if ([segue.identifier isEqualToString:@"FacebookSDKSegue"]) {
+        webVC.webVM = [WebVM FacebookSDKWebVM];
+    }
     else if ([segue.identifier isEqualToString:@"HexColorSegue"]) {
         webVC.webVM = [WebVM HexColorWebVM];
     }

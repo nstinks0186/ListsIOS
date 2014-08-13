@@ -25,6 +25,7 @@
 + (id)BButtonWebVM;
 + (id)BZGFormFieldWebVM;
 + (id)CTFeedbackWebVM;
++ (id)FacebookSDKWebVM;
 + (id)ECSlidingViewControllerWebVM;
 + (id)HexColorWebVM;
 + (id)TSMessagesWebVM;
