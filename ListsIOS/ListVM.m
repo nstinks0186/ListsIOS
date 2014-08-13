@@ -78,7 +78,7 @@
     }
     
     LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription tagList:self.tagList];
-    [self.lzListItemList addObject:newItem];
+    [self.lzListItemList insertObject:newItem atIndex:0];
     
     @synchronized(self){
         [newItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -108,7 +108,7 @@
                 [self.lzListItemList removeAllObjects];
                 for (PFObject *object in objects) {
                     LZListItem *item = [[LZListItem alloc] initWithPFObject:object];
-                    [self.lzListItemList addObject:item];
+                    [self.lzListItemList insertObject:item atIndex:0];
                 }
                 
                 if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
