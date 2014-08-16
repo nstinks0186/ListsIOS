@@ -41,8 +41,11 @@
     [TSMessage setDefaultViewController:self];
     
     self.emailAddressField.textField.placeholder = @"Email Address";
+    self.emailAddressField.textField.delegate = self;
     self.usernameField.textField.placeholder = @"Username";
+    self.usernameField.textField.delegate = self;
     self.passwordField.textField.placeholder = @"Password";
+    self.passwordField.textField.delegate = self;
     self.passwordField.textField.secureTextEntry = YES;
     
     [self.emailAddressField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
@@ -68,6 +71,7 @@
 
 - (IBAction)cancelButtonTapped:(id)sender
 {
+    [self.view endEditing:YES];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -104,6 +108,7 @@
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
+            [self.view endEditing:YES];
             [self showHome];
         }else{
             [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)

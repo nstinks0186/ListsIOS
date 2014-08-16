@@ -10,6 +10,6 @@
 #import <Parse/Parse.h>
 #import "SignupVM.h"
 
-@interface SignupVC : UITableViewController
+@interface SignupVC : UITableViewController <UITextFieldDelegate>
 
 @end

@@ -44,10 +44,16 @@
     self.passwordField.textField.secureTextEntry = YES;
     
     [self.usernameField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                              atScrollPosition:UITableViewScrollPositionTop
+                                      animated:YES];
         self.loginVM.username = text;
         return self.loginVM.isUsernameValid;
     }];
     [self.passwordField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]
+                              atScrollPosition:UITableViewScrollPositionTop
+                                      animated:YES];
         self.loginVM.password = text;
         return self.loginVM.isPasswordValid;
     }];
@@ -62,6 +68,7 @@
 
 - (IBAction)cancelButtonTapped:(id)sender
 {
+    [self.view endEditing:YES];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -93,6 +100,7 @@
                                  password:self.loginVM.password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
+                                            [self.view endEditing:YES];
                                             [self showHome];
                                         } else {
                                             NSString *errorMessage = error.localizedDescription;
