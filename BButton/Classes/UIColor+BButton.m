@@ -30,7 +30,8 @@
 
 + (UIColor *)bb_defaultColorV3
 {
-    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    return Theme_MainColor;
+//    return [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
 }
 
 + (UIColor *)bb_primaryColorV2

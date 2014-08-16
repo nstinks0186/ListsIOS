@@ -45,10 +45,11 @@
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-53434717-2"];
     
     // Appearance Setup
-    UIColor *redColor = [UIColor colorWithRed:1 green:0.075 blue:0 alpha:1];
     [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
-    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue-Light" size:0.0f], NSForegroundColorAttributeName : redColor }];
-    [[UINavigationBar appearance] setTintColor:redColor];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:Theme_FontName size:0.0f], NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    [[UINavigationBar appearance] setBarTintColor:Theme_MainColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
     return YES;
 }

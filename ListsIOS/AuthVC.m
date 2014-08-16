@@ -13,7 +13,10 @@
 
 @interface AuthVC ()
 
+@property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 @property (weak, nonatomic) IBOutlet BButton *facebookLoginButton;
+@property (weak, nonatomic) IBOutlet BButton *signupButton;
+@property (weak, nonatomic) IBOutlet BButton *loginButton;
 
 @end
 
@@ -25,11 +28,18 @@
     
     [TSMessage setDefaultViewController:self];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.appNameLabel.textColor = Theme_MainColor;
     [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
     if([PFUser currentUser]){
         [self showHome];
     }
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Action Buttons

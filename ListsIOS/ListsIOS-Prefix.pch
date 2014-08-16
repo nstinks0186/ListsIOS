@@ -26,3 +26,14 @@
 #else
 #   define ULog(...)
 #endif
+
+// Themes
+//#define Theme_MainColor [UIColor colorWithRed:1 green:0.075 blue:0 alpha:1]
+#define Theme_MainColor [UIColor colorWithRed:(64/255.0) green:(122/255.0) blue:(184/255.0) alpha:1]
+#define Theme_FontName @"Helvetica Neue-Light"
+
+
+
+
+
+
