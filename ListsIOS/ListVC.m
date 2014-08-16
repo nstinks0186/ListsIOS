@@ -35,6 +35,7 @@
     
     // UI setup
     self.navigationItem.title = self.listVM.title;
+    [self.refreshControl addTarget:self action:@selector(reloadButtonTapped:) forControlEvents:UIControlEventValueChanged];
     
     // fetch data
     [self.listVM fetchItemList];
@@ -80,6 +81,17 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
+    [self.listVM doRemoveItem:lzListItem];
+}
+
 #pragma mark - UITextFieldDelegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -100,13 +112,14 @@
 - (void)listVMDidUpdateListItemList:(ListVM *)vm
 {
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - Conveninence Methods
 
 - (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
-    LZListItem *lzListItem = [self.listVM.lzListItemList objectAtIndex:indexPath.row];
+    LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
     cell.textLabel.text = lzListItem.description;
 }
 

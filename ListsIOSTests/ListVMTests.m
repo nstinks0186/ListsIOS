@@ -138,10 +138,10 @@
     XCTAssertEqual(rowCountTonote, one, @"%d",rowCountTonote);
     XCTAssertEqual(rowCountCustom, one, @"%d",rowCountCustom);
     // TODO: itemList[0].description should be equal to newItemDescription
-    LZListItem *newItemTodo = vmTodo.lzListItemList.firstObject;
-    LZListItem *newItemTobuy = vmTobuy.lzListItemList.firstObject;
-    LZListItem *newItemTonote = vmTonote.lzListItemList.firstObject;
-    LZListItem *newItemCustom = vmCustom.lzListItemList.firstObject;
+    LZListItem *newItemTodo = vmTodo.itemList.firstObject;
+    LZListItem *newItemTobuy = vmTobuy.itemList.firstObject;
+    LZListItem *newItemTonote = vmTonote.itemList.firstObject;
+    LZListItem *newItemCustom = vmCustom.itemList.firstObject;
     XCTAssertTrue([newItemTodo.description isEqualToString:newItemDescription], @"%@",newItemTodo.description);
     XCTAssertTrue([newItemTobuy.description isEqualToString:newItemDescription], @"%@",newItemTobuy.description);
     XCTAssertTrue([newItemTonote.description isEqualToString:newItemDescription], @"%@",newItemTonote.description);

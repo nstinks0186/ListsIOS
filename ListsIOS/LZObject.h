@@ -17,6 +17,7 @@
 
 - (void)saveInBackground;
 - (void)saveInBackgroundWithBlock:(PFBooleanResultBlock)block;
+- (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block;
 
 + (void)processError:(NSError *)error;
 

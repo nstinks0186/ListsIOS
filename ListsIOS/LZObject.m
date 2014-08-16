@@ -19,7 +19,7 @@
     return self;
 }
 
-#pragma mark - Saving
+#pragma mark - Operations
 
 - (void)saveInBackground
 {
@@ -31,6 +31,12 @@
 {
     assert(self.pfObject);
     [self.pfObject saveInBackgroundWithBlock:block];
+}
+
+- (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block
+{
+    assert(self.pfObject);
+    [self.pfObject deleteInBackgroundWithBlock:block];
 }
 
 #pragma mark -

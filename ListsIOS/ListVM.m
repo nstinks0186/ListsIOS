@@ -10,7 +10,7 @@
 
 @interface ListVM ()
 
-@property (strong, nonatomic) NSMutableArray *lzListItemList;
+@property (strong, nonatomic) NSMutableArray *itemList;
 
 @end
 
@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         self.type = type;
-        self.lzListItemList = [NSMutableArray array];
+        self.itemList = [NSMutableArray array];
     }
     return self;
 }
@@ -66,7 +66,7 @@
 
 - (NSInteger)rowCountForSection:(NSInteger)section
 {
-    return self.lzListItemList.count;
+    return self.itemList.count;
 }
 
 #pragma mark - Operations
@@ -78,10 +78,29 @@
     }
     
     LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription tagList:self.tagList];
-    [self.lzListItemList insertObject:newItem atIndex:0];
+    [self.itemList insertObject:newItem atIndex:0];
     
     @synchronized(self){
         [newItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.delegate listVMDidUpdateListItemList:self];
+                    });
+                }
+            } else {
+                [LZObject processError:error];
+            }
+        }];
+    }
+}
+
+- (void)doRemoveItem:(LZListItem *)item
+{
+    [self.itemList removeObject:item];
+    
+    @synchronized(self){
+        [item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
                 if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
                     dispatch_async(dispatch_get_main_queue(), ^{
@@ -105,10 +124,10 @@
         [query whereKey:@"tagList" containsAllObjectsInArray:self.tagList];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
-                [self.lzListItemList removeAllObjects];
+                [self.itemList removeAllObjects];
                 for (PFObject *object in objects) {
                     LZListItem *item = [[LZListItem alloc] initWithPFObject:object];
-                    [self.lzListItemList insertObject:item atIndex:0];
+                    [self.itemList insertObject:item atIndex:0];
                 }
                 
                 if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {

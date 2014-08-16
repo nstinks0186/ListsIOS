@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 @property (readonly, nonatomic) NSString *title;
 @property (readonly, nonatomic) NSArray *tagList;
-@property (readonly, nonatomic) NSMutableArray *lzListItemList;
+@property (readonly, nonatomic) NSMutableArray *itemList;
 @property (strong, nonatomic) NSString *createItemDescription;
 
 @property (weak, nonatomic) id<ListVMDelegate> delegate;
@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 // operation
 - (void)doCreateItem;
+- (void)doRemoveItem:(LZListItem *)item;
 - (void)fetchItemList;
 
 @end
