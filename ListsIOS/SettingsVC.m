@@ -30,6 +30,21 @@
     
 }
 
+#pragma mark - UITableViewDataSource Methods
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if(indexPath.row == 8){
+        NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
+        NSString *build = infoDictionary[(NSString*)kCFBundleVersionKey];
+        cell.detailTextLabel.text = build;
+    }
+    
+    return cell;
+}
+
 #pragma mark - UITableViewControllerDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
