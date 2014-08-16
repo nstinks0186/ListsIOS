@@ -29,5 +29,6 @@
 + (id)ECSlidingViewControllerWebVM;
 + (id)HexColorWebVM;
 + (id)TSMessagesWebVM;
++ (id)DefaultEULAWebVM;
 
 @end

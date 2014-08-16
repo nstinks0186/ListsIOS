@@ -9,8 +9,17 @@
 #import "SettingsVC.h"
 #import "CTFeedbackViewController.h"
 #import "AppDelegate.h"
+#import "WebVC.h"
 
 @implementation SettingsVC
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    WebVC *webVC = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"TermsOfUseSegue"]) {
+        webVC.webVM = [WebVM DefaultEULAWebVM];
+    }
+}
 
 #pragma mark - Action Methods
 
@@ -36,7 +45,7 @@
 {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
-    if(indexPath.row == 8){
+    if(indexPath.row == 5){
         NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
         NSString *build = infoDictionary[(NSString*)kCFBundleVersionKey];
         cell.detailTextLabel.text = build;
