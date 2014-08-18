@@ -7,6 +7,7 @@
 //
 
 #import "ListVM.h"
+#import "NSDate+Utilities.h"
 
 @interface ListVM ()
 
@@ -143,3 +144,51 @@
 }
 
 @end
+
+@implementation LZListItem (ListVM)
+
+- (NSString *)dueDateString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.doesRelativeDateFormatting = YES;
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    
+    return (self.isDueToday ? @"Today" :
+            (self.isDueTomorrow ? @"Tomorrow" :
+             (self.isDueWeekend ? @"Weekend" :
+              (self.dueDate ? [dateFormatter stringFromDate:self.dueDate] :
+               @"Someday"))));
+}
+
+#pragma mark - Due date logic
+
+- (BOOL)isDueToday
+{
+    return (self.dueDate && (self.dueDate.isToday || self.dueDate.isInPast));
+}
+
+- (BOOL)isDueTomorrow
+{
+    return (self.dueDate && self.dueDate.isTomorrow);
+}
+- (BOOL)isDueWeekend
+{
+    if (self.dueDate && !self.dueDate.isInPast && self.dueDate.isTypicallyWeekend) {
+        NSDate *today = [NSDate date];
+        return ([today daysBeforeDate:self.dueDate] < 7);
+    }
+    return NO;
+}
+
+- (BOOL)isDueSomeday
+{
+    return (!self.isDueToday && !self.isDueTomorrow && !self.isDueWeekend);
+}
+
+@end
+
+
+
+
+

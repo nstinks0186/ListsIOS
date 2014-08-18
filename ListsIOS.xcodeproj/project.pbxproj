@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E54D28019946F1800D54176 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E54D27F19946F1800D54176 /* FacebookSDK.framework */; };
 		9E54D283199470D500D54176 /* AuthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E54D282199470D500D54176 /* AuthVC.m */; };
+		9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB68ACE19A1995600E8C16E /* NSDate+Utilities.m */; };
 		FC16A8161995233000EB26F4 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A80F1995233000EB26F4 /* BButton.m */; };
 		FC16A8171995233000EB26F4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8111995233000EB26F4 /* NSString+FontAwesome.m */; };
 		FC16A8181995233000EB26F4 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8131995233000EB26F4 /* UIColor+BButton.m */; };
@@ -107,6 +108,8 @@
 		9E54D27F19946F1800D54176 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		9E54D281199470D500D54176 /* AuthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthVC.h; sourceTree = "<group>"; };
 		9E54D282199470D500D54176 /* AuthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthVC.m; sourceTree = "<group>"; };
+		9EB68ACD19A1995600E8C16E /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		9EB68ACE19A1995600E8C16E /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
 		FC16A80E1995233000EB26F4 /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
 		FC16A80F1995233000EB26F4 /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
 		FC16A8101995233000EB26F4 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
@@ -275,6 +278,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EB68ACC19A1995600E8C16E /* NSDate-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EB68ACD19A1995600E8C16E /* NSDate+Utilities.h */,
+				9EB68ACE19A1995600E8C16E /* NSDate+Utilities.m */,
+			);
+			path = "NSDate-Extensions";
+			sourceTree = SOURCE_ROOT;
+		};
 		FC16A80C1995233000EB26F4 /* BButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +331,7 @@
 		FC16A81E19952D8200EB26F4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9EB68ACC19A1995600E8C16E /* NSDate-Extensions */,
 				FC16A80C1995233000EB26F4 /* BButton */,
 				FC16A81A19952D5D00EB26F4 /* BZGFormField */,
 				FCF5D6661993FFD60027AB49 /* CTFeedback */,
@@ -767,6 +780,7 @@
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
+				9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */,
 				FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */,
 				FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */,
 				FC2FDD53199A90EE00E9A1E1 /* LZObject.m in Sources */,

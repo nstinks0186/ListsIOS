@@ -49,3 +49,15 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 - (void)listVMDidUpdateListItemList:(ListVM *)vm;
 
 @end
+
+@interface LZListItem (ListVM)
+
+- (NSString *)dueDateString;
+
+// due date logic
+- (BOOL)isDueToday;
+- (BOOL)isDueTomorrow;
+- (BOOL)isDueWeekend;
+- (BOOL)isDueSomeday;
+
+@end

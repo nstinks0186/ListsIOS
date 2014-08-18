@@ -121,6 +121,7 @@
 {
     LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
     cell.textLabel.text = lzListItem.description;
+    cell.detailTextLabel.text = lzListItem.dueDateString;
 }
 
 @end

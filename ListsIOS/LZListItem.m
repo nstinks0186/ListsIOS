@@ -16,6 +16,7 @@
     if (self) {
         self.description = pfObject[@"description"];
         self.tagList = [NSMutableArray arrayWithArray:pfObject[@"tagList"]];
+        self.dueDate = (NSDate *)pfObject[@"dueDate"];
         self.status = [(NSNumber *)pfObject[@"status"] integerValue];
     }
     return self;
@@ -25,6 +26,8 @@
 {
     PFObject *pfObject = [PFObject objectWithClassName:@"Item"];
     pfObject[@"owner"] = [PFUser currentUser];
+    pfObject[@"dueDate"] = [NSDate date];
+    
     pfObject[@"description"] = description.copy;
     pfObject[@"tagList"] = tagList.copy;
     pfObject[@"status"] = @(status);

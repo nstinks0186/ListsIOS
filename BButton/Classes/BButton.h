@@ -2,7 +2,7 @@
 //  Created by Mathieu Bolard on 31/07/12.
 //  Copyright (c) 2012 Mathieu Bolard. All rights reserved.
 //
-//  https://github.com/mattlawer/BButton
+//      
 //
 //
 //  BButton is licensed under the MIT license

@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, LZListItemStatus) {
 
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSMutableArray *tagList;
+@property (strong, nonatomic) NSDate *dueDate;
 @property (nonatomic) LZListItemStatus status;
 
 - (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList status:(LZListItemStatus)status;
