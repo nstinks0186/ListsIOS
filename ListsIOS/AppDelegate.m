@@ -49,7 +49,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:Theme_FontName size:0.0f], NSForegroundColorAttributeName : [UIColor whiteColor] }];
     [[UINavigationBar appearance] setBarTintColor:Theme_MainColor];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setTranslucent:NO];
+//    [[UINavigationBar appearance] setTranslucent:NO];
+// #warning causes crash
     
     return YES;
 }

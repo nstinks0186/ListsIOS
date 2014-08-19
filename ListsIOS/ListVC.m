@@ -49,6 +49,14 @@
 
 #pragma mark - Action Methods
 
+
+- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)control
+{
+    self.type = control.selectedSegmentIndex;
+    self.listVM.type = control.selectedSegmentIndex;
+    [self.listVM fetchItemList];
+}
+
 - (IBAction)createItemFieldChange:(id)sender
 {
     self.listVM.createItemDescription = self.createItemField.text;
