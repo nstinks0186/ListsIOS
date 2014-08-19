@@ -115,11 +115,11 @@
     }
 }
 
-- (void)fetchItemList
+- (void)fetchItemList:(BOOL)forceNetwork
 {
     @synchronized(self) {
         PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-        query.cachePolicy = kPFCachePolicyCacheThenNetwork; // kPFCachePolicyNetworkElseCache;
+        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyCacheThenNetwork);
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
         [query whereKey:@"status" equalTo:@(LZListItemStatusUnchecked)];
         [query whereKey:@"tagList" containsAllObjectsInArray:self.tagList];

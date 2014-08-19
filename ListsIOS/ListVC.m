@@ -38,7 +38,7 @@
     [self.refreshControl addTarget:self action:@selector(reloadButtonTapped:) forControlEvents:UIControlEventValueChanged];
     
     // fetch data
-    [self.listVM fetchItemList];
+    [self.listVM fetchItemList:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +54,7 @@
 {
     self.type = control.selectedSegmentIndex;
     self.listVM.type = control.selectedSegmentIndex;
-    [self.listVM fetchItemList];
+    [self.listVM fetchItemList:NO];
 }
 
 - (IBAction)createItemFieldChange:(id)sender
@@ -64,7 +64,7 @@
 
 - (IBAction)reloadButtonTapped:(id)sender
 {
-    [self.listVM fetchItemList];
+    [self.listVM fetchItemList:YES];
 }
 
 #pragma mark - Table view data source

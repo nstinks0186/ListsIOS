@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 // operation
 - (void)doCreateItem;
 - (void)doRemoveItem:(LZListItem *)item;
-- (void)fetchItemList;
+- (void)fetchItemList:(BOOL)forceNetwork;
 
 @end
 
