@@ -41,11 +41,8 @@
     [TSMessage setDefaultViewController:self];
     
     self.emailAddressField.textField.placeholder = @"Email Address";
-    self.emailAddressField.textField.delegate = self;
     self.usernameField.textField.placeholder = @"Username";
-    self.usernameField.textField.delegate = self;
     self.passwordField.textField.placeholder = @"Password";
-    self.passwordField.textField.delegate = self;
     self.passwordField.textField.secureTextEntry = YES;
     
     [self.emailAddressField setTextValidationBlock:^BOOL(BZGFormField *field, NSString *text) {
