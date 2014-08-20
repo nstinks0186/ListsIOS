@@ -19,6 +19,9 @@
     if ([segue.identifier isEqualToString:@"TermsOfUseSegue"]) {
         webVC.webVM = [WebVM DefaultEULAWebVM];
     }
+    else if([segue.identifier isEqualToString:@"AcknowledgementsSegue"]){
+        webVC.webVM = [WebVM DefaultAcknowledgementsWebVM];
+    }
 }
 
 #pragma mark - Action Methods

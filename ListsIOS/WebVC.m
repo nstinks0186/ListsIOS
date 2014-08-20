@@ -231,6 +231,21 @@
     return vm;
 }
 
++ (id)DefaultAcknowledgementsWebVM
+{
+    WebVM *vm = [WebVM new];
+    vm.title = @"Acknowledgements";
+    NSString *content = @"<div>"
+    "Icon Credits"
+    "<ul>"
+    "<li><a href=\"http://medialoot.com/\">Medialoot</a></li>"
+    "<li><a href=\"http://icons8.com/\">Icons8</a>"
+    "</ul>"
+    "</div>";
+    vm.htmlString = [WebVM htmlStringWithContent:content];
+    return vm;
+}
+
 @end
 
 

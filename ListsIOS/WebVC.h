@@ -30,5 +30,6 @@
 + (id)HexColorWebVM;
 + (id)TSMessagesWebVM;
 + (id)DefaultEULAWebVM;
++ (id)DefaultAcknowledgementsWebVM;
 
 @end
