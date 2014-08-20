@@ -49,6 +49,7 @@
     [PFFacebookUtils logInWithPermissions:@[@"public_profile"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             if (error) {
+                ALog(@"%@ \n %@ \n %@",error, error.localizedDescription, error.localizedFailureReason);
                 [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
                                             subtitle:error.localizedDescription
                                                 type:TSMessageNotificationTypeError];
