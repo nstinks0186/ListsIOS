@@ -179,7 +179,7 @@
 		FC2FDD67199ABD7900E9A1E1 /* LicensesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicensesVC.h; sourceTree = "<group>"; };
 		FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicensesVC.m; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF5D60E1992AC3D0027AB49 /* ListZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FCF5D6151992AC3D0027AB49 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -506,7 +506,7 @@
 		FCF5D60F1992AC3D0027AB49 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */,
+				FCF5D60E1992AC3D0027AB49 /* ListZilla.app */,
 				FCF5D6321992AC3E0027AB49 /* ListsIOSTests.xctest */,
 			);
 			name = Products;
@@ -655,7 +655,7 @@
 			);
 			name = ListsIOS;
 			productName = ListsIOS;
-			productReference = FCF5D60E1992AC3D0027AB49 /* ListsIOS.app */;
+			productReference = FCF5D60E1992AC3D0027AB49 /* ListZilla.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FCF5D6311992AC3E0027AB49 /* ListsIOSTests */ = {
@@ -685,6 +685,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = UNO;
 				TargetAttributes = {
+					FCF5D60D1992AC3D0027AB49 = {
+						DevelopmentTeam = QHM2F44853;
+					};
 					FCF5D6311992AC3E0027AB49 = {
 						TestTargetID = FCF5D60D1992AC3D0027AB49;
 					};
@@ -929,6 +932,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pinuno Fuentes (QHM2F44853)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -940,7 +944,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ListZilla;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -950,6 +954,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pinuno Fuentes (QHM2F44853)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -961,7 +966,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ListZilla;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
