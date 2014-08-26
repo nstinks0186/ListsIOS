@@ -7,12 +7,51 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "BButton.h"
 
 @implementation AppDelegate
 
+#pragma mark - Operations
+
+- (void)showHome
+{
+//    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ListNavVC"];
+}
+
+- (void)showAuth
+{
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateInitialViewController];
+}
+
+#pragma mark - UIApplicationDelegate Methods
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Parse Setup
+    [Parse setApplicationId:@"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw"
+                  clientKey:@"qPyxYg7VOIpZtJ0wBfFlJ25GgyDAmReqpqB0kzuY"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    // FB Setup
+    [PFFacebookUtils initializeFacebook];
+    
+    // Google Analytics Setup
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-53434717-2"];
+    
+    // Appearance Setup
+    [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:Theme_FontName size:0.0f], NSForegroundColorAttributeName : [UIColor whiteColor] }];
+    [[UINavigationBar appearance] setBarTintColor:Theme_MainColor];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setTranslucent:NO];
+// #warning causes crash
+    
     return YES;
 }
 							
@@ -35,12 +74,19 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 @end

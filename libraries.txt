@@ -1,0 +1,16 @@
+BButton
+	https://github.com/mattlawer/BButton
+	MIT License
+BZGFormField
+	https://github.com/benzguo/BZGFormField
+CTFeedback
+	https://github.com/rizumita/CTFeedback
+ECSlidingViewController
+	https://github.com/ECSlidingViewController/ECSlidingViewController
+FacebookSDK
+	https://github.com/facebook/facebook-ios-sdk
+GoogleAnalytics
+HexColor
+NSDate-Extensions
+Parse
+TSMessages

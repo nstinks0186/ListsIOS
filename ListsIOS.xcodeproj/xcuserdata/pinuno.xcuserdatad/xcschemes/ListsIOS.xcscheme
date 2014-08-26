@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-               BuildableName = "ListsIOS.app"
+               BuildableName = "ListZilla.app"
                BlueprintName = "ListsIOS"
                ReferencedContainer = "container:ListsIOS.xcodeproj">
             </BuildableReference>
@@ -38,12 +38,22 @@
                ReferencedContainer = "container:ListsIOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC16A874199932A600EB26F4"
+               BuildableName = "ListVMTests.xctest"
+               BlueprintName = "ListVMTests"
+               ReferencedContainer = "container:ListsIOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>
@@ -62,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>
@@ -80,7 +90,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>

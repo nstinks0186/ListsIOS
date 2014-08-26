@@ -14,3 +14,32 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#ifdef DEBUG
+#   define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#else
+#   define ULog(...)
+#endif
+
+// Themes
+//#define Theme_MainColor [UIColor colorWithRed:1 green:0.075 blue:0 alpha:1]
+#define Theme_MainColor [UIColor colorWithRed:(64/255.0) green:(122/255.0) blue:(184/255.0) alpha:1]
+#define Theme_FontName @"Helvetica Neue-Light"
+
+// Analytics
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
+#define GAITracker ((id<GAITracker>)[[GAI sharedInstance] defaultTracker])
+
+
+
+
+
+
