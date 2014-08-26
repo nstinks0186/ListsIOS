@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "GAI.h"
 #import "BButton.h"
 
 @implementation AppDelegate

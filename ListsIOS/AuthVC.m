@@ -46,10 +46,15 @@
 
 - (IBAction)facebookLoginButtonTapped:(id)sender
 {
-    [PFFacebookUtils logInWithPermissions:@[@"basic_info", @"email", @"user_birthday"] block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInWithPermissions:@[@"basic_info", @"email"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             if (error) {
                 ALog(@"%@ \n %@ \n %@",error, error.localizedDescription, error.localizedFailureReason);
+                [GAITracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Error"
+                                                                         action:@"FB Login"
+                                                                          label:@"AuthVC.FBLogin.Error"
+                                                                          value:@(error.code)] build]];
+
                 [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
                                             subtitle:error.localizedDescription
                                                 type:TSMessageNotificationTypeError];
