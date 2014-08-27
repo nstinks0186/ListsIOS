@@ -46,7 +46,7 @@
 
 - (IBAction)facebookLoginButtonTapped:(id)sender
 {
-    [PFFacebookUtils logInWithPermissions:@[@"basic_info", @"email"] block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"email"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             if (error) {
                 ALog(@"%@ \n %@ \n %@",error, error.localizedDescription, error.localizedFailureReason);
