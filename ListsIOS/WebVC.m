@@ -169,6 +169,15 @@
     return vm;
 }
 
++ (instancetype)DejalActivityViewWebVM
+{
+    WebVM *vm = [WebVM new];
+    vm.title = @"DejalActivityView";
+    NSString *content = [WebVM BSD2ClauseLicenseDivStringGivenYear:@"2002-2014" name:@"Dejal Systems, LLC"];
+    vm.htmlString = [WebVM htmlStringWithContent:content];
+    return vm;
+}
+
 + (instancetype)ECSlidingViewControllerWebVM
 {
     WebVM *vm = [WebVM new];
@@ -192,6 +201,33 @@
     WebVM *vm = [WebVM new];
     vm.title = @"HexColor";
     NSString *content = [WebVM MITLicenseDivStringGivenYear:@"2012" name:@"Marius Landwehr &lt;<a href=\"mailto:mike@enriquez.me\">marius.landwehr@gmail.com</a>&gt;"];
+    vm.htmlString = [WebVM htmlStringWithContent:content];
+    return vm;
+}
+
++ (instancetype)KNSemiModalViewControllerWebVM
+{
+    WebVM *vm = [WebVM new];
+    vm.title = @"KNSemiModalViewController";
+    NSString *content = [WebVM MITLicenseDivStringGivenYear:@"2012" name:@"Kent Nguyen"];
+    vm.htmlString = [WebVM htmlStringWithContent:content];
+    return vm;
+}
+
++ (instancetype)MBProgressHud
+{
+    WebVM *vm = [WebVM new];
+    vm.title = @"MBProgressHud";
+    NSString *content = [WebVM MITLicenseDivStringGivenYear:@"2013" name:@"Matej Bukovinski"];
+    vm.htmlString = [WebVM htmlStringWithContent:content];
+    return vm;
+}
+
++ (instancetype)THCalendarDatePickerWebVM
+{
+    WebVM *vm = [WebVM new];
+    vm.title = @"THCalendarDatePicker";
+    NSString *content = [WebVM MITLicenseDivStringGivenYear:@"2014" name:@"Tribus Hannes (<a href=\"http://hons82.blogspot.it\">http://hons82.blogspot.it</a>)"];
     vm.htmlString = [WebVM htmlStringWithContent:content];
     return vm;
 }

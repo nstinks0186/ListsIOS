@@ -25,10 +25,14 @@
 + (id)BButtonWebVM;
 + (id)BZGFormFieldWebVM;
 + (id)CTFeedbackWebVM;
++ (id)DejalActivityViewWebVM;
 + (id)FacebookSDKWebVM;
 + (id)ECSlidingViewControllerWebVM;
 + (id)HexColorWebVM;
++ (id)KNSemiModalViewControllerWebVM;
++ (id)MBProgressHud;
 + (id)TSMessagesWebVM;
++ (id)THCalendarDatePickerWebVM;
 + (id)DefaultEULAWebVM;
 + (id)DefaultAcknowledgementsWebVM;
 

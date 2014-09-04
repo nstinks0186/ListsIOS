@@ -43,14 +43,22 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	return [[NSDate date] dateBySubtractingDays:days];
 }
 
++ (NSDate *) dateYesterday
+{
+	return [NSDate dateWithDaysBeforeNow:1];
+}
+
 + (NSDate *) dateTomorrow
 {
 	return [NSDate dateWithDaysFromNow:1];
 }
 
-+ (NSDate *) dateYesterday
++ (NSDate *) dateThisSaturday
 {
-	return [NSDate dateWithDaysBeforeNow:1];
+    NSDate *today = [NSDate date].dateWithOutTime;
+    NSInteger todayIndex = today.weekday;
+    NSInteger daysLeft = (7-todayIndex > 0 ? 7-todayIndex : todayIndex);
+    return [NSDate dateWithDaysFromNow:daysLeft];
 }
 
 + (NSDate *) dateWithHoursFromNow: (NSInteger) dHours
@@ -295,6 +303,14 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 }
 
 #pragma mark - Adjusting Dates
+
+- (NSDate *) dateWithOutTime {
+    if (self) {
+        NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:self];
+        return [[NSCalendar currentCalendar] dateFromComponents:comps];
+    }
+    return nil;
+}
 
 // Thaks, rsjohnson
 - (NSDate *) dateByAddingYears: (NSInteger) dYears

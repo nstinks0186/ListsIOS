@@ -43,7 +43,6 @@
 		FC16A86C19992E6900EB26F4 /* LZListItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86B19992E6900EB26F4 /* LZListItemTests.m */; };
 		FC16A86E1999324300EB26F4 /* LoginVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86D1999324300EB26F4 /* LoginVMTests.m */; };
 		FC16A8701999328100EB26F4 /* SignupVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A86F1999328100EB26F4 /* SignupVMTests.m */; };
-		FC16A8891999341400EB26F4 /* ListVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC16A8881999341400EB26F4 /* ListVMTests.m */; };
 		FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */; };
 		FC2FDD4D199A7B4B00E9A1E1 /* SignupVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD4C199A7B4B00E9A1E1 /* SignupVM.m */; };
 		FC2FDD53199A90EE00E9A1E1 /* LZObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD52199A90EE00E9A1E1 /* LZObject.m */; };
@@ -51,6 +50,40 @@
 		FC2FDD62199AA81600E9A1E1 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2FDD61199AA81600E9A1E1 /* libGoogleAnalyticsServices.a */; };
 		FC2FDD66199AB95D00E9A1E1 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD65199AB95D00E9A1E1 /* WebVC.m */; };
 		FC2FDD69199ABD7900E9A1E1 /* LicensesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */; };
+		FC6178A119AFCDDD00D90CA4 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788519AFCDDD00D90CA4 /* arrow_left.png */; };
+		FC6178A219AFCDDD00D90CA4 /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788619AFCDDD00D90CA4 /* arrow_left@2x.png */; };
+		FC6178A319AFCDDD00D90CA4 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788719AFCDDD00D90CA4 /* arrow_right.png */; };
+		FC6178A419AFCDDD00D90CA4 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788819AFCDDD00D90CA4 /* arrow_right@2x.png */; };
+		FC6178A519AFCDDD00D90CA4 /* calendar_clear-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788919AFCDDD00D90CA4 /* calendar_clear-disabled.png */; };
+		FC6178A619AFCDDD00D90CA4 /* calendar_clear-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788A19AFCDDD00D90CA4 /* calendar_clear-disabled@2x.png */; };
+		FC6178A719AFCDDD00D90CA4 /* calendar_littledot-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788B19AFCDDD00D90CA4 /* calendar_littledot-disabled.png */; };
+		FC6178A819AFCDDD00D90CA4 /* calendar_littledot-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788C19AFCDDD00D90CA4 /* calendar_littledot-disabled@2x.png */; };
+		FC6178A919AFCDDD00D90CA4 /* calendar_littledot.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788D19AFCDDD00D90CA4 /* calendar_littledot.png */; };
+		FC6178AA19AFCDDD00D90CA4 /* calendar_littledot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788E19AFCDDD00D90CA4 /* calendar_littledot@2x.png */; };
+		FC6178AB19AFCDDD00D90CA4 /* calendar_ok-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61788F19AFCDDD00D90CA4 /* calendar_ok-disabled.png */; };
+		FC6178AC19AFCDDD00D90CA4 /* calendar_ok-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789019AFCDDD00D90CA4 /* calendar_ok-disabled@2x.png */; };
+		FC6178AD19AFCDDD00D90CA4 /* dialog_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789119AFCDDD00D90CA4 /* dialog_cancel.png */; };
+		FC6178AE19AFCDDD00D90CA4 /* dialog_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789219AFCDDD00D90CA4 /* dialog_cancel@2x.png */; };
+		FC6178AF19AFCDDD00D90CA4 /* dialog_clear-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789319AFCDDD00D90CA4 /* dialog_clear-disabled.png */; };
+		FC6178B019AFCDDD00D90CA4 /* dialog_clear-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789419AFCDDD00D90CA4 /* dialog_clear-disabled@2x.png */; };
+		FC6178B119AFCDDD00D90CA4 /* dialog_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789519AFCDDD00D90CA4 /* dialog_clear.png */; };
+		FC6178B219AFCDDD00D90CA4 /* dialog_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789619AFCDDD00D90CA4 /* dialog_clear@2x.png */; };
+		FC6178B319AFCDDD00D90CA4 /* dialog_ok-disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789719AFCDDD00D90CA4 /* dialog_ok-disabled.png */; };
+		FC6178B419AFCDDD00D90CA4 /* dialog_ok-disabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789819AFCDDD00D90CA4 /* dialog_ok-disabled@2x.png */; };
+		FC6178B519AFCDDD00D90CA4 /* dialog_ok.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789919AFCDDD00D90CA4 /* dialog_ok.png */; };
+		FC6178B619AFCDDD00D90CA4 /* dialog_ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC61789A19AFCDDD00D90CA4 /* dialog_ok@2x.png */; };
+		FC6178B719AFCDDD00D90CA4 /* THDateDay.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61789C19AFCDDD00D90CA4 /* THDateDay.m */; };
+		FC6178B819AFCDDD00D90CA4 /* THDateDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC61789D19AFCDDD00D90CA4 /* THDateDay.xib */; };
+		FC6178B919AFCDDD00D90CA4 /* THDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61789F19AFCDDD00D90CA4 /* THDatePickerViewController.m */; };
+		FC6178BA19AFCDDD00D90CA4 /* THDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6178A019AFCDDD00D90CA4 /* THDatePickerViewController.xib */; };
+		FC61790419AFCF3200D90CA4 /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61790219AFCF3200D90CA4 /* UIViewController+KNSemiModal.m */; };
+		FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61795119B6301000D90CA4 /* ListVCellM.m */; };
+		FC61796B19B789B800D90CA4 /* LZAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61796A19B789B800D90CA4 /* LZAnalytics.m */; };
+		FC61796F19B7971C00D90CA4 /* LZDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61796E19B7971C00D90CA4 /* LZDebug.m */; };
+		FC61797919B8BB9100D90CA4 /* TagListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797819B8BB9100D90CA4 /* TagListVC.m */; };
+		FC899D0619AD16C700DFF3B5 /* ListVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D0519AD16C700DFF3B5 /* ListVCell.m */; };
+		FC899D1519AFBE8500DFF3B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */; };
+		FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
@@ -155,7 +188,6 @@
 		FC16A86B19992E6900EB26F4 /* LZListItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZListItemTests.m; sourceTree = "<group>"; };
 		FC16A86D1999324300EB26F4 /* LoginVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVMTests.m; sourceTree = "<group>"; };
 		FC16A86F1999328100EB26F4 /* SignupVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVMTests.m; sourceTree = "<group>"; };
-		FC16A8881999341400EB26F4 /* ListVMTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVMTests.m; sourceTree = "<group>"; };
 		FC2FDD48199A7AFA00E9A1E1 /* LoginVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
 		FC2FDD49199A7AFA00E9A1E1 /* LoginVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
 		FC2FDD4B199A7B4B00E9A1E1 /* SignupVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupVM.h; sourceTree = "<group>"; };
@@ -178,6 +210,50 @@
 		FC2FDD65199AB95D00E9A1E1 /* WebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		FC2FDD67199ABD7900E9A1E1 /* LicensesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicensesVC.h; sourceTree = "<group>"; };
 		FC2FDD68199ABD7900E9A1E1 /* LicensesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicensesVC.m; sourceTree = "<group>"; };
+		FC61788519AFCDDD00D90CA4 /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
+		FC61788619AFCDDD00D90CA4 /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
+		FC61788719AFCDDD00D90CA4 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
+		FC61788819AFCDDD00D90CA4 /* arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_right@2x.png"; sourceTree = "<group>"; };
+		FC61788919AFCDDD00D90CA4 /* calendar_clear-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_clear-disabled.png"; sourceTree = "<group>"; };
+		FC61788A19AFCDDD00D90CA4 /* calendar_clear-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_clear-disabled@2x.png"; sourceTree = "<group>"; };
+		FC61788B19AFCDDD00D90CA4 /* calendar_littledot-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_littledot-disabled.png"; sourceTree = "<group>"; };
+		FC61788C19AFCDDD00D90CA4 /* calendar_littledot-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_littledot-disabled@2x.png"; sourceTree = "<group>"; };
+		FC61788D19AFCDDD00D90CA4 /* calendar_littledot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_littledot.png; sourceTree = "<group>"; };
+		FC61788E19AFCDDD00D90CA4 /* calendar_littledot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_littledot@2x.png"; sourceTree = "<group>"; };
+		FC61788F19AFCDDD00D90CA4 /* calendar_ok-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_ok-disabled.png"; sourceTree = "<group>"; };
+		FC61789019AFCDDD00D90CA4 /* calendar_ok-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_ok-disabled@2x.png"; sourceTree = "<group>"; };
+		FC61789119AFCDDD00D90CA4 /* dialog_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_cancel.png; sourceTree = "<group>"; };
+		FC61789219AFCDDD00D90CA4 /* dialog_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_cancel@2x.png"; sourceTree = "<group>"; };
+		FC61789319AFCDDD00D90CA4 /* dialog_clear-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_clear-disabled.png"; sourceTree = "<group>"; };
+		FC61789419AFCDDD00D90CA4 /* dialog_clear-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_clear-disabled@2x.png"; sourceTree = "<group>"; };
+		FC61789519AFCDDD00D90CA4 /* dialog_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_clear.png; sourceTree = "<group>"; };
+		FC61789619AFCDDD00D90CA4 /* dialog_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_clear@2x.png"; sourceTree = "<group>"; };
+		FC61789719AFCDDD00D90CA4 /* dialog_ok-disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_ok-disabled.png"; sourceTree = "<group>"; };
+		FC61789819AFCDDD00D90CA4 /* dialog_ok-disabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_ok-disabled@2x.png"; sourceTree = "<group>"; };
+		FC61789919AFCDDD00D90CA4 /* dialog_ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_ok.png; sourceTree = "<group>"; };
+		FC61789A19AFCDDD00D90CA4 /* dialog_ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialog_ok@2x.png"; sourceTree = "<group>"; };
+		FC61789B19AFCDDD00D90CA4 /* THDateDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDateDay.h; sourceTree = "<group>"; };
+		FC61789C19AFCDDD00D90CA4 /* THDateDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDateDay.m; sourceTree = "<group>"; };
+		FC61789D19AFCDDD00D90CA4 /* THDateDay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDateDay.xib; sourceTree = "<group>"; };
+		FC61789E19AFCDDD00D90CA4 /* THDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDatePickerViewController.h; sourceTree = "<group>"; };
+		FC61789F19AFCDDD00D90CA4 /* THDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDatePickerViewController.m; sourceTree = "<group>"; };
+		FC6178A019AFCDDD00D90CA4 /* THDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDatePickerViewController.xib; sourceTree = "<group>"; };
+		FC61790119AFCF3200D90CA4 /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		FC61790219AFCF3200D90CA4 /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
+		FC61795019B6301000D90CA4 /* ListVCellM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVCellM.h; sourceTree = "<group>"; };
+		FC61795119B6301000D90CA4 /* ListVCellM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCellM.m; sourceTree = "<group>"; };
+		FC61796919B789B800D90CA4 /* LZAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZAnalytics.h; sourceTree = "<group>"; };
+		FC61796A19B789B800D90CA4 /* LZAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZAnalytics.m; sourceTree = "<group>"; };
+		FC61796D19B7971C00D90CA4 /* LZDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZDebug.h; sourceTree = "<group>"; };
+		FC61796E19B7971C00D90CA4 /* LZDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDebug.m; sourceTree = "<group>"; };
+		FC61797719B8BB9100D90CA4 /* TagListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListVC.h; sourceTree = "<group>"; };
+		FC61797819B8BB9100D90CA4 /* TagListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListVC.m; sourceTree = "<group>"; };
+		FC899D0419AD16C700DFF3B5 /* ListVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVCell.h; sourceTree = "<group>"; };
+		FC899D0519AD16C700DFF3B5 /* ListVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCell.m; sourceTree = "<group>"; };
+		FC899D1119AFBE8500DFF3B5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FC899D1819AFC2B700DFF3B5 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -255,6 +331,7 @@
 				FCF5D6891994103F0027AB49 /* CoreLocation.framework in Frameworks */,
 				FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */,
 				FCF5D687199410320027AB49 /* CFNetwork.framework in Frameworks */,
+				FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */,
 				FCF5D685199410290027AB49 /* AudioToolbox.framework in Frameworks */,
 				FC2FDD62199AA81600E9A1E1 /* libGoogleAnalyticsServices.a in Frameworks */,
 				FCF5D6161992AC3D0027AB49 /* UIKit.framework in Frameworks */,
@@ -331,13 +408,17 @@
 		FC16A81E19952D8200EB26F4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				9EB68ACC19A1995600E8C16E /* NSDate-Extensions */,
+				FC6178FF19AFCF3200D90CA4 /* KNSemiModalViewController */,
+				FC61788319AFCDDD00D90CA4 /* THCalendarDatePicker */,
+				FC899D1719AFC2B700DFF3B5 /* Flurry */,
 				FC16A80C1995233000EB26F4 /* BButton */,
 				FC16A81A19952D5D00EB26F4 /* BZGFormField */,
 				FCF5D6661993FFD60027AB49 /* CTFeedback */,
 				FCF5D6491992B5FD0027AB49 /* ECSlidingViewController */,
 				FC2FDD54199AA6FC00E9A1E1 /* GoogleAnalytics */,
 				FC16A852199554DE00EB26F4 /* HexColor */,
+				FC899D0F19AFBE8500DFF3B5 /* MBProgressHud */,
+				9EB68ACC19A1995600E8C16E /* NSDate-Extensions */,
 				FC16A8221995533700EB26F4 /* TSMessages */,
 			);
 			name = Libraries;
@@ -418,10 +499,15 @@
 		FC16A85F1995736800EB26F4 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				FC61797619B8BB4600D90CA4 /* TagListVC */,
 				FC16A866199573FB00EB26F4 /* ListVM.h */,
 				FC16A867199573FB00EB26F4 /* ListVM.m */,
 				FC16A85C1995693600EB26F4 /* ListVC.h */,
 				FC16A85D1995693600EB26F4 /* ListVC.m */,
+				FC899D0419AD16C700DFF3B5 /* ListVCell.h */,
+				FC899D0519AD16C700DFF3B5 /* ListVCell.m */,
+				FC61795019B6301000D90CA4 /* ListVCellM.h */,
+				FC61795119B6301000D90CA4 /* ListVCellM.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -492,6 +578,112 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		FC61788319AFCDDD00D90CA4 /* THCalendarDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				FC61788419AFCDDD00D90CA4 /* Images */,
+				FC61789B19AFCDDD00D90CA4 /* THDateDay.h */,
+				FC61789C19AFCDDD00D90CA4 /* THDateDay.m */,
+				FC61789D19AFCDDD00D90CA4 /* THDateDay.xib */,
+				FC61789E19AFCDDD00D90CA4 /* THDatePickerViewController.h */,
+				FC61789F19AFCDDD00D90CA4 /* THDatePickerViewController.m */,
+				FC6178A019AFCDDD00D90CA4 /* THDatePickerViewController.xib */,
+			);
+			path = THCalendarDatePicker;
+			sourceTree = SOURCE_ROOT;
+		};
+		FC61788419AFCDDD00D90CA4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FC61788519AFCDDD00D90CA4 /* arrow_left.png */,
+				FC61788619AFCDDD00D90CA4 /* arrow_left@2x.png */,
+				FC61788719AFCDDD00D90CA4 /* arrow_right.png */,
+				FC61788819AFCDDD00D90CA4 /* arrow_right@2x.png */,
+				FC61788919AFCDDD00D90CA4 /* calendar_clear-disabled.png */,
+				FC61788A19AFCDDD00D90CA4 /* calendar_clear-disabled@2x.png */,
+				FC61788B19AFCDDD00D90CA4 /* calendar_littledot-disabled.png */,
+				FC61788C19AFCDDD00D90CA4 /* calendar_littledot-disabled@2x.png */,
+				FC61788D19AFCDDD00D90CA4 /* calendar_littledot.png */,
+				FC61788E19AFCDDD00D90CA4 /* calendar_littledot@2x.png */,
+				FC61788F19AFCDDD00D90CA4 /* calendar_ok-disabled.png */,
+				FC61789019AFCDDD00D90CA4 /* calendar_ok-disabled@2x.png */,
+				FC61789119AFCDDD00D90CA4 /* dialog_cancel.png */,
+				FC61789219AFCDDD00D90CA4 /* dialog_cancel@2x.png */,
+				FC61789319AFCDDD00D90CA4 /* dialog_clear-disabled.png */,
+				FC61789419AFCDDD00D90CA4 /* dialog_clear-disabled@2x.png */,
+				FC61789519AFCDDD00D90CA4 /* dialog_clear.png */,
+				FC61789619AFCDDD00D90CA4 /* dialog_clear@2x.png */,
+				FC61789719AFCDDD00D90CA4 /* dialog_ok-disabled.png */,
+				FC61789819AFCDDD00D90CA4 /* dialog_ok-disabled@2x.png */,
+				FC61789919AFCDDD00D90CA4 /* dialog_ok.png */,
+				FC61789A19AFCDDD00D90CA4 /* dialog_ok@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FC6178FF19AFCF3200D90CA4 /* KNSemiModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC61790119AFCF3200D90CA4 /* UIViewController+KNSemiModal.h */,
+				FC61790219AFCF3200D90CA4 /* UIViewController+KNSemiModal.m */,
+			);
+			path = KNSemiModalViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		FC61796719B786D400D90CA4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FC61796C19B796F500D90CA4 /* DebugMode */,
+				FC61796819B789A100D90CA4 /* Analytics */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FC61796819B789A100D90CA4 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				FC61796919B789B800D90CA4 /* LZAnalytics.h */,
+				FC61796A19B789B800D90CA4 /* LZAnalytics.m */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		FC61796C19B796F500D90CA4 /* DebugMode */ = {
+			isa = PBXGroup;
+			children = (
+				FC61796D19B7971C00D90CA4 /* LZDebug.h */,
+				FC61796E19B7971C00D90CA4 /* LZDebug.m */,
+			);
+			name = DebugMode;
+			sourceTree = "<group>";
+		};
+		FC61797619B8BB4600D90CA4 /* TagListVC */ = {
+			isa = PBXGroup;
+			children = (
+				FC61797719B8BB9100D90CA4 /* TagListVC.h */,
+				FC61797819B8BB9100D90CA4 /* TagListVC.m */,
+			);
+			name = TagListVC;
+			sourceTree = "<group>";
+		};
+		FC899D0F19AFBE8500DFF3B5 /* MBProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				FC899D1119AFBE8500DFF3B5 /* MBProgressHUD.h */,
+				FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHud;
+			sourceTree = SOURCE_ROOT;
+		};
+		FC899D1719AFC2B700DFF3B5 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				FC899D1819AFC2B700DFF3B5 /* Flurry.h */,
+				FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */,
+			);
+			path = Flurry;
+			sourceTree = SOURCE_ROOT;
+		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +740,7 @@
 				FC16A85F1995736800EB26F4 /* List */,
 				FCF5D68119940B140027AB49 /* Authentication */,
 				FC2FDD63199AB69A00E9A1E1 /* Settings */,
+				FC61796719B786D400D90CA4 /* Util */,
 				FCF5D62C1992AC3E0027AB49 /* Images.xcassets */,
 				FCF5D6181992AC3D0027AB49 /* Supporting Files */,
 			);
@@ -568,7 +761,6 @@
 		FCF5D6391992AC3E0027AB49 /* ListsIOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC16A8881999341400EB26F4 /* ListVMTests.m */,
 				FC16A86F1999328100EB26F4 /* SignupVMTests.m */,
 				FC16A86D1999324300EB26F4 /* LoginVMTests.m */,
 				FC16A86B19992E6900EB26F4 /* LZListItemTests.m */,
@@ -718,28 +910,52 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC16A84F1995533700EB26F4 /* TSMessagesDefaultDesign.json in Resources */,
+				FC6178A519AFCDDD00D90CA4 /* calendar_clear-disabled.png in Resources */,
 				FC16A8471995533700EB26F4 /* NotificationBackgroundSuccessIcon.png in Resources */,
+				FC6178A919AFCDDD00D90CA4 /* calendar_littledot.png in Resources */,
+				FC6178A319AFCDDD00D90CA4 /* arrow_right.png in Resources */,
+				FC6178B419AFCDDD00D90CA4 /* dialog_ok-disabled@2x.png in Resources */,
 				FC16A84B1995533700EB26F4 /* NotificationBackgroundWarningIcon.png in Resources */,
+				FC6178A719AFCDDD00D90CA4 /* calendar_littledot-disabled.png in Resources */,
+				FC6178BA19AFCDDD00D90CA4 /* THDatePickerViewController.xib in Resources */,
 				FC16A8491995533700EB26F4 /* NotificationBackgroundWarning.png in Resources */,
+				FC6178AA19AFCDDD00D90CA4 /* calendar_littledot@2x.png in Resources */,
+				FC6178A819AFCDDD00D90CA4 /* calendar_littledot-disabled@2x.png in Resources */,
 				FC16A84D1995533700EB26F4 /* NotificationButtonBackground.png in Resources */,
 				FC16A8401995533700EB26F4 /* NotificationBackgroundError@2x.png in Resources */,
 				FCF5D6281992AC3E0027AB49 /* Main_iPad.storyboard in Resources */,
 				FC16A84A1995533700EB26F4 /* NotificationBackgroundWarning@2x.png in Resources */,
 				FCF5D62D1992AC3E0027AB49 /* Images.xcassets in Resources */,
+				FC6178B019AFCDDD00D90CA4 /* dialog_clear-disabled@2x.png in Resources */,
+				FC6178AF19AFCDDD00D90CA4 /* dialog_clear-disabled.png in Resources */,
 				FC16A84C1995533700EB26F4 /* NotificationBackgroundWarningIcon@2x.png in Resources */,
 				FC16A8461995533700EB26F4 /* NotificationBackgroundSuccess@2x.png in Resources */,
 				FC16A8421995533700EB26F4 /* NotificationBackgroundErrorIcon@2x.png in Resources */,
 				FC16A8451995533700EB26F4 /* NotificationBackgroundSuccess.png in Resources */,
+				FC6178B819AFCDDD00D90CA4 /* THDateDay.xib in Resources */,
 				FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */,
+				FC6178A419AFCDDD00D90CA4 /* arrow_right@2x.png in Resources */,
 				FCF5D61C1992AC3D0027AB49 /* InfoPlist.strings in Resources */,
 				FC16A8411995533700EB26F4 /* NotificationBackgroundErrorIcon.png in Resources */,
 				FCF5D6771993FFD60027AB49 /* PlatformNames.plist in Resources */,
 				FC16A83F1995533700EB26F4 /* NotificationBackgroundError.png in Resources */,
+				FC6178AD19AFCDDD00D90CA4 /* dialog_cancel.png in Resources */,
+				FC6178B619AFCDDD00D90CA4 /* dialog_ok@2x.png in Resources */,
+				FC6178AC19AFCDDD00D90CA4 /* calendar_ok-disabled@2x.png in Resources */,
+				FC6178B319AFCDDD00D90CA4 /* dialog_ok-disabled.png in Resources */,
+				FC6178B219AFCDDD00D90CA4 /* dialog_clear@2x.png in Resources */,
 				FC16A8441995533700EB26F4 /* NotificationBackgroundMessage@2x.png in Resources */,
 				FC16A8191995233000EB26F4 /* FontAwesome.ttf in Resources */,
+				FC6178A119AFCDDD00D90CA4 /* arrow_left.png in Resources */,
+				FC6178A619AFCDDD00D90CA4 /* calendar_clear-disabled@2x.png in Resources */,
+				FC6178AB19AFCDDD00D90CA4 /* calendar_ok-disabled.png in Resources */,
+				FC6178B519AFCDDD00D90CA4 /* dialog_ok.png in Resources */,
 				FC16A84E1995533700EB26F4 /* NotificationButtonBackground@2x.png in Resources */,
+				FC6178B119AFCDDD00D90CA4 /* dialog_clear.png in Resources */,
 				FC16A8481995533700EB26F4 /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
+				FC6178A219AFCDDD00D90CA4 /* arrow_left@2x.png in Resources */,
 				FC16A8431995533700EB26F4 /* NotificationBackgroundMessage.png in Resources */,
+				FC6178AE19AFCDDD00D90CA4 /* dialog_cancel@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,12 +974,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC6178B719AFCDDD00D90CA4 /* THDateDay.m in Sources */,
 				FC16A8171995233000EB26F4 /* NSString+FontAwesome.m in Sources */,
+				FC61790419AFCF3200D90CA4 /* UIViewController+KNSemiModal.m in Sources */,
 				9E54D283199470D500D54176 /* AuthVC.m in Sources */,
 				FC16A83E1995533700EB26F4 /* TSMessage.m in Sources */,
 				FCF5D67A1994011B0027AB49 /* SettingsVC.m in Sources */,
+				FC899D0619AD16C700DFF3B5 /* ListVCell.m in Sources */,
 				FCF5D68019940B020027AB49 /* LoginVC.m in Sources */,
 				FCF5D6741993FFD60027AB49 /* CTFeedbackTopicsViewController.m in Sources */,
+				FC899D1519AFBE8500DFF3B5 /* MBProgressHUD.m in Sources */,
 				FCF5D65C1992B5FD0027AB49 /* UIViewController+ECSlidingViewController.m in Sources */,
 				FC2FDD69199ABD7900E9A1E1 /* LicensesVC.m in Sources */,
 				FC16A855199554DE00EB26F4 /* HexColor.m in Sources */,
@@ -773,6 +993,7 @@
 				FCF5D67D19940A5A0027AB49 /* SignupVC.m in Sources */,
 				FCF5D6221992AC3D0027AB49 /* AppDelegate.m in Sources */,
 				FC16A8181995233000EB26F4 /* UIColor+BButton.m in Sources */,
+				FC61796B19B789B800D90CA4 /* LZAnalytics.m in Sources */,
 				FCF5D6621992B7690027AB49 /* MenuVC.m in Sources */,
 				FCF5D6591992B5FD0027AB49 /* ECSlidingInteractiveTransition.m in Sources */,
 				FCF5D6751993FFD60027AB49 /* CTFeedbackViewController.m in Sources */,
@@ -782,15 +1003,19 @@
 				FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */,
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
+				FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
 				9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */,
 				FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */,
+				FC61796F19B7971C00D90CA4 /* LZDebug.m in Sources */,
+				FC6178B919AFCDDD00D90CA4 /* THDatePickerViewController.m in Sources */,
 				FCF5D65B1992B5FD0027AB49 /* ECSlidingViewController.m in Sources */,
 				FC2FDD53199A90EE00E9A1E1 /* LZObject.m in Sources */,
 				FC16A85E1995693600EB26F4 /* ListVC.m in Sources */,
 				FCF5D6581992B5FD0027AB49 /* ECSlidingAnimationController.m in Sources */,
 				FCF5D6721993FFD60027AB49 /* CTFeedbackCell.m in Sources */,
 				FC16A8161995233000EB26F4 /* BButton.m in Sources */,
+				FC61797919B8BB9100D90CA4 /* TagListVC.m in Sources */,
 				FC16A8501995533700EB26F4 /* TSBlurView.m in Sources */,
 				FC2FDD4D199A7B4B00E9A1E1 /* SignupVM.m in Sources */,
 				FCF5D6571992B5FD0027AB49 /* ECPercentDrivenInteractiveTransition.m in Sources */,
@@ -801,7 +1026,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC16A8891999341400EB26F4 /* ListVMTests.m in Sources */,
 				FC16A86E1999324300EB26F4 /* LoginVMTests.m in Sources */,
 				FC16A86C19992E6900EB26F4 /* LZListItemTests.m in Sources */,
 				FC16A8701999328100EB26F4 /* SignupVMTests.m in Sources */,
@@ -940,9 +1164,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListsIOS/ListsIOS-Prefix.pch";
 				INFOPLIST_FILE = "ListsIOS/ListsIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				PRODUCT_NAME = ListZilla;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -955,7 +1181,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pinuno Fuentes (NF9KUUTSNX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pinuno Fuentes (QHM2F44853)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -963,9 +1189,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListsIOS/ListsIOS-Prefix.pch";
 				INFOPLIST_FILE = "ListsIOS/ListsIOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GoogleAnalytics",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				PRODUCT_NAME = ListZilla;
 				TARGETED_DEVICE_FAMILY = 1;

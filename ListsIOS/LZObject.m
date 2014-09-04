@@ -8,6 +8,12 @@
 
 #import "LZObject.h"
 
+@interface LZObject ()
+
+- (void)processError:(NSError *)error;
+
+@end
+
 @implementation LZObject
 
 - (id)initWithPFObject:(PFObject *)pfObject
@@ -24,34 +30,62 @@
 - (void)saveInBackground
 {
     assert(self.pfObject);
-    [self.pfObject saveInBackground];
+    
+    [self.pfObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [self processError:error];
+        }
+    }];
 }
 
 - (void)saveInBackgroundWithBlock:(PFBooleanResultBlock)block
 {
     assert(self.pfObject);
-    [self.pfObject saveInBackgroundWithBlock:block];
+    
+    [self.pfObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [self processError:error];
+        }
+        
+        block(succeeded, error);
+    }];
 }
 
 - (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block
 {
     assert(self.pfObject);
-    [self.pfObject deleteInBackgroundWithBlock:block];
+    
+    [self.pfObject deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            [self processError:error];
+        }
+        
+        block(succeeded, error);
+    }];
 }
 
-#pragma mark -
+#pragma mark Utility Methods
 
-+ (void)processError:(NSError *)error
+- (void)processError:(NSError *)error
 {
-    if (error.code == 120) { // cache miss
-        DLog(@"%@",error.localizedDescription);
+    [LZAnalyticsBoss logError:error
+                        title:@"Parse.APICall"
+                      message:@"Parse.APICall.Error"];
+}
+
+@end
+
+@implementation PFObject (LZObject)
+
+- (PFObject *)duplicate
+{
+    PFObject *pfObject = [PFObject objectWithClassName:self.parseClassName];
+    pfObject.objectId = self.objectId;
+    NSArray *keys = [pfObject allKeys];
+    for (NSString *key in keys) {
+        pfObject[key] = self[key];
     }
-    if (error.code == 124) { // timed out
-        DLog(@"%@",error.localizedDescription);
-    }
-    else{
-        DLog(@"Error: %@ %@", error, [error userInfo]);
-    }
+    return pfObject;
 }
 
 @end

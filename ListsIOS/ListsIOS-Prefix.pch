@@ -15,6 +15,7 @@
     #import <Foundation/Foundation.h>
 #endif
 
+// Logs
 #ifdef DEBUG
 #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
@@ -28,15 +29,12 @@
 #endif
 
 // Themes
-//#define Theme_MainColor [UIColor colorWithRed:1 green:0.075 blue:0 alpha:1]
 #define Theme_MainColor [UIColor colorWithRed:(64/255.0) green:(122/255.0) blue:(184/255.0) alpha:1]
 #define Theme_FontName @"Helvetica Neue-Light"
 
-// Analytics
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
-#define GAITracker ((id<GAITracker>)[[GAI sharedInstance] defaultTracker])
+// Util
+#import "LZDebug.h"
+#import "LZAnalytics.h"
 
 
 

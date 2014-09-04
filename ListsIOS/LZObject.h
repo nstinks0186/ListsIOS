@@ -19,7 +19,10 @@
 - (void)saveInBackgroundWithBlock:(PFBooleanResultBlock)block;
 - (void)deleteInBackgroundWithBlock:(PFBooleanResultBlock)block;
 
-+ (void)processError:(NSError *)error;
+@end
 
+@interface PFObject (LZObject)
+
+- (PFObject *)duplicate;
 
 @end

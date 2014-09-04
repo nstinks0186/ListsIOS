@@ -7,7 +7,6 @@
 //
 
 #import "ListVM.h"
-#import "NSDate+Utilities.h"
 
 @interface ListVM ()
 
@@ -18,11 +17,10 @@
 
 @implementation ListVM
 
-- (id)initWithType:(ListVType)type
+- (id)init
 {
     self = [super init];
     if (self) {
-        self.type = type;
         self.itemList = [NSMutableArray array];
     }
     return self;
@@ -32,12 +30,12 @@
 
 - (NSString *)title
 {
-    switch (self.type) {
-        case ListVTypeTodo:
+    switch (self.mode) {
+        case ListVModeTodo:
             return @"To Do";
-        case ListVTypeTobuy:
+        case ListVModeTobuy:
             return @"To Buy";
-        case ListVTypeTonote:
+        case ListVModeTonote:
             return @"To Note";
         default:
             return @" ";
@@ -46,12 +44,12 @@
 
 - (NSArray *)tagList
 {
-    switch (self.type) {
-        case ListVTypeTodo:
+    switch (self.mode) {
+        case ListVModeTodo:
             return @[@"$TypeTodo"];
-        case ListVTypeTobuy:
+        case ListVModeTobuy:
             return @[@"$TypeTobuy"];
-        case ListVTypeTonote:
+        case ListVModeTonote:
             return @[@"$TypeTonote"];
         default:
             return @[@""];
@@ -78,7 +76,13 @@
         return;
     }
     
-    LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription tagList:self.tagList];
+    LZListItem *newItem = [[LZListItem alloc] initWithDescription:self.createItemDescription
+                                                          tagList:self.tagList
+                                                           status:LZListItemStatusDefault
+                                                          dueDate:(self.dueDateFilter == ListVDueDateFilterTomorrow ? [NSDate dateTomorrow].dateWithOutTime :
+                                                                   (self.dueDateFilter == ListVDueDateFilterWeekend ? [NSDate dateThisSaturday] :
+                                                                    [NSDate date]))];
+    
     [self.itemList insertObject:newItem atIndex:0];
     
     @synchronized(self){
@@ -90,26 +94,6 @@
                     });
                 }
             } else {
-                [LZObject processError:error];
-            }
-        }];
-    }
-}
-
-- (void)doRemoveItem:(LZListItem *)item
-{
-    [self.itemList removeObject:item];
-    
-    @synchronized(self){
-        [item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                if ([self.delegate respondsToSelector:@selector(listVMDidUpdateListItemList:)]) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.delegate listVMDidUpdateListItemList:self];
-                    });
-                }
-            } else {
-                [LZObject processError:error];
             }
         }];
     }
@@ -119,15 +103,20 @@
 {
     @synchronized(self) {
         PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyCacheThenNetwork);
+        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyNetworkElseCache);
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-        [query whereKey:@"status" equalTo:@(LZListItemStatusUnchecked)];
+        [query whereKey:@"status" equalTo:@(LZListItemStatusDefault)];
         [query whereKey:@"tagList" containsAllObjectsInArray:self.tagList];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 [self.itemList removeAllObjects];
                 for (PFObject *object in objects) {
                     LZListItem *item = [[LZListItem alloc] initWithPFObject:object];
+                    
+                    if (self.dueDateFilter == ListVDueDateFilterToday && !item.isDueToday) { continue; }
+                    else if (self.dueDateFilter == ListVDueDateFilterTomorrow && !item.isDueTomorrow) { continue; }
+                    else if (self.dueDateFilter == ListVDueDateFilterWeekend && !item.isDueWeekend) { continue; }
+                    
                     [self.itemList insertObject:item atIndex:0];
                 }
                 
@@ -137,53 +126,20 @@
                     });
                 }
             } else {
-                [LZObject processError:error];
+                [LZAnalyticsBoss logError:error
+                                    title:@"Parse.APICall"
+                                  message:@"Parse.APICall.Error"];
             }
         }];
     }
 }
 
-@end
-
-@implementation LZListItem (ListVM)
-
-- (NSString *)dueDateString
+- (void)sortItemList
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.doesRelativeDateFormatting = YES;
-    dateFormatter.dateStyle = NSDateFormatterShortStyle;
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    
-    return (self.isDueToday ? @"Today" :
-            (self.isDueTomorrow ? @"Tomorrow" :
-             (self.isDueWeekend ? @"Weekend" :
-              (self.dueDate ? [dateFormatter stringFromDate:self.dueDate] :
-               @"Someday"))));
-}
-
-#pragma mark - Due date logic
-
-- (BOOL)isDueToday
-{
-    return (self.dueDate && (self.dueDate.isToday || self.dueDate.isInPast));
-}
-
-- (BOOL)isDueTomorrow
-{
-    return (self.dueDate && self.dueDate.isTomorrow);
-}
-- (BOOL)isDueWeekend
-{
-    if (self.dueDate && !self.dueDate.isInPast && self.dueDate.isTypicallyWeekend) {
-        NSDate *today = [NSDate date];
-        return ([today daysBeforeDate:self.dueDate] < 7);
-    }
-    return NO;
-}
-
-- (BOOL)isDueSomeday
-{
-    return (!self.isDueToday && !self.isDueTomorrow && !self.isDueWeekend);
+    NSArray *sortedList = [self.itemList sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        return [([(LZListItem*)a dueDate] != nil ? [(LZListItem*)a dueDate] : [NSDate dateWithTimeIntervalSinceNow:999999999]) compare:([(LZListItem*)b dueDate] != nil ? [(LZListItem*)b dueDate] : [NSDate dateWithTimeIntervalSinceNow:999999999])];
+    }];
+    self.itemList = [NSMutableArray arrayWithArray:sortedList];
 }
 
 @end

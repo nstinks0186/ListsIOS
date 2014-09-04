@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-               BuildableName = "ListsIOS.app"
+               BuildableName = "ListZilla.app"
                BlueprintName = "ListsIOS"
                ReferencedContainer = "container:ListsIOS.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FCF5D60D1992AC3D0027AB49"
-            BuildableName = "ListsIOS.app"
+            BuildableName = "ListZilla.app"
             BlueprintName = "ListsIOS"
             ReferencedContainer = "container:ListsIOS.xcodeproj">
          </BuildableReference>

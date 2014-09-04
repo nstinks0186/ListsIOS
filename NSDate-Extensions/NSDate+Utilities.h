@@ -16,8 +16,9 @@
 + (NSCalendar *) currentCalendar; // avoid bottlenecks
 
 // Relative dates from the current date
-+ (NSDate *) dateTomorrow;
 + (NSDate *) dateYesterday;
++ (NSDate *) dateTomorrow;
++ (NSDate *) dateThisSaturday;
 + (NSDate *) dateWithDaysFromNow: (NSInteger) days;
 + (NSDate *) dateWithDaysBeforeNow: (NSInteger) days;
 + (NSDate *) dateWithHoursFromNow: (NSInteger) dHours;
@@ -71,6 +72,7 @@
 - (BOOL) isTypicallyWeekend;
 
 // Adjusting dates
+- (NSDate *) dateWithOutTime;
 - (NSDate *) dateByAddingYears: (NSInteger) dYears;
 - (NSDate *) dateBySubtractingYears: (NSInteger) dYears;
 - (NSDate *) dateByAddingMonths: (NSInteger) dMonths;

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ListVM.h"
+#import "ListVCell.h"
 
 
-@interface ListVC : UITableViewController <ListVMDelegate>
+@interface ListVC : UITableViewController <ListVMDelegate, ListVCellDelegate>
 
-@property (nonatomic) ListVType type;
 @property (strong, nonatomic) ListVM *listVM;
+@property (nonatomic) ListVDueDateFilter dueDateFilter;
 
 @end

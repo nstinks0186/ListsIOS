@@ -39,6 +39,9 @@
     else if ([segue.identifier isEqualToString:@"CTFeedbackSegue"]) {
         webVC.webVM = [WebVM CTFeedbackWebVM];
     }
+    else if ([segue.identifier isEqualToString:@"DejalActivityViewSegue"]) {
+        webVC.webVM = [WebVM DejalActivityViewWebVM];
+    }
     else if ([segue.identifier isEqualToString:@"ECSlidingViewControllerSegue"]) {
         webVC.webVM = [WebVM ECSlidingViewControllerWebVM];
     }
@@ -47,6 +50,15 @@
     }
     else if ([segue.identifier isEqualToString:@"HexColorSegue"]) {
         webVC.webVM = [WebVM HexColorWebVM];
+    }
+    else if ([segue.identifier isEqualToString:@"KNSemiModalViewControllerSegue"]) {
+        webVC.webVM = [WebVM KNSemiModalViewControllerWebVM];
+    }
+    else if ([segue.identifier isEqualToString:@"MBProgressHudSegue"]) {
+        webVC.webVM = [WebVM MBProgressHud];
+    }
+    else if ([segue.identifier isEqualToString:@"THCalendarDatePickerSegue"]) {
+        webVC.webVM = [WebVM THCalendarDatePickerWebVM];
     }
     else if ([segue.identifier isEqualToString:@"TSMessagesSegue"]) {
         webVC.webVM = [WebVM TSMessagesWebVM];

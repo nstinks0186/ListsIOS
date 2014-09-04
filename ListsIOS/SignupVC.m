@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "BZGFormField.h"
 #import "TSMessage.h"
+#import "MBProgressHUD.h"
 
 @interface SignupVC ()
 
@@ -31,9 +32,7 @@
     [super viewDidLoad];
     
     // setup GAnalytics tracker
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"SignupVC"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [LZAnalyticsBoss logScreenView:@"SignupVC"];
     
     [TSMessage setDefaultViewController:self];
     
@@ -100,7 +99,9 @@
     user.username = self.signupVM.username;
     user.password = self.signupVM.password;
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (!error) {
             [self.view endEditing:YES];
             [self showHome];

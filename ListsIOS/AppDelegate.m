@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import <FacebookSDK/FacebookSDK.h>
 #import "BButton.h"
+#import "GAI.h"
+#import "Flurry.h"
 
 @implementation AppDelegate
 
@@ -17,8 +18,8 @@
 
 - (void)showHome
 {
-//    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
-    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ListNavVC"];
+    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+//    self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ListNavVC"];
 }
 
 - (void)showAuth
@@ -30,13 +31,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#warning Debug code
+    LZDebugModeOn;
+    
     // Parse Setup
     [Parse setApplicationId:@"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw"
                   clientKey:@"qPyxYg7VOIpZtJ0wBfFlJ25GgyDAmReqpqB0kzuY"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    // FB Setup
-    [PFFacebookUtils initializeFacebook];
     
     // Google Analytics Setup
     [GAI sharedInstance].trackUncaughtExceptions = YES;
@@ -44,13 +45,15 @@
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-53434717-2"];
     
+    // Flurry Analytics Setup
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:@"XXWTNVY73SR37DRDJD36"];
+    
     // Appearance Setup
     [[BButton appearance] setButtonCornerRadius:[NSNumber numberWithFloat:0.0f]];
     [[UINavigationBar appearance] setTitleTextAttributes: @{ NSFontAttributeName: [UIFont fontWithName:Theme_FontName size:0.0f], NSForegroundColorAttributeName : [UIColor whiteColor] }];
     [[UINavigationBar appearance] setBarTintColor:Theme_MainColor];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UINavigationBar appearance] setTranslucent:NO];
-// #warning causes crash
     
     return YES;
 }

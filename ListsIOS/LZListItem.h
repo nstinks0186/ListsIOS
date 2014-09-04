@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "LZObject.h"
+#import "NSDate+Utilities.h"
 
 typedef NS_ENUM(NSInteger, LZListItemStatus) {
-    LZListItemStatusUnchecked,
-    LZListItemStatusChecked
+    LZListItemStatusDefault = 0,
+    LZListItemStatusArchived = 1
 };
 
 @interface LZListItem : LZObject
@@ -21,7 +22,17 @@ typedef NS_ENUM(NSInteger, LZListItemStatus) {
 @property (strong, nonatomic) NSDate *dueDate;
 @property (nonatomic) LZListItemStatus status;
 
-- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList status:(LZListItemStatus)status;
-- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList;
+// init
+- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList status:(LZListItemStatus)status dueDate:(NSDate *)dueDate;
+
+// update
+- (void)updateDueDate:(NSDate *)newDate withBlock:(PFBooleanResultBlock)block;
+- (void)updateStatus:(LZListItemStatus)newStatus withBlock:(PFBooleanResultBlock)block;
+
+// due date logic
+- (BOOL)isDueToday;
+- (BOOL)isDueTomorrow;
+- (BOOL)isDueWeekend;
+- (BOOL)isDueSomeday;
 
 @end

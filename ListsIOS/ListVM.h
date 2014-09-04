@@ -11,27 +11,31 @@
 #import "LZListItem.h"
 
 
-typedef NS_ENUM(NSUInteger, ListVType) {
-    ListVTypeTodo,
-    ListVTypeTobuy,
-    ListVTypeTonote,
-    ListVTypeCustom
+typedef NS_ENUM(NSUInteger, ListVMode) {
+    ListVModeTodo,
+    ListVModeTobuy,
+    ListVModeTonote
+};
+
+typedef NS_ENUM(NSUInteger, ListVDueDateFilter) {
+    ListVDueDateFilterNone,
+    ListVDueDateFilterToday,
+    ListVDueDateFilterTomorrow,
+    ListVDueDateFilterWeekend
 };
 
 @protocol ListVMDelegate;
 
 @interface ListVM : NSObject
 
-@property (nonatomic) ListVType type;
+@property (nonatomic) ListVMode mode;
+@property (nonatomic) ListVDueDateFilter dueDateFilter;
 
-@property (readonly, nonatomic) NSString *title;
 @property (readonly, nonatomic) NSArray *tagList;
 @property (readonly, nonatomic) NSMutableArray *itemList;
 @property (strong, nonatomic) NSString *createItemDescription;
 
 @property (weak, nonatomic) id<ListVMDelegate> delegate;
-
-- (id)initWithType:(ListVType)type;
 
 // getters
 - (NSInteger)sectionCount;
@@ -39,25 +43,13 @@ typedef NS_ENUM(NSUInteger, ListVType) {
 
 // operation
 - (void)doCreateItem;
-- (void)doRemoveItem:(LZListItem *)item;
 - (void)fetchItemList:(BOOL)forceNetwork;
+- (void)sortItemList;
 
 @end
 
 @protocol ListVMDelegate <NSObject>
 
 - (void)listVMDidUpdateListItemList:(ListVM *)vm;
-
-@end
-
-@interface LZListItem (ListVM)
-
-- (NSString *)dueDateString;
-
-// due date logic
-- (BOOL)isDueToday;
-- (BOOL)isDueTomorrow;
-- (BOOL)isDueWeekend;
-- (BOOL)isDueSomeday;
 
 @end

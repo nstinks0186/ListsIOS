@@ -21,17 +21,15 @@
     [super viewDidLoad];
     
     // initialize vm
-    self.listVM = [[ListVM alloc] initWithType:self.type];
+    self.listVM = [[ListVM alloc] init];
+    self.listVM.dueDateFilter = self.dueDateFilter;
     self.listVM.delegate = self;
     self.listVM.createItemDescription = self.createItemField.text;
     
-    // setup GAnalytics tracker
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"ListVC.%@",self.listVM.title]];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    // setup analytics
+    [LZAnalyticsBoss logScreenView:@"ListVC"];
     
     // UI setup
-    self.navigationItem.title = self.listVM.title;
     [self.refreshControl addTarget:self action:@selector(reloadButtonTapped:) forControlEvents:UIControlEventValueChanged];
     
     // fetch data
@@ -44,13 +42,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TagListSegue"]) {
+        
+    }
+}
+
+
+
 #pragma mark - Action Methods
 
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)control
 {
-    self.type = control.selectedSegmentIndex;
-    self.listVM.type = control.selectedSegmentIndex;
+    self.listVM.mode = control.selectedSegmentIndex;
     [self.listVM fetchItemList:NO];
 }
 
@@ -79,7 +85,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListItemCellIdentifier"];
+    ListVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListItemCellIdentifier"];
     
     [self setupCell:cell forIndexPath:indexPath];
     
@@ -94,7 +100,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
-    [self.listVM doRemoveItem:lzListItem];
+    [lzListItem updateStatus:LZListItemStatusArchived withBlock:^(BOOL succeeded, NSError *error) {
+        [self.tableView reloadData];
+    }];
+    
 }
 
 #pragma mark - UITextFieldDelegate Methods
@@ -116,17 +125,25 @@
 
 - (void)listVMDidUpdateListItemList:(ListVM *)vm
 {
+    [self.listVM sortItemList];
+    
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 
+#pragma mark ListVCellDelegate Methods
+
+- (void)listVCellDidUpdateDueDate:(ListVCell *)cell
+{
+    [self.listVM fetchItemList:NO];
+}
+
 #pragma mark - Conveninence Methods
 
-- (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
+- (void)setupCell:(ListVCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
-    LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
-    cell.textLabel.text = lzListItem.description;
-    cell.detailTextLabel.text = lzListItem.dueDateString;
+    cell.viewController = self;
+    cell.listItem = [self.listVM.itemList objectAtIndex:indexPath.row];
 }
 
 @end

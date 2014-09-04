@@ -14,20 +14,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"ToDoSegue"]) {
+    if (![segue.identifier isEqualToString:@"SettingsSegue"]) {
         UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
         ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
-        vc.type = ListVTypeTodo;
-    }
-    else if ([segue.identifier isEqualToString:@"ToBuySegue"]) {
-        UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
-        ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
-        vc.type = ListVTypeTobuy;
-    }
-    else if ([segue.identifier isEqualToString:@"ToNoteSegue"]) {
-        UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
-        ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
-        vc.type = ListVTypeTonote;
+        vc.dueDateFilter = ([segue.identifier isEqualToString:@"TodaySegue"] ? ListVDueDateFilterToday :
+                            ([segue.identifier isEqualToString:@"TomorrowSegue"] ? ListVDueDateFilterTomorrow :
+                             ([segue.identifier isEqualToString:@"WeekendSegue"] ? ListVDueDateFilterWeekend : ListVDueDateFilterNone)));
     }
 }
 

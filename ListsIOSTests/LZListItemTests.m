@@ -27,17 +27,4 @@
     [super tearDown];
 }
 
-- (void)test_initWithDescription
-{
-    // given
-    NSString *description = @"some list item";
-    
-    // when
-    LZListItem *lzListItem = [[LZListItem alloc] initWithDescription:description];
-    
-    // then
-    XCTAssertNotNil(lzListItem, @"%@",lzListItem);
-    XCTAssertTrue([description isEqualToString:lzListItem.description], @"%@ %@",description, lzListItem.description);
-}
-
 @end

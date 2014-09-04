@@ -11,7 +11,20 @@
 #import "AppDelegate.h"
 #import "WebVC.h"
 
+@interface SettingsVC () {
+    NSInteger _debugModeTriggerCount;
+}
+
+@end
+
 @implementation SettingsVC
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    _debugModeTriggerCount = 0;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -24,7 +37,7 @@
     }
 }
 
-#pragma mark - Action Methods
+#pragma mark Action Methods
 
 - (IBAction)doneButtonTapped:(id)sender
 {
@@ -42,13 +55,13 @@
     
 }
 
-#pragma mark - UITableViewDataSource Methods
+#pragma mark UITableViewDataSource Methods
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
-    if(indexPath.row == 5){
+    if ([cell.reuseIdentifier isEqualToString:@"VersionCellIdentifier"]){
         NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
         NSString *build = infoDictionary[(NSString*)kCFBundleVersionKey];
         cell.detailTextLabel.text = build;
@@ -57,16 +70,36 @@
     return cell;
 }
 
-#pragma mark - UITableViewControllerDelegate Methods
+#pragma mark UITableViewControllerDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 1) {
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.reuseIdentifier isEqualToString:@"FeedbackCellIdentifier"]) {
         CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
         feedbackViewController.toRecipients = @[@"nstinks0186@gmail.com"];
         feedbackViewController.useHTML = NO;
         [self.navigationController pushViewController:feedbackViewController animated:YES];
     }
+    else if ([cell.reuseIdentifier isEqualToString:@"VersionCellIdentifier"] && !LZDebugMode){
+        if (_debugModeTriggerCount++ == 10) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Debug Mode"
+                                                            message:@"Do you want to help the app developer in improving this app?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+            [alert show];
+        }
+    }
 }
+
+#pragma mark UIAlertViewDelegate Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.cancelButtonIndex != buttonIndex) {
+        LZDebugModeOn;
+    }
+}
+
 
 @end
