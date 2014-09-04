@@ -444,7 +444,7 @@
                                         <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <state key="normal" image="settings-22"/>
                                         <connections>
-                                            <segue destination="n9O-4f-Xrf" kind="custom" identifier="SettingsSegue" customClass="ECSlidingSegue" id="xob-ab-k2T"/>
+                                            <segue destination="n9O-4f-Xrf" kind="modal" identifier="SettingsSegue" id="GwK-gV-VZ6"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ListZilla" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZG-NN-k4u">
@@ -647,16 +647,15 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Settings" id="o0D-MN-855">
                         <barButtonItem key="backBarButtonItem" title=" " id="gQ6-lY-i9Q"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu-22" id="rzI-fT-pKV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="rzI-fT-pKV">
                             <connections>
-                                <segue destination="O9n-oc-2aB" kind="unwind" unwindAction="unwindToMenuViewController:" id="2uv-ID-icn"/>
+                                <action selector="doneButtonTapped:" destination="759-TA-ZFJ" id="bqk-7P-8dr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8f-J0-Oms" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="O9n-oc-2aB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-3343" y="-768"/>
         </scene>

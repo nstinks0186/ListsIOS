@@ -41,16 +41,15 @@
 {
     [PFUser logOut];
     
-//    [self.navigationController ]
-    
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate showAuth];
-    
+    [self.navigationController dismissViewControllerAnimated:NO completion:^{
+        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+        [delegate showAuth];
+    }];
 }
 
 - (IBAction)doneButtonTapped:(id)sender
 {
-//    self.
+    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark UITableViewDataSource Methods
