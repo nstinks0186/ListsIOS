@@ -25,6 +25,14 @@
 
 #pragma mark - Action Methods
 
+- (IBAction)settingsButtonTapped:(id)sender
+{
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    UIViewController *rootVC = appDelegate.window.rootViewController;
+    UINavigationController *navVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingsNavVC"];
+    [rootVC presentViewController:navVC animated:YES completion:nil];
+}
+
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue
 {
 }

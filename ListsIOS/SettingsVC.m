@@ -10,6 +10,7 @@
 #import "CTFeedbackViewController.h"
 #import "AppDelegate.h"
 #import "WebVC.h"
+#import "ECSlidingViewController.h"
 
 @interface SettingsVC () {
     NSInteger _debugModeTriggerCount;
@@ -29,29 +30,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     WebVC *webVC = segue.destinationViewController;
-    if ([segue.identifier isEqualToString:@"TermsOfUseSegue"]) {
-        webVC.webVM = [WebVM DefaultEULAWebVM];
-    }
-    else if([segue.identifier isEqualToString:@"AcknowledgementsSegue"]){
+    if([segue.identifier isEqualToString:@"AcknowledgementsSegue"]){
         webVC.webVM = [WebVM DefaultAcknowledgementsWebVM];
     }
 }
 
 #pragma mark Action Methods
 
-- (IBAction)doneButtonTapped:(id)sender
-{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)signoutButtonTapped:(id)sender
 {
     [PFUser logOut];
     
-    [self.navigationController dismissViewControllerAnimated:NO completion:^{
-        AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-        [delegate showAuth];
-    }];
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    [delegate showAuth];
     
 }
 
