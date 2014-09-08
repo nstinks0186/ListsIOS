@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, LZListItemStatus) {
 // update
 - (void)updateDueDate:(NSDate *)newDate withBlock:(PFBooleanResultBlock)block;
 - (void)updateStatus:(LZListItemStatus)newStatus withBlock:(PFBooleanResultBlock)block;
+- (void)updateTagList:(NSMutableArray *)tagList withBlock:(PFBooleanResultBlock)block;
 
 // due date logic
 - (BOOL)isDueToday;

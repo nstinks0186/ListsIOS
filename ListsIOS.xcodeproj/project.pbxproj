@@ -81,6 +81,7 @@
 		FC61796B19B789B800D90CA4 /* LZAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61796A19B789B800D90CA4 /* LZAnalytics.m */; };
 		FC61796F19B7971C00D90CA4 /* LZDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61796E19B7971C00D90CA4 /* LZDebug.m */; };
 		FC61797919B8BB9100D90CA4 /* TagListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797819B8BB9100D90CA4 /* TagListVC.m */; };
+		FC61797C19BE17AA00D90CA4 /* TagListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797B19BE17AA00D90CA4 /* TagListVM.m */; };
 		FC899D0619AD16C700DFF3B5 /* ListVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D0519AD16C700DFF3B5 /* ListVCell.m */; };
 		FC899D1519AFBE8500DFF3B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */; };
 		FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */; };
@@ -248,6 +249,8 @@
 		FC61796E19B7971C00D90CA4 /* LZDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZDebug.m; sourceTree = "<group>"; };
 		FC61797719B8BB9100D90CA4 /* TagListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListVC.h; sourceTree = "<group>"; };
 		FC61797819B8BB9100D90CA4 /* TagListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListVC.m; sourceTree = "<group>"; };
+		FC61797A19BE17AA00D90CA4 /* TagListVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListVM.h; sourceTree = "<group>"; };
+		FC61797B19BE17AA00D90CA4 /* TagListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListVM.m; sourceTree = "<group>"; };
 		FC899D0419AD16C700DFF3B5 /* ListVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVCell.h; sourceTree = "<group>"; };
 		FC899D0519AD16C700DFF3B5 /* ListVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCell.m; sourceTree = "<group>"; };
 		FC899D1119AFBE8500DFF3B5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -662,6 +665,8 @@
 			children = (
 				FC61797719B8BB9100D90CA4 /* TagListVC.h */,
 				FC61797819B8BB9100D90CA4 /* TagListVC.m */,
+				FC61797A19BE17AA00D90CA4 /* TagListVM.h */,
+				FC61797B19BE17AA00D90CA4 /* TagListVM.m */,
 			);
 			name = TagListVC;
 			sourceTree = "<group>";
@@ -1003,6 +1008,7 @@
 				FC2FDD4A199A7AFA00E9A1E1 /* LoginVM.m in Sources */,
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
+				FC61797C19BE17AA00D90CA4 /* TagListVM.m in Sources */,
 				FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
 				9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */,
@@ -1157,6 +1163,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pinuno Fuentes (NF9KUUTSNX)";
+				CURRENT_PROJECT_VERSION = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1172,6 +1179,7 @@
 				);
 				PRODUCT_NAME = ListZilla;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1182,6 +1190,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pinuno Fuentes (QHM2F44853)";
+				CURRENT_PROJECT_VERSION = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1197,6 +1206,7 @@
 				);
 				PRODUCT_NAME = ListZilla;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1218,6 +1228,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ListsIOSTests/ListsIOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1237,6 +1248,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListsIOS/ListsIOS-Prefix.pch";
 				INFOPLIST_FILE = "ListsIOSTests/ListsIOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -64,9 +64,10 @@
             self.dueDate = ([[object[@"dueDate"] class] isSubclassOfClass:[NSNull class]] ? nil : object[@"dueDate"]);
         }
         
-        block(succeeded, error);
+        if (block) {
+            block(succeeded, error);
+        }
     }];
-    
 }
 
 - (void)updateStatus:(LZListItemStatus)newStatus withBlock:(PFBooleanResultBlock)block
@@ -79,7 +80,25 @@
             self.status = [(NSNumber *)object[@"status"] integerValue];
         }
         
-        block(succeeded, error);
+        if (block) {
+            block(succeeded, error);
+        }
+    }];
+}
+
+- (void)updateTagList:(NSMutableArray *)tagList withBlock:(PFBooleanResultBlock)block
+{
+    PFObject *object = self.pfObject.duplicate;
+    object[@"tagList"] = tagList.copy;
+    
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            self.tagList = [NSMutableArray arrayWithArray:object[@"tagList"]];
+        }
+        
+        if (block) {
+            block(succeeded, error);
+        }
     }];
 }
 

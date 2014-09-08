@@ -8,6 +8,7 @@
 
 #import "ListVCell.h"
 #import "UIViewController+KNSemiModal.h"
+#import "TagListVC.h"
 
 
 
@@ -59,6 +60,13 @@
                                                     otherButtonTitles:self.listVCellM.dueTodayTitle, self.listVCellM.dueTomorrowTitle, self.listVCellM.dueWeekendTitle, self.listVCellM.otherTitle, nil];
     actionSheet.delegate = self;
     [actionSheet showInView:self.viewController.view];
+}
+
+- (IBAction)tagButtonTapped:(id)sender
+{
+    TagListVC *vc = [self.viewController.storyboard instantiateViewControllerWithIdentifier:@"TagListVC"];
+    vc.listItem = self.listVCellM.listItem;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark Properties

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LZListItem;
 
 @interface TagListVC : UITableViewController
+
+@property (weak, nonatomic) LZListItem *listItem;
 
 @end

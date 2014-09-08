@@ -10,6 +10,7 @@
 
 @interface ListVM ()
 
+@property (readonly, nonatomic) NSArray *tagList;
 @property (strong, nonatomic) NSMutableArray *itemList;
 
 @end
@@ -21,7 +22,7 @@
 {
     self = [super init];
     if (self) {
-        self.itemList = [NSMutableArray array];
+        self.itemList = [NSMutableArray array]; 
     }
     return self;
 }
