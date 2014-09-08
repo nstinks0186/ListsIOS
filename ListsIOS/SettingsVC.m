@@ -49,7 +49,7 @@
 
 - (IBAction)doneButtonTapped:(id)sender
 {
-    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark UITableViewDataSource Methods

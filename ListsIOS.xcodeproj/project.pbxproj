@@ -82,6 +82,7 @@
 		FC61796F19B7971C00D90CA4 /* LZDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61796E19B7971C00D90CA4 /* LZDebug.m */; };
 		FC61797919B8BB9100D90CA4 /* TagListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797819B8BB9100D90CA4 /* TagListVC.m */; };
 		FC61797C19BE17AA00D90CA4 /* TagListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797B19BE17AA00D90CA4 /* TagListVM.m */; };
+		FC61798019BE587400D90CA4 /* NewListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61797F19BE587400D90CA4 /* NewListVC.m */; };
 		FC899D0619AD16C700DFF3B5 /* ListVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D0519AD16C700DFF3B5 /* ListVCell.m */; };
 		FC899D1519AFBE8500DFF3B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */; };
 		FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */; };
@@ -251,6 +252,8 @@
 		FC61797819B8BB9100D90CA4 /* TagListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListVC.m; sourceTree = "<group>"; };
 		FC61797A19BE17AA00D90CA4 /* TagListVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListVM.h; sourceTree = "<group>"; };
 		FC61797B19BE17AA00D90CA4 /* TagListVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListVM.m; sourceTree = "<group>"; };
+		FC61797E19BE587400D90CA4 /* NewListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewListVC.h; sourceTree = "<group>"; };
+		FC61797F19BE587400D90CA4 /* NewListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewListVC.m; sourceTree = "<group>"; };
 		FC899D0419AD16C700DFF3B5 /* ListVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVCell.h; sourceTree = "<group>"; };
 		FC899D0519AD16C700DFF3B5 /* ListVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCell.m; sourceTree = "<group>"; };
 		FC899D1119AFBE8500DFF3B5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -502,6 +505,7 @@
 		FC16A85F1995736800EB26F4 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				FC61797D19BE585800D90CA4 /* NewList */,
 				FC61797619B8BB4600D90CA4 /* TagListVC */,
 				FC16A866199573FB00EB26F4 /* ListVM.h */,
 				FC16A867199573FB00EB26F4 /* ListVM.m */,
@@ -669,6 +673,15 @@
 				FC61797B19BE17AA00D90CA4 /* TagListVM.m */,
 			);
 			name = TagListVC;
+			sourceTree = "<group>";
+		};
+		FC61797D19BE585800D90CA4 /* NewList */ = {
+			isa = PBXGroup;
+			children = (
+				FC61797E19BE587400D90CA4 /* NewListVC.h */,
+				FC61797F19BE587400D90CA4 /* NewListVC.m */,
+			);
+			name = NewList;
 			sourceTree = "<group>";
 		};
 		FC899D0F19AFBE8500DFF3B5 /* MBProgressHud */ = {
@@ -1010,6 +1023,7 @@
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
 				FC61797C19BE17AA00D90CA4 /* TagListVM.m in Sources */,
 				FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */,
+				FC61798019BE587400D90CA4 /* NewListVC.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
 				9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */,
 				FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */,
