@@ -62,6 +62,11 @@
     [self.tagList insertObject:tag atIndex:0];
 }
 
+- (void)removeTagAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tagList removeObjectAtIndex:indexPath.row];
+}
+
 - (void)save
 {
     [self.tagList addObject:self.typeTag];

@@ -20,6 +20,7 @@
 
 // operations
 - (void)addTag:(NSString *)tag;
+- (void)removeTagAtIndexPath:(NSIndexPath *)indexPath;
 - (void)save;
 
 @end
