@@ -30,7 +30,10 @@
         }else if ([self.tagList containsObject:@"$TypeTobuy"]) {
             self.typeTag = @"$TypeTobuy";
             [self.tagList removeObject:@"$TypeTobuy"];
-        }else if ([self.tagList containsObject:@"$TypeTonote"]) {
+        }
+        
+        // for backward compatibility $TypeTonote is no longer supported
+        else if ([self.tagList containsObject:@"$TypeTonote"]) {
             self.typeTag = @"$TypeTonote";
             [self.tagList removeObject:@"$TypeTonote"];
         }

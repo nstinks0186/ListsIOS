@@ -36,8 +36,6 @@
             return @"To Do";
         case ListVModeTobuy:
             return @"To Buy";
-        case ListVModeTonote:
-            return @"To Note";
         default:
             return @" ";
     }
@@ -50,8 +48,6 @@
             return @[@"$TypeTodo"];
         case ListVModeTobuy:
             return @[@"$TypeTobuy"];
-        case ListVModeTonote:
-            return @[@"$TypeTonote"];
         default:
             return @[@""];
     }

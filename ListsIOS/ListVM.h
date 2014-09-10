@@ -13,8 +13,7 @@
 
 typedef NS_ENUM(NSUInteger, ListVMode) {
     ListVModeTodo,
-    ListVModeTobuy,
-    ListVModeTonote
+    ListVModeTobuy
 };
 
 typedef NS_ENUM(NSUInteger, ListVDueDateFilter) {

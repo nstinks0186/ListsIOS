@@ -1112,7 +1112,6 @@
                             <segments>
                                 <segment title="To Do"/>
                                 <segment title="To Buy"/>
-                                <segment title="To Note"/>
                             </segments>
                             <connections>
                                 <action selector="segmentedControlValueChanged:" destination="0Jm-Qf-qUy" eventType="valueChanged" id="lsx-dm-CiV"/>
