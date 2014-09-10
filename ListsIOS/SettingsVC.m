@@ -61,7 +61,8 @@
     if ([cell.reuseIdentifier isEqualToString:@"VersionCellIdentifier"]){
         NSDictionary *infoDictionary = [[NSBundle mainBundle]infoDictionary];
         NSString *build = infoDictionary[(NSString*)kCFBundleVersionKey];
-        cell.detailTextLabel.text = build;
+        NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        cell.detailTextLabel.text = (LZDebugMode ? [NSString stringWithFormat:@"%@ (Build %@)",version,build] : version);
     }
     
     return cell;
