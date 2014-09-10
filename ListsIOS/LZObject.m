@@ -47,7 +47,9 @@
             [self processError:error];
         }
         
-        block(succeeded, error);
+        if (block) {
+            block(succeeded, error);
+        }
     }];
 }
 
@@ -60,7 +62,9 @@
             [self processError:error];
         }
         
-        block(succeeded, error);
+        if (block) {
+            block(succeeded, error);
+        }
     }];
 }
 

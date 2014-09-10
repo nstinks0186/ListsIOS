@@ -1,14 +1,14 @@
 //
-//  LZList.m
+//  LZTag.m
 //  ListsIOS
 //
-//  Created by Pinuno on 8/8/14.
+//  Created by Pinuno on 9/10/14.
 //  Copyright (c) 2014 UNO. All rights reserved.
 //
 
-#import "LZList.h"
+#import "LZTag.h"
 
-@implementation LZList
+@implementation LZTag
 
 - (id)initWithPFObject:(PFObject *)pfObject
 {
@@ -17,18 +17,16 @@
     self = [super initWithPFObject:pfObject];
     if (self) {
         self.description = pfObject[@"description"];
-        self.tagList = [NSMutableArray arrayWithArray:pfObject[@"tagList"]];
     }
     return self;
 }
 
-- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList
+- (id)initWithDescription:(NSString *)description
 {
-    PFObject *pfObject = [PFObject objectWithClassName:@"List"];
+    PFObject *pfObject = [PFObject objectWithClassName:@"Tag"];
     pfObject[@"owner"] = [PFUser currentUser];
     
     pfObject[@"description"] = description.copy;
-    pfObject[@"tagList"] = tagList.copy;
     
     return [self initWithPFObject:pfObject];
 }

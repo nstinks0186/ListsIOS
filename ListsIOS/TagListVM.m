@@ -7,6 +7,8 @@
 //
 
 #import "TagListVM.h"
+#import "LZList.h"
+#import "LZTag.h"
 
 @interface TagListVM ()
 
@@ -23,7 +25,7 @@
     self = [self init];
     if (self) {
         self.item = item;
-        self.tagList = [NSMutableArray arrayWithArray:self.item.tagList];
+        self.tagList = [NSMutableArray array];
         if ([self.tagList containsObject:@"$TypeTodo"]) {
             self.typeTag = @"$TypeTodo";
             [self.tagList removeObject:@"$TypeTodo"];
@@ -31,12 +33,14 @@
             self.typeTag = @"$TypeTobuy";
             [self.tagList removeObject:@"$TypeTobuy"];
         }
-        
         // for backward compatibility $TypeTonote is no longer supported
         else if ([self.tagList containsObject:@"$TypeTonote"]) {
             self.typeTag = @"$TypeTonote";
             [self.tagList removeObject:@"$TypeTonote"];
         }
+        
+        #warning Unimplemented method
+        // TODO: fetch tag list
     }
     return self;
 }
@@ -60,9 +64,22 @@
 
 #pragma mark Operations
 
-- (void)addTag:(NSString *)tag
+- (void)addTag:(NSString *)_tag
 {
-    [self.tagList insertObject:tag atIndex:0];
+    [self.tagList insertObject:_tag atIndex:0];
+    
+    // Create Tag
+    LZTag *tag = [[LZTag alloc] initWithDescription:_tag];
+    @synchronized(self){
+        [tag saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            // Then Create a list
+            LZList *newList = [[LZList alloc] initWithDescription:_tag tagList:@[tag.pfObject]];
+            @synchronized(self){
+                [newList saveInBackgroundWithBlock:nil];
+            }
+        }];
+    }
+    
 }
 
 - (void)removeTagAtIndexPath:(NSIndexPath *)indexPath

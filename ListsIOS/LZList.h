@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LZObject.h"
 
-@interface LZList : NSObject
+@interface LZList : LZObject
+
+@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) NSMutableArray *tagList;
+
+- (id)initWithDescription:(NSString *)description tagList:(NSArray *)tagList;
 
 @end
