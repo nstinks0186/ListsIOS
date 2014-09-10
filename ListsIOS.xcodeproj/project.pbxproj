@@ -88,6 +88,7 @@
 		FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
 		FCD5156C19C0EE9F000A5BDF /* LZTag.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5156B19C0EE9F000A5BDF /* LZTag.m */; };
+		FCD5157019C0FA6B000A5BDF /* MenuVM.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5156F19C0FA6B000A5BDF /* MenuVM.m */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
 		FCF5D6161992AC3D0027AB49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6151992AC3D0027AB49 /* UIKit.framework */; };
@@ -264,6 +265,8 @@
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FCD5156A19C0EE9F000A5BDF /* LZTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTag.h; sourceTree = "<group>"; };
 		FCD5156B19C0EE9F000A5BDF /* LZTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTag.m; sourceTree = "<group>"; };
+		FCD5156E19C0FA6B000A5BDF /* MenuVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVM.h; sourceTree = "<group>"; };
+		FCD5156F19C0FA6B000A5BDF /* MenuVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVM.m; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -509,11 +512,11 @@
 			isa = PBXGroup;
 			children = (
 				FC61797D19BE585800D90CA4 /* NewList */,
-				FC61797619B8BB4600D90CA4 /* TagListVC */,
-				FC16A866199573FB00EB26F4 /* ListVM.h */,
-				FC16A867199573FB00EB26F4 /* ListVM.m */,
+				FC61797619B8BB4600D90CA4 /* TagList */,
 				FC16A85C1995693600EB26F4 /* ListVC.h */,
 				FC16A85D1995693600EB26F4 /* ListVC.m */,
+				FC16A866199573FB00EB26F4 /* ListVM.h */,
+				FC16A867199573FB00EB26F4 /* ListVM.m */,
 				FC899D0419AD16C700DFF3B5 /* ListVCell.h */,
 				FC899D0519AD16C700DFF3B5 /* ListVCell.m */,
 				FC61795019B6301000D90CA4 /* ListVCellM.h */,
@@ -669,7 +672,7 @@
 			name = DebugMode;
 			sourceTree = "<group>";
 		};
-		FC61797619B8BB4600D90CA4 /* TagListVC */ = {
+		FC61797619B8BB4600D90CA4 /* TagList */ = {
 			isa = PBXGroup;
 			children = (
 				FC61797719B8BB9100D90CA4 /* TagListVC.h */,
@@ -677,7 +680,7 @@
 				FC61797A19BE17AA00D90CA4 /* TagListVM.h */,
 				FC61797B19BE17AA00D90CA4 /* TagListVM.m */,
 			);
-			name = TagListVC;
+			name = TagList;
 			sourceTree = "<group>";
 		};
 		FC61797D19BE585800D90CA4 /* NewList */ = {
@@ -706,6 +709,17 @@
 			);
 			path = Flurry;
 			sourceTree = SOURCE_ROOT;
+		};
+		FCD5156D19C0FA30000A5BDF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5D6601992B7690027AB49 /* MenuVC.h */,
+				FCF5D6611992B7690027AB49 /* MenuVC.m */,
+				FCD5156E19C0FA6B000A5BDF /* MenuVM.h */,
+				FCD5156F19C0FA6B000A5BDF /* MenuVM.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
 		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
@@ -757,9 +771,8 @@
 				FCF5D6211992AC3D0027AB49 /* AppDelegate.m */,
 				FCB587771995176E000AD806 /* Main_iPhone.storyboard */,
 				FCF5D6261992AC3E0027AB49 /* Main_iPad.storyboard */,
-				FCF5D6601992B7690027AB49 /* MenuVC.h */,
-				FCF5D6611992B7690027AB49 /* MenuVC.m */,
 				FC2FDD50199A90C100E9A1E1 /* LZ */,
+				FCD5156D19C0FA30000A5BDF /* Menu */,
 				FC16A85F1995736800EB26F4 /* List */,
 				FCF5D68119940B140027AB49 /* Authentication */,
 				FC2FDD63199AB69A00E9A1E1 /* Settings */,
@@ -1027,6 +1040,7 @@
 				FCF5D6731993FFD60027AB49 /* CTFeedbackCellItem.m in Sources */,
 				FCF5D61E1992AC3D0027AB49 /* main.m in Sources */,
 				FC61797C19BE17AA00D90CA4 /* TagListVM.m in Sources */,
+				FCD5157019C0FA6B000A5BDF /* MenuVM.m in Sources */,
 				FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */,
 				FC61798019BE587400D90CA4 /* NewListVC.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,

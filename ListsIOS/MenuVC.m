@@ -9,8 +9,23 @@
 #import "MenuVC.h"
 #import "AppDelegate.h"
 #import "ListVC.h"
+#import "MenuVM.h"
+
+@interface MenuVC ()
+
+@property (strong, nonatomic) MenuVM *menuVM;
+
+@end
 
 @implementation MenuVC
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.menuVM = [MenuVM new];
+    [self.menuVM fetchTagList:YES];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
