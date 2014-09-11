@@ -110,7 +110,11 @@
 - (void)updateTagList:(NSMutableArray *)tagList withBlock:(PFBooleanResultBlock)block
 {
     PFObject *object = self.pfObject.duplicate;
-    object[@"tagList"] = tagList.copy;
+    NSMutableArray *rawTagList = [NSMutableArray array];
+    for (LZTag *tag in tagList) {
+        [rawTagList addObject:tag.pfObject];
+    }
+    object[@"tagList"] = rawTagList;
     
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {

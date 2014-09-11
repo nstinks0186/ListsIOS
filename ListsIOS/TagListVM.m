@@ -76,9 +76,9 @@
 
 - (void)save
 {
-//    NSMutableArray *tagList = [NSMutableArray arrayWithArray:self.selectedTagList];
-//    [tagList addObject:self.item.typeTag];
-//    [self.item updateTagList:tagList withBlock:nil];
+    NSMutableArray *tagList = [NSMutableArray arrayWithArray:self.selectedTagList];
+    [tagList addObject:self.item.typeTag];
+    [self.item updateTagList:tagList withBlock:nil];
 }
 
 - (void)fetchTagList:(BOOL)forceNetwork
