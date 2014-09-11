@@ -8,6 +8,9 @@
 
 #import "LZObject.h"
 
+#define LZTagTypeTodo [LZCurrentSession typeTodoTag]
+#define LZTagTypeTobuy [LZCurrentSession typeTobuyTag]
+
 extern NSString * const kTagTypeTodo;
 extern NSString * const kTagTypeTobuy;
 
@@ -16,10 +19,5 @@ extern NSString * const kTagTypeTobuy;
 @property (strong, nonatomic) NSString *description;
 
 - (id)initWithDescription:(NSString *)description;
-
-// class methods
-+ (void)fetchSystemTags:(PFBooleanResultBlock)block;
-+ (LZTag *)typeTodo;
-+ (LZTag *)typeTobuy;
 
 @end

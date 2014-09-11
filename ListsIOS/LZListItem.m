@@ -7,6 +7,7 @@
 //
 
 #import "LZListItem.h"
+#import "LZSession.h"
 
 @interface NSDate (LZListItem)
 
@@ -37,16 +38,16 @@
         self.customTagList = [NSMutableArray array];
         NSArray *rawTagList = pfObject[@"tagList"];
         for (PFObject *pfTag in rawTagList) {
-            if ([pfTag.objectId isEqualToString:[LZTag typeTodo].pfObject.objectId]) {
-                self.typeTag = [LZTag typeTodo];
+            LZTag *tag = [LZCurrentSession tagWithPFPointer:pfTag];
+            if ([tag isEqual:LZTagTypeTodo]) {
+                self.typeTag = LZTagTypeTodo;
                 [self.tagList addObject:self.typeTag];
             }
-            else if ([pfTag.objectId isEqualToString:[LZTag typeTobuy].pfObject.objectId]) {
-                self.typeTag = [LZTag typeTobuy];
+            else if ([tag isEqual:LZTagTypeTobuy]) {
+                self.typeTag = LZTagTypeTobuy;
                 [self.tagList addObject:self.typeTag];
             }
             else {
-                LZTag *tag = [[LZTag alloc] initWithPFObject:pfTag];
                 [self.tagList addObject:tag];
                 [self.customTagList addObject:tag];
             }

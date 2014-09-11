@@ -7,7 +7,8 @@
 //
 
 #import "ListVM.h"
-#import "LZTag.h"
+#import "LZSession.h"
+
 
 @interface ListVM ()
 
@@ -46,9 +47,9 @@
 {
     switch (self.mode) {
         case ListVModeTodo:
-            return @[[LZTag typeTodo].pfObject];
+            return @[LZTagTypeTodo.pfObject];
         case ListVModeTobuy:
-            return @[[LZTag typeTobuy].pfObject];
+            return @[LZTagTypeTobuy.pfObject];
         default:
             return @[];
     }

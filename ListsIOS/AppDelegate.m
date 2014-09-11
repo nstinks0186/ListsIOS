@@ -11,7 +11,7 @@
 #import "BButton.h"
 #import "GAI.h"
 #import "Flurry.h"
-#import "LZTag.h"
+#import "LZSession.h"
 
 @implementation AppDelegate
 
@@ -20,8 +20,13 @@
 - (void)showHome
 {
     // TODO: do presync here
-    [LZTag fetchSystemTags:^(BOOL succeeded, NSError *error) {
-        self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+//    [LZTag fetchSystemTags:^(BOOL succeeded, NSError *error) {
+//        self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+//    }];
+    [LZCurrentSession initSession:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            self.window.rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"ECSlidingVC"];
+        }
     }];
 }
 
