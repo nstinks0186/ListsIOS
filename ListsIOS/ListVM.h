@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, ListVDueDateFilter) {
 // getters
 - (NSInteger)sectionCount;
 - (NSInteger)rowCountForSection:(NSInteger)section;
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath;
 
 // operation
 - (void)doCreateItem;

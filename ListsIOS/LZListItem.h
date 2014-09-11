@@ -31,9 +31,14 @@ typedef NS_ENUM(NSInteger, LZListItemStatus) {
 - (void)updateTagList:(NSMutableArray *)tagList withBlock:(PFBooleanResultBlock)block;
 
 // due date logic
-- (BOOL)isDueToday;
-- (BOOL)isDueTomorrow;
-- (BOOL)isDueWeekend;
-- (BOOL)isDueSomeday;
+@property (readonly) BOOL isDueToday;
+@property (readonly) BOOL isDueTomorrow;
+@property (readonly) BOOL isDueWeekend;
+@property (readonly) BOOL isDueSomeday;
+
+// tag logic
+@property (strong, readonly) NSMutableArray *customTagList;
+- (BOOL) isTagged:(NSString *)tag;
+@property (readonly) BOOL hasCustomTag;
 
 @end

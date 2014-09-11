@@ -66,6 +66,12 @@
     return self.itemList.count;
 }
 
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
+{
+    LZListItem *item = [self.itemList objectAtIndex:indexPath.row];
+    return (item.hasCustomTag ? @"ListItemWithTagCellIdentifier" : @"ListItemCellIdentifier");
+}
+
 #pragma mark - Operations
 
 - (void)doCreateItem
@@ -118,13 +124,10 @@
                     if (self.tagListFilter) {
                         BOOL tagFilterSatisfied = NO;
                         for (LZTag *tag in self.tagListFilter) {
-                            for (NSString *_tag in item.tagList) {
-                                if ([_tag isEqual:tag]) {
-                                    tagFilterSatisfied = YES;
-                                    break;
-                                }
+                            if ([item isTagged:tag.description]) {
+                                tagFilterSatisfied = YES;
+                                break;
                             }
-                            if (tagFilterSatisfied) break;
                         }
                         if (!tagFilterSatisfied) continue;
                     }

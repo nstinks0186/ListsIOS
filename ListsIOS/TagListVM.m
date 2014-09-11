@@ -28,15 +28,12 @@
         self.tagList = [NSMutableArray array];
         if ([self.tagList containsObject:@"$TypeTodo"]) {
             self.typeTag = @"$TypeTodo";
-            [self.tagList removeObject:@"$TypeTodo"];
         }else if ([self.tagList containsObject:@"$TypeTobuy"]) {
             self.typeTag = @"$TypeTobuy";
-            [self.tagList removeObject:@"$TypeTobuy"];
         }
         // for backward compatibility $TypeTonote is no longer supported
         else if ([self.tagList containsObject:@"$TypeTonote"]) {
             self.typeTag = @"$TypeTonote";
-            [self.tagList removeObject:@"$TypeTonote"];
         }
         
         #warning Unimplemented method

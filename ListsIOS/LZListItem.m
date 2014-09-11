@@ -14,12 +14,9 @@
 
 @end
 
-@implementation NSDate (LZListItem)
+@interface LZListItem ()
 
-+ (NSDate *)dateFromPFObjectProperty:(id<NSObject>)value
-{
-    return (value != nil ? ([[value class] isSubclassOfClass:[NSNull class]] ? nil : (NSDate *)value) : nil);
-}
+@property (strong, nonatomic) NSMutableArray *customTagList;
 
 @end
 
@@ -35,6 +32,8 @@
         self.tagList = [NSMutableArray arrayWithArray:pfObject[@"tagList"]];
         self.dueDate = [NSDate dateFromPFObjectProperty:pfObject[@"dueDate"]];
         self.status = [(NSNumber *)pfObject[@"status"] integerValue];
+        
+        [self setCustomTagList];
     }
     return self;
 }
@@ -126,6 +125,48 @@
 - (BOOL)isDueSomeday
 {
     return (!self.isDueToday && !self.isDueTomorrow && !self.isDueWeekend);
+}
+
+#pragma mark Custom tag list logic
+
+- (void)setCustomTagList
+{
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.tagList];
+    [array removeObject:@"$TypeTodo"];
+    [array removeObject:@"$TypeTobuy"];
+    // for backward compatibility $TypeTonote is no longer supported
+    [array removeObject:@"$TypeTonote"];
+    
+    self.customTagList = array;
+}
+
+- (BOOL) isTagged:(NSString *)tag
+{
+    BOOL tagFilterSatisfied = NO;
+    for (NSString *_tag in self.customTagList) {
+        if ([_tag isEqual:tag]) {
+            tagFilterSatisfied = YES;
+            break;
+        }
+    }
+    return tagFilterSatisfied;
+}
+
+- (BOOL) hasCustomTag
+{
+    return (self.customTagList && self.customTagList.count > 0);
+}
+
+@end
+
+
+
+
+@implementation NSDate (LZListItem)
+
++ (NSDate *)dateFromPFObjectProperty:(id<NSObject>)value
+{
+    return (value != nil ? ([[value class] isSubclassOfClass:[NSNull class]] ? nil : (NSDate *)value) : nil);
 }
 
 @end
