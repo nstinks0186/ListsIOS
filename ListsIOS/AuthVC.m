@@ -38,7 +38,7 @@
     [self.facebookLoginButton addAwesomeIcon:FAFacebook beforeTitle:YES];
     
     if([PFUser currentUser]){
-        [self showHome];
+        [self _showHome];
     }
 }
 
@@ -72,9 +72,9 @@
                 }
             }
         } else if (user.isNew) {
-            [self showHome];
+            [self _showHome];
         } else {
-            [self showHome];
+            [self _showHome];
         }
     }];
 
@@ -82,7 +82,7 @@
 
 #pragma mark - Convenience Methods
 
-- (void)showHome
+- (void)_showHome
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     [delegate showHome];

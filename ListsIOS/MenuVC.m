@@ -24,7 +24,7 @@
     
     self.menuVM = [MenuVM new];
     self.menuVM.delegate = self;
-    [self.menuVM fetchTagList:YES];
+    [self.menuVM fetchTagList:NO];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

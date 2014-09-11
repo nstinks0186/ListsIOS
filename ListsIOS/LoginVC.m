@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet BZGFormField *passwordField;
 
 - (void)login;
-- (void)showHome;
 
 @end
 
@@ -100,7 +99,7 @@
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                                         if (user) {
                                             [self.view endEditing:YES];
-                                            [self showHome];
+                                            [self _showHome];
                                         } else {
                                             NSString *errorMessage = error.localizedDescription;
                                             switch (error.code) {
@@ -119,7 +118,7 @@
                                     }];
 }
 
-- (void)showHome
+- (void)_showHome
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     [delegate showHome];

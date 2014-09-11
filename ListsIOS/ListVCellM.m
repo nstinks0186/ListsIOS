@@ -7,6 +7,7 @@
 //
 
 #import "ListVCellM.h"
+#import "LZTag.h"
 
 @interface LZListItem (ListVCellM)
 
@@ -27,7 +28,7 @@
 - (NSString *)tagList
 {
     return (self.listItem && self.listItem.customTagList && self.listItem.customTagList.count
-            ? [self.listItem.customTagList firstObject]
+            ? ((LZTag *)[self.listItem.customTagList firstObject]).description
             : @"");
 }
 

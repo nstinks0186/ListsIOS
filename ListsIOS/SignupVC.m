@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet BZGFormField *passwordField;
 
 - (void)signup;
-- (void)showHome;
 
 @end
 
@@ -104,7 +103,7 @@
         [MBProgressHUD  hideHUDForView:self.view animated:YES];
         if (!error) {
             [self.view endEditing:YES];
-            [self showHome];
+            [self _showHome];
         }else{
             [TSMessage showNotificationWithTitle:NSLocalizedString(@"Login Failed", nil)
                                         subtitle:error.localizedDescription
@@ -114,7 +113,7 @@
     }];
 }
 
-- (void)showHome
+- (void)_showHome
 {
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
     [delegate showHome];

@@ -26,18 +26,6 @@
     if (self) {
         self.item = item;
         self.tagList = [NSMutableArray array];
-        if ([self.tagList containsObject:@"$TypeTodo"]) {
-            self.typeTag = @"$TypeTodo";
-        }else if ([self.tagList containsObject:@"$TypeTobuy"]) {
-            self.typeTag = @"$TypeTobuy";
-        }
-        // for backward compatibility $TypeTonote is no longer supported
-        else if ([self.tagList containsObject:@"$TypeTonote"]) {
-            self.typeTag = @"$TypeTonote";
-        }
-        
-        #warning Unimplemented method
-        // TODO: fetch tag list
     }
     return self;
 }
@@ -56,7 +44,8 @@
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.tagList objectAtIndex:indexPath.row];
+    LZTag *tag = [self.tagList objectAtIndex:indexPath.row];
+    return tag.description;
 }
 
 #pragma mark Operations
@@ -88,6 +77,37 @@
 {
     [self.tagList addObject:self.typeTag];
     [self.item updateTagList:self.tagList withBlock:nil];
+}
+
+- (void)fetchTagList:(BOOL)forceNetwork
+{
+    @synchronized(self) {
+        PFQuery *query = [PFQuery queryWithClassName:@"Tag"];
+        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyCacheElseNetwork);
+        [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                if (!self.tagList) {
+                    self.tagList = [NSMutableArray array];
+                }else{
+                    [self.tagList removeAllObjects];
+                }
+                
+                for (PFObject *object in objects) {
+                    LZTag *tag = [[LZTag alloc] initWithPFObject:object];
+                    [self.tagList addObject:tag];
+                }
+                
+                if ([self.delegate respondsToSelector:@selector(tagListVMDidUpdateTagList:)]) {
+                    [self.delegate tagListVMDidUpdateTagList:self];
+                }
+            } else {
+                [LZAnalyticsBoss logError:error
+                                    title:@"Parse.APICall"
+                                  message:@"Parse.APICall.Error"];
+            }
+        }];
+    }
 }
 
 @end

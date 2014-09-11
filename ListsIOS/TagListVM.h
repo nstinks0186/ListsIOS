@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LZListItem.h"
 
+@protocol TagListVMDelegate;
+
 @interface TagListVM : NSObject
 
 - (id)initWithLZListItem:(LZListItem *)item;
+
+@property (weak, nonatomic) id<TagListVMDelegate>delegate;
 
 // getters
 - (NSInteger)sectionCount;
@@ -22,5 +26,13 @@
 - (void)addTag:(NSString *)tag;
 - (void)removeTagAtIndexPath:(NSIndexPath *)indexPath;
 - (void)save;
+- (void)fetchTagList:(BOOL)forceNetwork;
 
 @end
+
+@protocol TagListVMDelegate <NSObject>
+
+- (void)tagListVMDidUpdateTagList:(TagListVM *)vm;
+
+@end
+

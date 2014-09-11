@@ -46,11 +46,11 @@
 {
     switch (self.mode) {
         case ListVModeTodo:
-            return @[@"$TypeTodo"];
+            return @[[LZTag typeTodo].pfObject];
         case ListVModeTobuy:
-            return @[@"$TypeTobuy"];
+            return @[[LZTag typeTobuy].pfObject];
         default:
-            return @[@""];
+            return @[];
     }
 }
 
@@ -122,14 +122,14 @@
                     else if (self.dueDateFilter == ListVDueDateFilterWeekend && !item.isDueWeekend) { continue; }
                     
                     if (self.tagListFilter) {
-                        BOOL tagFilterSatisfied = NO;
-                        for (LZTag *tag in self.tagListFilter) {
-                            if ([item isTagged:tag.description]) {
-                                tagFilterSatisfied = YES;
-                                break;
-                            }
-                        }
-                        if (!tagFilterSatisfied) continue;
+//                        BOOL tagFilterSatisfied = NO;
+//                        for (LZTag *tag in self.tagListFilter) {
+//                            if ([item isTagged:tag.description]) {
+//                                tagFilterSatisfied = YES;
+//                                break;
+//                            }
+//                        }
+//                        if (!tagFilterSatisfied) continue;
                     }
                     
                     [self.itemList insertObject:item atIndex:0];

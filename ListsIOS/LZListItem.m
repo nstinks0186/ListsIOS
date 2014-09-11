@@ -7,6 +7,7 @@
 //
 
 #import "LZListItem.h"
+#import "LZTag.h"
 
 @interface NSDate (LZListItem)
 
@@ -29,10 +30,19 @@
     self = [super initWithPFObject:pfObject];
     if (self) {
         self.description = pfObject[@"description"];
-        self.tagList = [NSMutableArray arrayWithArray:pfObject[@"tagList"]];
         self.dueDate = [NSDate dateFromPFObjectProperty:pfObject[@"dueDate"]];
         self.status = [(NSNumber *)pfObject[@"status"] integerValue];
         
+        // setup tag list
+        self.tagList = [NSMutableArray array];
+        NSArray *rawTagList = pfObject[@"tagList"];
+        for (PFObject *pfTag in rawTagList) {
+            [pfTag fetchIfNeeded];
+            LZTag *tag = [[LZTag alloc] initWithPFObject:pfTag];
+            [self.tagList addObject:tag];
+        }
+        
+        // setup custom tag list
         [self setCustomTagList];
     }
     return self;
@@ -45,7 +55,7 @@
     pfObject[@"dueDate"] = dueDate.copy;
     
     pfObject[@"description"] = description.copy;
-    pfObject[@"tagList"] = tagList.copy;
+    pfObject[@"tagList"] = tagList;
     pfObject[@"status"] = @(status);
     
     return [self initWithPFObject:pfObject];
@@ -132,10 +142,11 @@
 - (void)setCustomTagList
 {
     NSMutableArray *array = [NSMutableArray arrayWithArray:self.tagList];
-    [array removeObject:@"$TypeTodo"];
-    [array removeObject:@"$TypeTobuy"];
-    // for backward compatibility $TypeTonote is no longer supported
-    [array removeObject:@"$TypeTonote"];
+    for (LZTag *tag in self.tagList) {
+        if ([tag.description isEqualToString:kTagTypeTodo] || [tag.description isEqualToString:kTagTypeTobuy]) {
+            [array removeObject:tag];
+        }
+    }
     
     self.customTagList = array;
 }

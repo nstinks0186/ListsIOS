@@ -28,7 +28,7 @@
     pfObject[@"owner"] = [PFUser currentUser];
     
     pfObject[@"description"] = description.copy;
-    pfObject[@"tagList"] = tagList.copy;
+    pfObject[@"tagList"] = tagList;
     
     return [self initWithPFObject:pfObject];
 }

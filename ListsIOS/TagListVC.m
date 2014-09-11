@@ -7,7 +7,6 @@
 //
 
 #import "TagListVC.h"
-#import "TagListVM.h"
 
 @interface TagListVC ()
 
@@ -25,7 +24,9 @@
     
     if (!self.tagListVM) {
         self.tagListVM = [[TagListVM alloc] initWithLZListItem:self.listItem];
+        self.tagListVM.delegate = self;
     }
+    [self.tagListVM fetchTagList:NO];
 }
 
 #pragma mark - Action Methods
@@ -92,6 +93,13 @@
     self.createTagField.text = @"";
     
     return YES;
+}
+
+#pragma mark TagListVMDelegate Methods
+
+- (void)tagListVMDidUpdateTagList:(TagListVM *)vm
+{
+    [self.tableView reloadData];
 }
 
 @end

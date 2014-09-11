@@ -77,7 +77,7 @@
 {
     @synchronized(self) {
         PFQuery *query = [PFQuery queryWithClassName:@"Tag"];
-        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyNetworkElseCache);
+        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyCacheElseNetwork);
         [query whereKey:@"owner" equalTo:[PFUser currentUser]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {

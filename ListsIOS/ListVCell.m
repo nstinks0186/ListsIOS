@@ -67,6 +67,7 @@
 {
     TagListVC *vc = [self.viewController.storyboard instantiateViewControllerWithIdentifier:@"TagListVC"];
     vc.listItem = self.listVCellM.listItem;
+    
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
