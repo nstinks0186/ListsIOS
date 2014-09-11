@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, ListVDueDateFilter) {
 
 @property (nonatomic) ListVMode mode;
 @property (nonatomic) ListVDueDateFilter dueDateFilter;
+@property (copy, nonatomic) NSArray *tagListFilter;
 
 @property (readonly, nonatomic) NSMutableArray *itemList;
 @property (strong, nonatomic) NSString *createItemDescription;

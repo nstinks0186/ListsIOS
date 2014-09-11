@@ -7,6 +7,7 @@
 //
 
 #import "ListVM.h"
+#import "LZTag.h"
 
 @interface ListVM ()
 
@@ -113,6 +114,20 @@
                     if (self.dueDateFilter == ListVDueDateFilterToday && !item.isDueToday) { continue; }
                     else if (self.dueDateFilter == ListVDueDateFilterTomorrow && !item.isDueTomorrow) { continue; }
                     else if (self.dueDateFilter == ListVDueDateFilterWeekend && !item.isDueWeekend) { continue; }
+                    
+                    if (self.tagListFilter) {
+                        BOOL tagFilterSatisfied = NO;
+                        for (LZTag *tag in self.tagListFilter) {
+                            for (NSString *_tag in item.tagList) {
+                                if ([_tag isEqual:tag]) {
+                                    tagFilterSatisfied = YES;
+                                    break;
+                                }
+                            }
+                            if (tagFilterSatisfied) break;
+                        }
+                        if (!tagFilterSatisfied) continue;
+                    }
                     
                     [self.itemList insertObject:item atIndex:0];
                 }

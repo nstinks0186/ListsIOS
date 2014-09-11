@@ -23,6 +23,7 @@
     // initialize vm
     self.listVM = [[ListVM alloc] init];
     self.listVM.dueDateFilter = self.dueDateFilter;
+    self.listVM.tagListFilter = self.tagListFilter;
     self.listVM.delegate = self;
     self.listVM.createItemDescription = self.createItemField.text;
     
