@@ -14,6 +14,7 @@
 @property (weak, nonatomic) LZListItem *listItem;
 
 @property (readonly, nonatomic) NSString *description;
+@property (readonly, nonatomic) NSString *tagList;
 @property (readonly, nonatomic) UIColor *tintColor;
 
 @property (readonly, nonatomic) NSString *destructiveButtonTitle;

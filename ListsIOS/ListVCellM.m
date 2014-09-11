@@ -24,6 +24,13 @@
     return (self.listItem && self.listItem.description.length ? self.listItem.description : @"");
 }
 
+- (NSString *)tagList
+{
+    return (self.listItem && self.listItem.customTagList && self.listItem.customTagList.count
+            ? [self.listItem.customTagList firstObject]
+            : @"");
+}
+
 - (UIColor *)tintColor
 {
     return (self.listItem.isDueToday ? [UIColor redColor] :

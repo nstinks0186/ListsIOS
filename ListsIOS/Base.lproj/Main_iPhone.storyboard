@@ -1104,6 +1104,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="fSu-Fq-Dfz" id="5Wl-mn-jmm"/>
+                                    <outlet property="tagListLabel" destination="SdU-oq-yJX" id="Ey9-QK-jWY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

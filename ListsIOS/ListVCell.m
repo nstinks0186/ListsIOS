@@ -18,6 +18,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagListLabel;
 @property (strong, nonatomic) THDatePickerViewController *datePicker;
 
 @end
@@ -132,6 +133,7 @@
 - (void)updateSubviews
 {
     self.descriptionLabel.text = self.listVCellM.description;
+    self.tagListLabel.text = self.listVCellM.tagList;
     self.tintColor =  self.listVCellM.tintColor;
 }
 
