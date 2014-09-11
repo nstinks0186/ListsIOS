@@ -368,7 +368,33 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <segue destination="vZb-ws-CBl" kind="custom" identifier="TodaySegue" customClass="ECSlidingSegue" id="0aq-vr-W51"/>
+                                    <segue destination="vZb-ws-CBl" kind="custom" identifier="DueDateSegue" customClass="ECSlidingSegue" id="0aq-vr-W51"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TagCellIdentifier" textLabel="IpU-Hd-5rt" imageView="Qau-id-DqE" style="IBUITableViewCellStyleDefault" id="JHW-tL-kQc">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JHW-tL-kQc" id="rF0-eW-MwZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IpU-Hd-5rt">
+                                            <rect key="frame" x="48" y="0.0" width="257" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="price_tag-18" id="Qau-id-DqE">
+                                            <rect key="frame" x="15" y="12" width="18" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <segue destination="vZb-ws-CBl" kind="custom" identifier="TagSegue" customClass="ECSlidingSegue" id="Wci-7X-Ebo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1085,6 +1111,7 @@
         <scene sceneID="Fx4-a1-6hV">
             <objects>
                 <navigationController storyboardIdentifier="ListNavVC" definesPresentationContext="YES" id="vZb-ws-CBl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bgd-d4-zlE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="X8r-Mz-Obt">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1200,7 +1227,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0aq-vr-W51"/>
+        <segue reference="Wci-7X-Ebo"/>
         <segue reference="3oB-bd-IRe"/>
     </inferredMetricsTieBreakers>
 </document>

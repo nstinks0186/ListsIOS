@@ -9,9 +9,8 @@
 #import "MenuVC.h"
 #import "AppDelegate.h"
 #import "ListVC.h"
-#import "MenuVM.h"
 
-@interface MenuVC ()
+@interface MenuVC()
 
 @property (strong, nonatomic) MenuVM *menuVM;
 
@@ -24,6 +23,7 @@
     [super viewDidLoad];
     
     self.menuVM = [MenuVM new];
+    self.menuVM.delegate = self;
     [self.menuVM fetchTagList:YES];
 }
 
@@ -91,6 +91,13 @@
 //    }];
 //    
 //}
+
+#pragma mark - MenuVMDelegate Methods
+
+- (void)menuVMDidUpdateTagList:(MenuVM *)vm
+{
+    [self.tableView reloadData];
+}
 
 #pragma mark - Conveninence Methods
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuVM.h"
 
-@interface MenuVC : UITableViewController
+@interface MenuVC : UITableViewController <MenuVMDelegate>
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
 

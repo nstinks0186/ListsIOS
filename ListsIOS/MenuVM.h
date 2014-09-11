@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
+@protocol MenuVMDelegate;
+
 @interface MenuVM : NSObject
+
+@property (weak, nonatomic) id<MenuVMDelegate> delegate;
 
 // getters
 - (NSInteger)sectionCount;
@@ -19,5 +23,11 @@
 
 // operation
 - (void)fetchTagList:(BOOL)forceNetwork;
+
+@end
+
+@protocol MenuVMDelegate <NSObject>
+
+- (void)menuVMDidUpdateTagList:(MenuVM *)vm;
 
 @end
