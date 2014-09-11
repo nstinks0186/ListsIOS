@@ -54,6 +54,23 @@
     return tag.description;
 }
 
+- (ListVDueDateFilter)dueDateFilterForIndexPath:(NSIndexPath *)indexPath
+{
+    return (indexPath.row == 1 ? ListVDueDateFilterToday :
+            (indexPath.row == 2 ? ListVDueDateFilterTomorrow :
+             (indexPath.row == 3 ? ListVDueDateFilterWeekend :
+              ListVDueDateFilterNone)));
+}
+
+- (NSArray *)tagListFilterForIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row >= 4) {
+        NSInteger index = indexPath.row-4;
+        return @[[self.tagList objectAtIndex:index]];
+    }
+    return nil;
+}
+
 #pragma mark Operations
 
 - (void)fetchTagList:(BOOL)forceNetwork

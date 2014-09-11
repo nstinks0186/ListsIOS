@@ -14,6 +14,9 @@
 @interface ListVC : UITableViewController <ListVMDelegate, ListVCellDelegate>
 
 @property (strong, nonatomic) ListVM *listVM;
+
+// filters
 @property (nonatomic) ListVDueDateFilter dueDateFilter;
+@property (copy, nonatomic) NSArray *tagListFilter;
 
 @end

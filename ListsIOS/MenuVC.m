@@ -31,13 +31,12 @@
 {
     if (![segue.identifier isEqualToString:@"SettingsSegue"] && ![segue.identifier isEqualToString:@"NewListSegue"]) {
         UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         
         UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
         ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
-        vc.dueDateFilter = (cell.tag == 1 ? ListVDueDateFilterToday :
-                            (cell.tag == 2 ? ListVDueDateFilterTomorrow :
-                             (cell.tag == 3 ? ListVDueDateFilterWeekend :
-                              ListVDueDateFilterNone)));
+        vc.dueDateFilter = [self.menuVM dueDateFilterForIndexPath:indexPath];
+        vc.tagListFilter = [self.menuVM tagListFilterForIndexPath:indexPath];
     }
 }
 

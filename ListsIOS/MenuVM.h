@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "ListVM.h"
 
 @protocol MenuVMDelegate;
 
@@ -20,6 +21,8 @@
 - (NSInteger)rowCountForSection:(NSInteger)section;
 - (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath;
+- (ListVDueDateFilter)dueDateFilterForIndexPath:(NSIndexPath *)indexPath;
+- (NSArray *)tagListFilterForIndexPath:(NSIndexPath *)indexPath;
 
 // operation
 - (void)fetchTagList:(BOOL)forceNetwork;
