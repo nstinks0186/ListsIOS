@@ -11,6 +11,36 @@
 
 @implementation MenuVM
 
+#pragma mark Getters
+
+- (NSInteger)sectionCount
+{
+    return 1;
+}
+
+- (NSInteger)rowCountForSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath
+{
+    return (indexPath.row == 0 ? @"AllItemsCellIdentifier" :
+            (indexPath.row >= 1 && indexPath.row <= 3 ? @"DueDateCellIdentifier" :
+             @""));
+}
+
+- (NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath
+{
+    return (indexPath.row == 0 ? @"All Items" :
+            (indexPath.row == 1 ? @"Today" :
+             (indexPath.row == 2 ? @"Tomorrow" :
+              (indexPath.row == 3 ? @"Weekend" :
+               @""))));
+}
+
+#pragma mark Operations
+
 - (void)fetchTagList:(BOOL)forceNetwork
 {
     @synchronized(self) {

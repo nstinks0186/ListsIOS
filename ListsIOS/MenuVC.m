@@ -30,11 +30,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (![segue.identifier isEqualToString:@"SettingsSegue"] && ![segue.identifier isEqualToString:@"NewListSegue"]) {
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        
         UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
         ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
-        vc.dueDateFilter = ([segue.identifier isEqualToString:@"TodaySegue"] ? ListVDueDateFilterToday :
-                            ([segue.identifier isEqualToString:@"TomorrowSegue"] ? ListVDueDateFilterTomorrow :
-                             ([segue.identifier isEqualToString:@"WeekendSegue"] ? ListVDueDateFilterWeekend : ListVDueDateFilterNone)));
+        vc.dueDateFilter = (cell.tag == 1 ? ListVDueDateFilterToday :
+                            (cell.tag == 2 ? ListVDueDateFilterTomorrow :
+                             (cell.tag == 3 ? ListVDueDateFilterWeekend :
+                              ListVDueDateFilterNone)));
     }
 }
 
@@ -50,6 +53,50 @@
 
 - (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue
 {
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.menuVM sectionCount];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.menuVM rowCountForSection:section];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.menuVM cellIdentifierForIndexPath:indexPath]];
+    cell.tag = indexPath.row;
+    
+    [self setupCell:cell forIndexPath:indexPath];
+    
+    return cell;
+}
+
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    LZListItem *lzListItem = [self.listVM.itemList objectAtIndex:indexPath.row];
+//    [lzListItem updateStatus:LZListItemStatusArchived withBlock:^(BOOL succeeded, NSError *error) {
+//        [self.tableView reloadData];
+//    }];
+//    
+//}
+
+#pragma mark - Conveninence Methods
+
+- (void)setupCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
+{
+    cell.textLabel.text = [self.menuVM cellTitleForIndexPath:indexPath];
 }
 
 @end

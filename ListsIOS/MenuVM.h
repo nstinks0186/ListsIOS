@@ -11,6 +11,12 @@
 
 @interface MenuVM : NSObject
 
+// getters
+- (NSInteger)sectionCount;
+- (NSInteger)rowCountForSection:(NSInteger)section;
+- (NSString *)cellIdentifierForIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath;
+
 // operation
 - (void)fetchTagList:(BOOL)forceNetwork;
 
