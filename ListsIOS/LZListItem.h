@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LZObject.h"
 #import "NSDate+Utilities.h"
+#import "LZTag.h"
 
 typedef NS_ENUM(NSInteger, LZListItemStatus) {
     LZListItemStatusDefault = 0,
@@ -20,6 +21,7 @@ typedef NS_ENUM(NSInteger, LZListItemStatus) {
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSMutableArray *tagList;
 @property (strong, nonatomic) NSDate *dueDate;
+@property (weak, nonatomic) LZTag *typeTag;
 @property (nonatomic) LZListItemStatus status;
 
 // init

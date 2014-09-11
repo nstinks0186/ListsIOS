@@ -13,8 +13,8 @@
 @interface TagListVM ()
 
 @property (weak, nonatomic) LZListItem *item;
-@property (strong, nonatomic) NSString *typeTag;
 @property (strong, nonatomic) NSMutableArray *tagList;
+@property (strong, nonatomic) NSMutableArray *selectedTagList;
 
 @end
 
@@ -26,6 +26,7 @@
     if (self) {
         self.item = item;
         self.tagList = [NSMutableArray array];
+        self.selectedTagList = [NSMutableArray arrayWithArray:self.item.customTagList];
     }
     return self;
 }
@@ -75,8 +76,9 @@
 
 - (void)save
 {
-    [self.tagList addObject:self.typeTag];
-    [self.item updateTagList:self.tagList withBlock:nil];
+//    NSMutableArray *tagList = [NSMutableArray arrayWithArray:self.selectedTagList];
+//    [tagList addObject:self.item.typeTag];
+//    [self.item updateTagList:tagList withBlock:nil];
 }
 
 - (void)fetchTagList:(BOOL)forceNetwork
@@ -108,6 +110,12 @@
             }
         }];
     }
+}
+
+- (void)selectTagAtIndexPath:(NSIndexPath *)indexPath
+{
+    LZTag *tag = [self.tagList objectAtIndex:indexPath.row];
+    [self.selectedTagList addObject:tag];
 }
 
 @end

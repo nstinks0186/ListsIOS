@@ -7,7 +7,6 @@
 //
 
 #import "LZListItem.h"
-#import "LZTag.h"
 
 @interface NSDate (LZListItem)
 
@@ -35,11 +34,23 @@
         
         // setup tag list
         self.tagList = [NSMutableArray array];
+        self.customTagList = [NSMutableArray array];
         NSArray *rawTagList = pfObject[@"tagList"];
         for (PFObject *pfTag in rawTagList) {
-            [pfTag fetchIfNeeded];
-            LZTag *tag = [[LZTag alloc] initWithPFObject:pfTag];
-            [self.tagList addObject:tag];
+            if ([pfTag.objectId isEqualToString:[LZTag typeTodo].pfObject.objectId]) {
+                self.typeTag = [LZTag typeTodo];
+                [self.tagList addObject:self.typeTag];
+            }
+            else if ([pfTag.objectId isEqualToString:[LZTag typeTobuy].pfObject.objectId]) {
+                self.typeTag = [LZTag typeTobuy];
+                [self.tagList addObject:self.typeTag];
+            }
+            else {
+                LZTag *tag = [[LZTag alloc] initWithPFObject:pfTag];
+                [self.tagList addObject:tag];
+                [self.customTagList addObject:tag];
+            }
+            
         }
         
         // setup custom tag list
@@ -144,6 +155,7 @@
     NSMutableArray *array = [NSMutableArray arrayWithArray:self.tagList];
     for (LZTag *tag in self.tagList) {
         if ([tag.description isEqualToString:kTagTypeTodo] || [tag.description isEqualToString:kTagTypeTobuy]) {
+            self.typeTag = tag;
             [array removeObject:tag];
         }
     }

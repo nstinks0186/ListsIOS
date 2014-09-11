@@ -29,7 +29,7 @@
     [self.tagListVM fetchTagList:NO];
 }
 
-#pragma mark - Action Methods
+#pragma mark Action Methods
 
 - (IBAction)saveButtonTapped:(id)sender
 {
@@ -37,7 +37,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - Table view data source
+#pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -59,18 +59,25 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+//
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self.tagListVM removeTagAtIndexPath:indexPath];
+//    [self.tableView reloadData];
+//}
+
+#pragma mark UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    [self.tagListVM selectTagAtIndexPath:indexPath];
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.tagListVM removeTagAtIndexPath:indexPath];
-    [self.tableView reloadData];
-}
-
-#pragma mark - UITextFieldDelegate Methods
+#pragma mark UITextFieldDelegate Methods
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)characters
 {

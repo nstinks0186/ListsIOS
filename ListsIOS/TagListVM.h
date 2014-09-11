@@ -27,6 +27,7 @@
 - (void)removeTagAtIndexPath:(NSIndexPath *)indexPath;
 - (void)save;
 - (void)fetchTagList:(BOOL)forceNetwork;
+- (void)selectTagAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
