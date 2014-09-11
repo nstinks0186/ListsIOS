@@ -12,14 +12,24 @@
 
 @interface LZSession ()
 
+@property (strong, nonatomic) NSMutableArray *tagList;
+@property (strong, nonatomic) NSMutableArray *customTagList;
 @property (strong, nonatomic) LZTag *typeTodoTag;
 @property (strong, nonatomic) LZTag *typeTobuyTag;
-
-@property (strong, nonatomic) NSMutableArray *tagList;
 
 @end
 
 @implementation LZSession
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.tagList = [NSMutableArray array];
+        self.customTagList = [NSMutableArray array];
+    }
+    return self;
+}
 
 + (LZSession *)currentSession
 {
@@ -28,7 +38,6 @@
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
         _sharedInstance = [[LZSession alloc] init];
-        _sharedInstance.tagList = [NSMutableArray array];
     });
     
     return _sharedInstance;
@@ -49,6 +58,9 @@
                 else if ([tag.description isEqualToString:kTagTypeTobuy]) {
                     self.typeTobuyTag = [[LZTag alloc] initWithPFObject:object];
                 }
+                else{
+                    [self.customTagList addObject:tag];
+                }
                 [self.tagList addObject:tag];
             }
         }
@@ -63,7 +75,17 @@
 
 #pragma mark Tag Operations
 
-- (LZTag *)tagWithPFPointer:(PFObject *)object
+- (BOOL)isTypeTodoTag:(PFObject *)object
+{
+    return [self.typeTodoTag.pfObject.objectId isEqualToString:object.objectId];
+}
+
+- (BOOL)isTypeTobuyTag:(PFObject *)object
+{
+    return [self.typeTobuyTag.pfObject.objectId isEqualToString:object.objectId];
+}
+
+- (LZTag *)customTagWithPFPointer:(PFObject *)object
 {
     for (LZTag *tag in self.tagList) {
         if ([tag.pfObject.objectId isEqualToString:object.objectId]) {
@@ -72,5 +94,6 @@
     }
     return nil;
 }
+
 
 @end

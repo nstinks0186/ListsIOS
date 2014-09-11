@@ -26,7 +26,6 @@
         self.tagListVM = [[TagListVM alloc] initWithLZListItem:self.listItem];
         self.tagListVM.delegate = self;
     }
-    [self.tagListVM fetchTagList:NO];
 }
 
 #pragma mark Action Methods

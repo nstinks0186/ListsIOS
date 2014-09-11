@@ -38,16 +38,16 @@
         self.customTagList = [NSMutableArray array];
         NSArray *rawTagList = pfObject[@"tagList"];
         for (PFObject *pfTag in rawTagList) {
-            LZTag *tag = [LZCurrentSession tagWithPFPointer:pfTag];
-            if ([tag isEqual:LZTagTypeTodo]) {
+            if ([LZCurrentSession isTypeTodoTag:pfTag]) {
                 self.typeTag = LZTagTypeTodo;
                 [self.tagList addObject:self.typeTag];
             }
-            else if ([tag isEqual:LZTagTypeTobuy]) {
+            else if ([LZCurrentSession isTypeTobuyTag:pfTag]) {
                 self.typeTag = LZTagTypeTobuy;
                 [self.tagList addObject:self.typeTag];
             }
             else {
+                LZTag *tag = [LZCurrentSession customTagWithPFPointer:pfTag];
                 [self.tagList addObject:tag];
                 [self.customTagList addObject:tag];
             }

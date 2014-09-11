@@ -9,6 +9,7 @@
 #import "TagListVM.h"
 #import "LZList.h"
 #import "LZTag.h"
+#import "LZSession.h"
 
 @interface TagListVM ()
 
@@ -25,7 +26,7 @@
     self = [self init];
     if (self) {
         self.item = item;
-        self.tagList = [NSMutableArray array];
+        self.tagList = LZCurrentSession.customTagList;
         self.selectedTagList = [NSMutableArray arrayWithArray:self.item.customTagList];
     }
     return self;
@@ -79,37 +80,6 @@
     NSMutableArray *tagList = [NSMutableArray arrayWithArray:self.selectedTagList];
     [tagList addObject:self.item.typeTag];
     [self.item updateTagList:tagList withBlock:nil];
-}
-
-- (void)fetchTagList:(BOOL)forceNetwork
-{
-    @synchronized(self) {
-        PFQuery *query = [PFQuery queryWithClassName:@"Tag"];
-        query.cachePolicy = (forceNetwork ? kPFCachePolicyNetworkElseCache : kPFCachePolicyCacheElseNetwork);
-        [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                if (!self.tagList) {
-                    self.tagList = [NSMutableArray array];
-                }else{
-                    [self.tagList removeAllObjects];
-                }
-                
-                for (PFObject *object in objects) {
-                    LZTag *tag = [[LZTag alloc] initWithPFObject:object];
-                    [self.tagList addObject:tag];
-                }
-                
-                if ([self.delegate respondsToSelector:@selector(tagListVMDidUpdateTagList:)]) {
-                    [self.delegate tagListVMDidUpdateTagList:self];
-                }
-            } else {
-                [LZAnalyticsBoss logError:error
-                                    title:@"Parse.APICall"
-                                  message:@"Parse.APICall.Error"];
-            }
-        }];
-    }
 }
 
 - (void)selectTagAtIndexPath:(NSIndexPath *)indexPath

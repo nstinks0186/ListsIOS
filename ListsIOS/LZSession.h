@@ -21,8 +21,11 @@
 - (void)initSession:(PFBooleanResultBlock)block;
 
 // tags
+@property (strong, readonly) NSMutableArray *customTagList;
 @property (strong, readonly) LZTag *typeTodoTag;
 @property (strong, readonly) LZTag *typeTobuyTag;
-- (LZTag *)tagWithPFPointer:(PFObject *)object;
+- (BOOL)isTypeTodoTag:(PFObject *)object;
+- (BOOL)isTypeTobuyTag:(PFObject *)object;
+- (LZTag *)customTagWithPFPointer:(PFObject *)object;
 
 @end
