@@ -111,13 +111,16 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    
-    [self.listVM doCreateItem];
-    
-    // update UI
-    [self.tableView reloadData];
-    self.createItemField.text = @"";
+    if (textField.text.length > 0) {
+        [textField resignFirstResponder];
+        [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+        
+        [self.listVM doCreateItem];
+        
+        // update UI
+        [self.tableView reloadData];
+        self.createItemField.text = @"";
+    }
     
     return YES;
 }
