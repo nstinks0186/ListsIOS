@@ -85,6 +85,7 @@
 		FC899D1519AFBE8500DFF3B5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FC899D1219AFBE8500DFF3B5 /* MBProgressHUD.m */; };
 		FC899D1A19AFC2B700DFF3B5 /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */; };
 		FCB587791995176E000AD806 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB587771995176E000AD806 /* Main_iPhone.storyboard */; };
+		FCD5157719CCCD2B000A5BDF /* CreateListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD5157619CCCD2B000A5BDF /* CreateListVC.m */; };
 		FCF5D6121992AC3D0027AB49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6111992AC3D0027AB49 /* Foundation.framework */; };
 		FCF5D6141992AC3D0027AB49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */; };
 		FCF5D6161992AC3D0027AB49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF5D6151992AC3D0027AB49 /* UIKit.framework */; };
@@ -255,6 +256,8 @@
 		FC899D1819AFC2B700DFF3B5 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		FC899D1919AFC2B700DFF3B5 /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
 		FCB587781995176E000AD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		FCD5157519CCCD2B000A5BDF /* CreateListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateListVC.h; sourceTree = "<group>"; };
+		FCD5157619CCCD2B000A5BDF /* CreateListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateListVC.m; sourceTree = "<group>"; };
 		FCF5D60E1992AC3D0027AB49 /* ListZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5D6111992AC3D0027AB49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCF5D6131992AC3D0027AB49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -499,6 +502,7 @@
 		FC16A85F1995736800EB26F4 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				FCD5157419CCCD16000A5BDF /* CreateListVC */,
 				FC61797619B8BB4600D90CA4 /* TagListVC */,
 				FC16A866199573FB00EB26F4 /* ListVM.h */,
 				FC16A867199573FB00EB26F4 /* ListVM.m */,
@@ -683,6 +687,15 @@
 			);
 			path = Flurry;
 			sourceTree = SOURCE_ROOT;
+		};
+		FCD5157419CCCD16000A5BDF /* CreateListVC */ = {
+			isa = PBXGroup;
+			children = (
+				FCD5157519CCCD2B000A5BDF /* CreateListVC.h */,
+				FCD5157619CCCD2B000A5BDF /* CreateListVC.m */,
+			);
+			name = CreateListVC;
+			sourceTree = "<group>";
 		};
 		FCF5D6051992AC3D0027AB49 = {
 			isa = PBXGroup;
@@ -1006,6 +1019,7 @@
 				FC61795219B6301000D90CA4 /* ListVCellM.m in Sources */,
 				FC16A865199573BA00EB26F4 /* LZListItem.m in Sources */,
 				9EB68ACF19A1995600E8C16E /* NSDate+Utilities.m in Sources */,
+				FCD5157719CCCD2B000A5BDF /* CreateListVC.m in Sources */,
 				FC16A81D19952D5D00EB26F4 /* BZGFormField.m in Sources */,
 				FC61796F19B7971C00D90CA4 /* LZDebug.m in Sources */,
 				FC6178B919AFCDDD00D90CA4 /* THDatePickerViewController.m in Sources */,

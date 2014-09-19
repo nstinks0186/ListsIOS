@@ -14,7 +14,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (![segue.identifier isEqualToString:@"SettingsSegue"]) {
+    if (![segue.identifier isEqualToString:@"SettingsSegue"] && ![segue.identifier isEqualToString:@"CreateListSegue"]) {
         UINavigationController *navVC = (UINavigationController *)segue.destinationViewController;
         ListVC *vc = (ListVC *)navVC.viewControllers.firstObject;
         vc.dueDateFilter = ([segue.identifier isEqualToString:@"TodaySegue"] ? ListVDueDateFilterToday :
