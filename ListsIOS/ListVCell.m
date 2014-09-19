@@ -8,7 +8,11 @@
 
 #import "ListVCell.h"
 #import "UIViewController+KNSemiModal.h"
+<<<<<<< HEAD
 #import "TagListVC.h"
+=======
+#import "MBProgressHUD.h"
+>>>>>>> dev
 
 
 
@@ -86,19 +90,19 @@
     // TODO: analytics event here
     
     if (buttonIndex == actionSheet.destructiveButtonIndex) {
-        [self.listVCellM.listItem updateDueDate:nil withBlock:resultBlock];
+        [self updateDueDate:nil withBlock:resultBlock];
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:self.listVCellM.dueTodayTitle]) {
         NSDate *today = [NSDate date];
-        [self.listVCellM.listItem updateDueDate:today withBlock:resultBlock];
+        [self updateDueDate:today withBlock:resultBlock];
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:self.listVCellM.dueTomorrowTitle]) {
         NSDate *tomorrow = [NSDate dateTomorrow].dateWithOutTime;
-        [self.listVCellM.listItem updateDueDate:tomorrow withBlock:resultBlock];
+        [self updateDueDate:tomorrow withBlock:resultBlock];
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:self.listVCellM.dueWeekendTitle]) {
         NSDate *thisSaturday = [NSDate dateThisSaturday];
-        [self.listVCellM.listItem updateDueDate:thisSaturday withBlock:resultBlock];
+        [self updateDueDate:thisSaturday withBlock:resultBlock];
     }
     else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:self.listVCellM.otherTitle]) {
         self.datePicker = [THDatePickerViewController datePicker];
@@ -120,7 +124,7 @@
 
 -(void)datePickerDonePressed:(THDatePickerViewController *)datePicker
 {
-    [self.listVCellM.listItem updateDueDate:datePicker.date withBlock:resultBlock];
+    [self updateDueDate:datePicker.date withBlock:resultBlock];
     [self.viewController dismissSemiModalView];
 }
 
@@ -136,6 +140,18 @@
     self.descriptionLabel.text = self.listVCellM.description;
     self.tagListLabel.text = self.listVCellM.tagList;
     self.tintColor =  self.listVCellM.tintColor;
+}
+
+- (void)updateDueDate:(NSDate *)newDate withBlock:(PFBooleanResultBlock)block
+{
+    [MBProgressHUD showHUDAddedTo:self.viewController.navigationController.view animated:YES];
+    [self.listVCellM.listItem updateDueDate:newDate withBlock:^(BOOL succeeded, NSError *error) {
+        if (block) {
+            block(succeeded, error);
+        }
+        
+        [MBProgressHUD hideAllHUDsForView:self.viewController.navigationController.view animated:YES];
+    }];
 }
 
 @end

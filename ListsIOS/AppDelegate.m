@@ -42,9 +42,16 @@
 #warning Debug code
     LZDebugModeOn;
     
+    NSString *parseApplicationId = (LZEnv == LZEnvProd ? @"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw" :
+                                    (LZEnv == LZEnvTest ? @"2ffRVAtOreeHBfhouYToqaF0FCdLy6GT230RWpUT" :
+                                     @"JKL3YmTrbo7TUhIJRF0KR02gEYQO4olZFBCabUfw"));
+    NSString *parseClientKey = (LZEnv == LZEnvProd ? @"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw" :
+                                    (LZEnv == LZEnvTest ? @"2VJWZXJfeoM0YcwkGEQ8phqhWMsv1aYw8HI4f8IP" :
+                                     @"IUwlX6M7PGjUBEGkDudHFWWTX0IdUIqUEYqN0b6l"));
+    
     // Parse Setup
-    [Parse setApplicationId:@"fs0rqrwuJGKHwtYp6qvyPxytPFACpEsqRtPt8hOw"
-                  clientKey:@"qPyxYg7VOIpZtJ0wBfFlJ25GgyDAmReqpqB0kzuY"];
+    [Parse setApplicationId:parseApplicationId
+                  clientKey:parseClientKey];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     // Google Analytics Setup
