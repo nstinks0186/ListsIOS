@@ -7,6 +7,7 @@
 //
 
 #import "ListVC.h"
+#import "MBProgressHUD.h"
 
 @interface ListVC ()
 
@@ -33,7 +34,7 @@
     [self.refreshControl addTarget:self action:@selector(reloadButtonTapped:) forControlEvents:UIControlEventValueChanged];
     
     // fetch data
-    [self.listVM fetchItemList:NO];
+    [self fetchItemList:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +58,7 @@
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)control
 {
     self.listVM.mode = control.selectedSegmentIndex;
-    [self.listVM fetchItemList:NO];
+    [self fetchItemList:NO];
 }
 
 - (IBAction)createItemFieldChange:(id)sender
@@ -67,7 +68,7 @@
 
 - (IBAction)reloadButtonTapped:(id)sender
 {
-    [self.listVM fetchItemList:YES];
+    [self fetchItemList:YES];
 }
 
 #pragma mark - Table view data source
@@ -129,13 +130,14 @@
     
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 }
 
 #pragma mark ListVCellDelegate Methods
 
 - (void)listVCellDidUpdateDueDate:(ListVCell *)cell
 {
-    [self.listVM fetchItemList:NO];
+    [self fetchItemList:NO];
 }
 
 #pragma mark - Conveninence Methods
@@ -144,6 +146,13 @@
 {
     cell.viewController = self;
     cell.listItem = [self.listVM.itemList objectAtIndex:indexPath.row];
+}
+
+- (void)fetchItemList:(BOOL)forceNetwork
+{
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    [self.listVM fetchItemList:forceNetwork];
 }
 
 @end
